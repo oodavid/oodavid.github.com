@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>David King - Curriculum Vitae</title>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <style>
+        /* Basic elements */
+            body,
+            html {background: #272822; color: #F8F8F2; padding: 0; margin: 0; border: 0;}
+            a    {color: inherit;}
+            abbr {border-bottom: 1px dotted; cursor: help}
+        /* Float center - http://stackoverflow.com/a/1232297/1122851 */
+            #wrap {float: left; position: relative; left: 50%;}
+            #cv   {float: left; position: relative; left: -50%; padding: 0 1em; margin: 0 0 0 -2em; border: 1px solid #5B5C56; border-top: none; border-bottom: none; font-family: 'Ubuntu Mono', sans-serif;}
+        /* Syntax styles */
+            .javadoc {color: #E6DB74;}
+            .tag     {font-weight: bold;}
+            .title1  {color: #A6E22E; font-weight: bold;}
+            .title2  {color: #66D9EF; font-weight: bold;}
+            .line    {width: 2em; text-align: right; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; color: #5B5C56; font-weight: normal; border-right: 1px solid #5B5C56;}
+        /* CSS trickery to make the line numbers unselectable */
+            .line:before {content: attr(data-content) ' ';}
+    </style>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		// Damn simple "cv highlighter"
+        $(document).ready(function(e){
+            // I'll do MSIE another day ~ something about line-endings going screwy
+            // if($.browser.msie){
+            //     return;
+            // }
+            // Pull out the cv
+            var cv = $('#cv').html();
+            // Define the expressions
+            var highlights = [
+                [ /(\/\*\*[\s\S]*?\*\/)/gm, '<span class="javadoc">$1</span>'   ], // Main Javadoc
+                [ /(^\s*\*\s\@)(\w*)/gm,    '$1<span class="tag">$2</span>'     ], // @tags
+                [ /(^\s*)(\/\/.*)/gm,       '$1<span class="title1">$2</span>'  ], // // Titles
+                [ /(^\s*)(#.*)/gm,          '$1<span class="title2">$2</span>'  ]  // # Titles
+            ];
+            // Run 'em
+            $.each(highlights, function(k,v){
+                cv = cv.replace(v[0], v[1]);
+            });
+            // Line numbers are cool
+            var lines = cv.split('\n');
+            cv = '';
+            for(i = 0; i < lines.length; i++) {
+                cv += '<span class="line" data-content="' + i + '"></span> ' + lines[i] + '\n';
+            }
+            // And re-write
+            $('#cv').html(cv);
+        });
+	</script>
+</head>
+<body>
+    <div id="wrap">
+        <pre id="cv">
+
+/**
+ * Curriculum Vitae
+ *
+ * A document for the procurement of work
+ * 
+ * @author  David King
+ * @dob     14th May, 1984
+ * @email   <a href="mailto:david@oodavid.com">david@oodavid.com</a>
+ * @tel     +44(0)7939273963
+ * @home    West Jesmond, Newcastle
+ * @url     <a target="_blank" href="http://oodavid.com">oodavid.com</a>
+ *
+ * @todo    knockup a markup parser for this document (done)
+ */
+
+/**
+ * Career Overview
+ *
+ * Give a rundown of my history leaving the reader suitably prepared to 
+ * understand my more recent achievements and technical experience.
+ */
+
+    I have been writing code since the tender age of 13. My first "app" was a
+    Visual Basic form that took two number inputs and spat out a long division
+    diagram. I'm not sure I can even do long division any more. After that I
+    worked my way through 3D Studio Max, Director, Flash (3+). I found the webby
+    ensemble of <abbr title="Linux, Apache, MySQL, PHP/Perl">LAMP</abbr> and <abbr title="Javascript, CSS, HTML">JaCH</abbr> shortly after and never really looked back.
+
+    Being a whippersnapper I wrote a few clones of the games I loved (Micro-
+    Machines, Worms, Lunar Lander, Tetris etc) but eventually found work with my
+    father's company drafting illustrations for an american &quot;print and play&quot;
+    game. I continued to work closely with my father for many years, he still
+    calls on me for his more challenging jobs.
+
+    After a few years of online and offline games I started working for
+    more serious clients and decided to try and break the startup scene (thrice)
+    with an <a target="_blank" href="http://cogshop.co.uk/">e-commerce</a> company, a <a target="_blank" href="http://1daylater.com/">time-tracking</a> SaaS and a <a target="_blank" href="http://happie.st">social media</a> outfit,
+    each with varying degrees of success. I continue to work as a freelancer
+    throughout these endevours.
+
+    Most recently my freelance work has seen me design, implement and deploy an
+    end-to-end solution for an Asbestos surveying and management company; it
+    deals with account management, scheduling, mobile site-work, lab analysis,
+    reports generation and inter-company communication. All to fit the strict
+    UKAS standards.
+
+    References available on request.
+
+/**
+ * Technical abilities
+ *
+ * Show my knowledge in a snappy manner, don't bore the potential employer,
+ * they're intelligent and will ask for more details if they need to.
+ */
+
+    I have a lot of experience in planning projects from concept to execution
+    and am comfortable tackling complex ideas and whittling them down to
+    manageable, simple solutions. (I have a 10 foot digital whiteboard in my
+    lounge for such activities.)
+
+    To date I have only worked on small programming teams, but should be
+    comfortable integrating with larger groups.
+
+    // Backend Development
+
+        # Linux etc
+            Standard server admin tasks: installation of software via YUM / APT;
+            managing services; user administration; working over Telnet / SSH;
+            SSL setup etc. Linux is my OS of choice but will be able to pick up
+            the same skills in a Windows or Mac environment.
+        # Apache
+            The basics: installation; .htaccess wizardry; Server-Side-Includes;
+            aliases; fundamental security etc. I've never had the need to
+            *really* open up Apache configuration but I'm sure it's fine in
+            there.
+        # PHP
+            My main backend language, I've used many frameworks (CodeIgniter,
+            Cake, Kohana, Rat) however I tend to custom-build my own
+            environments using 3rd party libraries etc as a foundation.
+        # MySQL
+            Certainly my favourite database. Familiar with setup and admin,
+            complex queries (I really like a good SQL statement), indexing,
+            spatial indexing, query optimisation, the different storage engines,
+            Entity-Relationship design, CLI or GUI skills are fine.
+        # MongoDB
+            Used this primarily for its geospatial functionality and mapreduce,
+            with its (possibly unfair) reputation for being volatile I used
+            MySQL in parallel.
+        # Couchdb
+            Just a tinker, never for production work.
+        # Node.js
+            Wrote a webserver &amp; socket server for fun, that was nice.
+        # Lighttpd &amp; Nginx
+            Again, I've tinkered, I still default to Apache when possible.
+        # All the other languages
+            I've had minimal exposure to Python, Ruby, RoR, ASP, .NET, Memcached
+            etc. but given the right opportunity I'll be super happy to learn
+            their nuances and port over my current skills.
+
+    // Frontend Development
+
+        # Javascript / jQuery / Moo / prototype etc.
+            JS is my strongest language, I've written all sorts: WYSIWYG
+            Editors; jQuery Plugins; UI improvements; Templating Engines; Syntax
+            Highlighters; Code Editors; A "Tutorial Engine"; Media Players... I
+            could go on. A good UI can make or break online software.
+        # HTML
+            I've always considered well written HTML to be akin to good manners;
+            once you've got the jist of it you're set for life: Semantics;
+            Naming Conventions; SEO and Templating are all in place.
+        # CSS
+            With the sizzle engine and zen coding techniques, it's difficult to
+            get by without knowing your CSS3! Grid systems, cross-browser
+            testing and fixes and optimisation are a given.
+        # Flash
+            I haven't used this for a few years, but in a previous life I have:
+            written 2D games; vector transformations; worked with streaming
+            media; etc. With Actionscript being an ECMA-based language akin to
+            Javascript I'd be very confident to pick it up again should the
+            needs arise.
+
+/**
+ * Working knowledge
+ *
+ * Highlight my useful non-language-specific skills to round off the list of
+ * lists and then we should be ready to wind up.
+ */
+
+    // Due Diligence
+
+        # Git
+            Day-to-day useage: push; pull; branching; merging; tagging; site
+            deployment via git hooks etc. (I've used SVN too, but I'd happily
+            not go back down that road)
+        # Documentor extraordinairre
+            Whether through JavaDoc type tools or by writing something bespoke I
+            document my code with the tenacity of someone with terrible memory.
+            What was I saying again? Oh yes, I also enjoy writing a good manual
+            or guide for the user-facing part of the systems I work on.
+
+    // Business knowledge
+
+        # Agile
+            I'm familiar with various aspects of SCRUM / DSDM / XP such as:
+            Roles, User-Stories; JEDUF; Timeboxes; Iteration, Sprints, Decision
+            Models, Standups etc.; with every team handpicking the "best" bits
+            there's always more to learn.
+        # Finances, Cashflow and Law
+            Having worked freelance and in the startup environment I know my
+            share of small-business monetary and legal matters.
+        # Of and through my clients
+            Although I am focussed on solving problems in the web-world I pride
+            myself on being able to "walk around in my clients shoes" and have
+            learned a great deal about the businesses that I serve, from marine
+            construction (corrodere.com) to asbestos management (lucion.co.uk)
+            and rather a lot in-between.
+
+    // Of note
+
+        # Open source evangelist / contributor.
+        # I love a good regular expression.
+        # I am an <a target="_blank" href="http://oodavid.tumblr.com/post/16022924182/meet-my-protege-ben-cooper">active Mentor</a>.
+
+/**
+ * Career history
+ *
+ * List the larger jobs that I have worked on during my career
+ *
+ * Since these are complex platforms that I have had a substantial (if not total)
+ * involvement with, I'm happy to let the reader peruse and make their own
+ * judgement-call as to the skills required to build them.
+ */
+    
+    # Corrodere
+        corrodere.com
+    # Lucion
+        web.lucion.co.uk
+    # 1DayLater
+        new.1daylater.com
+
+/**
+ * My Personality
+ *
+ * Write about my life outside the office. Briefly.
+ */
+
+    I try to keep my days well planned and jam-packed, away from the binary
+    bongo I'll be getting messy in the kitchen, cycling, reading, swimming,
+    doing DIY, sketching, writing or generally pootling about. I don't watch TV.
+    My knowledge of pop culture is abysmal, you don't want me on your pub-quiz
+    team.
+
+    I am diligently working my way through my bucket list.
+
+    Fragments of my personality can be found on my <a target="_blank" href="http://oodavid.com/">blog</a>.
+        </pre>
+    </div>
+</body>
+</html>
