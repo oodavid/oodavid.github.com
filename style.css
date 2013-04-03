@@ -1,0 +1,4 @@
+
+/* Guru Graphic */
+	#guru		{float: right; position: relative; width: 27px; height: 6px; margin: 5px 150px 0 0; background: #B9BFBF; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+	#guru div	{position: absolute; width: 72px; height: 132px; left: -24px; top: -250px; background: url('/harry_balloon.png') no-repeat;}

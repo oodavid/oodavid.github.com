@@ -1,0 +1,18 @@
+##### Backup files and settings
+.dropbox
+*.mwb.bak
+*.sublime-*
+
+##### Operating System gubbins
+.DS_Store?
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*.db
+.Trashes
+.Spotlight-V100
+
+##### Build folder and log file
+build/
+build.log
