@@ -3,13 +3,63 @@
 <head>
 	<meta charset="UTF-8">
 	<title>oodavid.com</title>
+	<!-- jQuery -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeMidnight.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.all()
+	</script>
+	<!-- Customisation -->
 	<script src="/script.js"></script>
 	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1>oodavid.com on github - test!</h1>
-	
+	<p>My Todo List</p>
+	<ul>
+		<li>Plan the site
+			<ul>
+				<li>About Me</li>
+				<li>Blog (most recent on homepage - nice to have)</li>
+				<li>Services</li>
+				<li>Code / GitHub</li>
+				<li>CV</li>
+			</ul>
+		</li>
+		<li>Make Pretty</li>
+		<li>Update my DNS!</li>
+		<li>Make this run with Jekyll</li>
+	</ul>
+	<h2>Some Codey Samples</h2>
+	<!-- Simple -->
+	<pre class="brush: js">
+		var js = true;
+		if(js){
+			alert('I am javascript highlighting!');
+		}
+</pre>
+	<!-- Saves escaping, not so good for SEO / syndication -->
+	<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+		<?php
+			echo "hello world";
+		?>
+]]></script>
+	<pre class="brush: sql">
+		SELECT * FROM `users` WHERE `id` = 1;
+</pre>
+	<pre class="brush: sql">
+		SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1;
+</pre>
+ 
+
 	<br>
 	<br>
 	<br>

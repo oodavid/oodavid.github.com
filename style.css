@@ -1,4 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:700);
+
+body			{background: #B9D1D3; font-family: sans-serif;}
+h1, h2, h3, h4	{font-family: 'Ubuntu', sans-serif; text-shadow: 1px 2px 1px #AABDC0; color: #FFFFFF;}
+p, ul			{color: #709196; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);}
+/* Pad out the syntax highlighter a little */
+	.syntaxhighlighter {padding: 5px 0;}
 
 /* Guru Graphic */
-	#guru		{float: right; position: relative; width: 27px; height: 6px; margin: 5px 150px 0 0; background: #B9BFBF; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+	#guru		{float: right; position: relative; width: 27px; height: 6px; margin: 5px 200px 0 0; background: #B9BFBF; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
 	#guru div	{position: absolute; width: 72px; height: 132px; left: -24px; top: -250px; background: url('/harry_balloon.png') no-repeat;}
