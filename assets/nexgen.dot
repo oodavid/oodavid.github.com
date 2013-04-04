@@ -1,0 +1,28 @@
+/**
+ * Example GraphViz file for the generation of a visual schema.
+ * 
+ *		To use:
+ *
+ *			dot -Tpng nexgen.dot -o nexgen.png
+ *			setsid exo-open nexgen.png
+ */
+digraph G {
+	// General Settings
+	graph [
+		truecolor=true
+		bgcolor="#FFFFFF00"
+		fontname = "Ubuntu"
+	]
+	node [
+		shape=box
+		style=filled
+		fillcolor="#FFFFFF"
+		color=transparent
+		fontcolor="#0F192A"
+	]
+	edge [
+		color="#0F192A"
+	]
+	// Just simple for now
+	crm -> accounts;
+}

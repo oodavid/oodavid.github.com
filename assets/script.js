@@ -16,16 +16,21 @@ guru.init = function(){
 	setInterval(guru.move, 30);
 	guru.move();
 	$('#meditate').show();
+	// Setup the transform
+	$('#shadow').css('-webkit-transform-origin', '50% 50%');
 };
 guru.move = function(){
 	// Where do we move to?
 	guru.guruDt += 0.03;
 	var dX = Math.sin(guru.guruDt) * 20;
 	var dY = Math.cos(guru.guruDt) * 10;
+	var dZ = 1 + Math.cos(guru.guruDt) / 4;
 	// Apply
 	$('#guru').css('top', (guru.guruTop + dY) + "px");
 	$('#guru').css('left', (guru.guruLeft + dX) + "px");
 	$('#shadow').css('left', (guru.shadowLeft + dX) + "px");
+	// Scale the shadow
+	$('#shadow').css('-webkit-transform', 'scale(' + dZ +')');
 };
 
 /*** Sticky Header ******************************/

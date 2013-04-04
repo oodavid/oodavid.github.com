@@ -21,10 +21,12 @@
 	/* Abbreviations */
 		abbr {border-bottom: 1px dashed #FFFFFF;}
 	/* Blockquotes */
-		blockquote {font-style: italic;}
+		blockquote		{background: #123456; font-style: italic; padding: 20px 20px 0 20px; margin: 0 0 20px 0; -webkit-border-radius: 10px; border-radius: 10px;}
+		blockquote img 	{float: left; margin: 0 20px 20px 0;}
 
-/* Clearfix */
-	.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+/* Clearfix - www.quirksmode.org/css/clearing.html */
+	.clearfix,
+	blockquote {overflow: auto; width: 100%;}
 
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
