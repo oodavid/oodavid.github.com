@@ -24,5 +24,19 @@ digraph G {
 		color="#0F192A"
 	]
 	// Just simple for now
-	crm -> accounts;
+	crm -> leads;
+	crm -> quotes;
+	leads -> quotes;
+	quotes -> contracts;
+	contracts -> jobs;
+	activities -> jobs;
+	activities -> contracts;
+	activities -> invoices;
+	invoices -> contracts;
+	jobs -> sites;
+	jobs -> crm;
+	targets -> invoices;
+	staff -> training;
+	staff -> jobs;
+	staff -> activities;
 }

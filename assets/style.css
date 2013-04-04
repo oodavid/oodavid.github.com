@@ -26,7 +26,7 @@
 
 /* Clearfix - www.quirksmode.org/css/clearing.html */
 	.clearfix,
-	blockquote {overflow: auto; width: 100%;}
+	blockquote {overflow: auto; width: auto;}
 
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
