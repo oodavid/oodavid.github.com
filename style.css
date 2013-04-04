@@ -17,6 +17,8 @@
 		.active	{color: #F6B82F;}
 	/* Abbreviations */
 		abbr {border-bottom: 1px dashed #FFFFFF;}
+	/* Blockquotes */
+		blockquote {font-style: italic;}
 
 /* Clearfix */
 	.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}

@@ -104,6 +104,24 @@
 				<img src="/gfx/oerm.png">
 				<br><em>an overview of the OERM functionality</em>
 			</p>
+			<p>The full-scope of this project is too big for this page, however I can demonstrate how powerful it is with a real-world example. I was asked a non-trivial question by a client:</p>
+			<blockquote><p>&quot;We need to see all Sites related to Contracts that we (an Account) have worked on within a Region, searching for the word 'Durham' and Clustered onto a google map...&quot;</p></blockquote>
+			<p>Anyone familiar with SQL queries will know that this <em>naive</em> question would test even the most hardened database engineer. With OERM it's a walk in the park.</p>
+			<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+				<?php
+					$rows = $oerm->select("COUNT(*) AS `TOTAL`")->
+						from('jobs')->join('contract')->join('site')->
+						where('contract.account', 730)->
+						clustering('site', array(
+							'zoom' => 10,
+							'lat_n' => 55.206,
+							'lat_s' => 54.694,
+							'lng_e' => -1.304,
+							'lng_w' => -2.087
+						))->search('site', 'durham')->execute();
+				?>]]></script>
+
+
 			<h2>My Work</h2>
 			<h3>Ethic</h3>
 			<p>Agile Development, Risk, Cost, Value-to-business, R.A.D.</p>
