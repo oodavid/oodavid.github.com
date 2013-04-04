@@ -56,8 +56,9 @@
 		<div class="center clearfix">
 			<div>
 				<ul>
-					<li><a href="/" {% if page.layout == "default" %} class="active" {% endif %}>David King</a></li>
-					<li><a href="{{ site.posts.first.url }}" {% if page.layout == "blog" %} class="active" {% endif %}>Blog</a></li>
+					<li><a href="/" {% if page.url == "/index.html" %} class="active" {% endif %}>David King</a></li>
+					<li><a href="{{ site.posts.first.url }}" {% if page.layout == "blog" or page.url == "/blog/index.html" %} class="active" {% endif %}>Blog</a></li>
+					<li><a href="/oerm.html" {% if page.url == "/oerm.html" %} class="active" {% endif %}>OERM</a></li>
 					<li><a href="https://github.com/oodavid">GitHub</a></li>
 					<li><a href="/cv.html">CV</a></li>
 					<li><a href="mailto:david@oodavid.com">Contact</a></li>

@@ -1,18 +1,18 @@
 {% include header.html %}
 
-	<!-- Title -->
-	<h1>{{ page.title }} <small>{{ page.date | date: "%d %b %Y" }}</small></h1>
 	<!-- Previous and Next posts... -->
-	<p class="prevnext clearfix" style="font-style: italic;">
+	<p class="prevnext clearfix" style="font-style: italic; text-align: center;">
 		{% if page.previous.url %}
 			<span style="float: left;">Prev &laquo; <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">{{page.previous.title}}</a></span>
 		{% endif %}
-		&nbsp;
+		<a href="/blog/index.html" title="All Articles">All Blog Articles</a></span>
 		{% if page.next.url %}
 			<span style="float: right;">Next &raquo; <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}}</a></span>
 		{% endif %}
 	</p>
-	<!-- Content -->
+
+	<!-- Title & Content -->
+	<h1>{{ page.title }} <small>{{ page.date | date: "%d %b %Y" }}</small></h1>
 	{{ content }}
 	<!-- Comments -->
 	<div class="fb-comments" data-href="http://oodavid.com{{page.url}}" data-width="680" data-num-posts="50"></div>

@@ -1,0 +1,56 @@
+---
+layout: default
+title: "Project: OERM"
+---
+<h1>{{page.title}}</h1>
+<p><em>This page is a work-in-progress, I generally spend more time developing than shouting about it...</em></p>
+<p>
+	During my career I have strived to contribute to open-source software and to share my programs and ideas for the
+	benefit of the community at large. In doing so I have developed a very powerful &quot;core&quot; set of tools that is
+	Project: <abbr title="It's a long story, but the OE = &empty; (an Empty Set) and the RM = Relational Mapping.">OERM</abbr>.
+</p>
+<p>
+	Project: OERM is a system that allows me to manage complex, relational databases (the best kind) in a very straightforward
+	manner, all I need to do is define the database schema in code and a seriously powerful set of tools are exposed to me that
+	create VERY powerful websites and mobile apps.
+</p>
+<p style="text-align: center;">
+	<img src="/assets/oerm.png">
+	<br><em>an overview of the OERM functionality</em>
+</p>
+
+<!-- In a Nutshell -->
+<h2>In a Nutshell</h2>
+<p>Video plz</p>
+
+<!-- Query Generator -->
+<h2>Query Generator</h2>
+<p>I can demonstrate the concept of this feature with a real-world example. I was asked a non-trivial question by a client:</p>
+<blockquote><p>&quot;We need to see all Sites related to Contracts that we (an Account) have worked on within a Region, searching for the word 'Durham' and Clustered onto a google map...&quot;</p></blockquote>
+<p>Anyone familiar with SQL queries will know that this <em>naive</em> question would test even the most hardened database engineer. With OERM it's a walk in the park.</p>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+	<?php
+		$rows = $oerm->select("COUNT(*) AS `TOTAL`")->
+			from('jobs')->join('contract')->join('site')->
+			where('contract.account', 730)->
+			clustering('site', array(
+				'zoom' => 10,
+				'lat_n' => 55.206,
+				'lat_s' => 54.694,
+				'lng_e' => -1.304,
+				'lng_w' => -2.087
+			))->search('site', 'durham')->execute();
+	?>]]></script>
+
+<!-- Search -->
+<h2>Search</h2>
+<p>InnoDB = stable, MyISAM has fulltext... explain how we manage this</p>
+
+<!-- Web and Mobile UI -->
+<h2>Web and Mobile UI</h2>
+<p>Screenies pls</p>
+
+<!-- DB Sync -->
+<h2>Database Sync and Validation</h2>
+<p>Common patterns - boolean should be an unsigned TINYINT(1). FK's should be indexed and setup. Did you forget to Auto-Increment your PK?</p>
+<p>Screenies of the diagnostics page</p>
