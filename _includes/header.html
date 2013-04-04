@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>David &quot;oodavid&quot; King - {{ page.title }}</title>
+	<!-- Author -->
+	<link rel="author" href="https://plus.google.com/114477180785416187576/posts"/>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeMidnight.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Customization -->
+	<link rel="stylesheet" href="/assets/style.css">
+	<script src="/assets/script.js"></script>
+</head>
+<body>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header>
+		<div class="center">
+			<hgroup>
+				<h1>David &quot;oodavid&quot; King</h1>
+				<h2>creative problem solver</h2>
+				<h3>full service web development</h3>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div class="center clearfix">
+			<div>
+				<ul>
+					<li><a href="/" {% if page.layout == "default" %} class="active" {% endif %}>David King</a></li>
+					<li><a href="{{ site.posts.first.url }}" {% if page.layout == "blog" %} class="active" {% endif %}>Blog</a></li>
+					<li><a href="https://github.com/oodavid">GitHub</a></li>
+					<li><a href="/cv.html">CV</a></li>
+					<li><a href="mailto:david@oodavid.com">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">

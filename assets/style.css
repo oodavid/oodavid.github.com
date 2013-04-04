@@ -1,5 +1,5 @@
 /* Basics */
-	body			{background: #B9D1D3; font-family: sans-serif; color: #FFFFFF; font-size: 100%; line-height: 1.4em; text-shadow: 1px 2px 1px #123456;}
+	body			{background: #123456; font-family: sans-serif; color: #FFFFFF; font-size: 100%; line-height: 1.4em; text-shadow: 1px 2px 1px #123456;}
 	body, html		{padding: 0; margin: 0;}
 	h1, h2, h3, h4	{font-family: 'Ubuntu', sans-serif; font-weight: normal; text-shadow: 2px 3px 1px #123456;}
 	/* Font-Sizes */
@@ -11,6 +11,8 @@
 		h2 small,
 		h3 small,
 		h4 small		{font-size: 50%; padding-left: 10px; font-style: italic; letter-spacing: 0;}
+	/* Basics */
+		h1, h2, h3, h4, p {margin: 0 0 20px 0;}
 	/* Links */
 		a		{text-decoration: underline; font-weight: bold; color: #FFFFFF;}
 		a:hover,
@@ -26,9 +28,9 @@
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
 	header	{background: #0F192A; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
-	nav		{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-bottom: #1B4E81 3px dotted; border-top: 1px solid #0F192A;}
-	section	{background: #1B4E81; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted; border-top: 1px solid #123456;}
-	footer	{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-top: 1px solid #1B4E81 ;}
+	nav		{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-bottom: #1B4E81 3px dotted;}
+	section	{background: #1B4E81; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
+	footer	{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0;}
 
 /* Header */
 	header {text-align: center;}
@@ -40,7 +42,7 @@
 	/* Guru Graphic */
 		header hgroup	{position: relative; z-index: 2;}
 		#meditate		{position: relative; z-index: 1; float: right; margin: 0 75px 0 0; display: none;}
-		#guru			{position: absolute; width: 72px; height: 132px; left: -24px; top: -165px; background: url('/gfx/harry_balloon.png') no-repeat;}
+		#guru			{position: absolute; width: 72px; height: 132px; left: -24px; top: -165px; background: url('/assets/harry_balloon.png') no-repeat;}
 		#shadow			{position: absolute; width: 27px; height: 6px; left: 0; top: 10px; background: #123456; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
 
 /* Nav - http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support */
@@ -57,3 +59,6 @@
 
 /* Tweak the syntax highlighter */
 	.syntaxhighlighter {padding: 5px 0;}
+
+/* FB: Comments */
+	.fb-comments {margin: 0 20px; background-color: #FFFFFF;}
