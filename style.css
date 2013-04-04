@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 /* Basics */
 	body			{background: #B9D1D3; font-family: sans-serif; color: #FFFFFF; font-size: 100%; line-height: 1.4em; text-shadow: 1px 2px 1px #123456;}
 	body, html		{padding: 0; margin: 0;}
@@ -16,6 +15,8 @@
 		a		{text-decoration: underline; font-weight: bold; color: #FFFFFF;}
 		a:hover,
 		.active	{color: #F6B82F;}
+	/* Abbreviations */
+		abbr {border-bottom: 1px dashed #FFFFFF;}
 
 /* Clearfix */
 	.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
@@ -23,9 +24,9 @@
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
 	header	{background: #0F192A; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
-	nav		{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-bottom: #1B4E81 3px dotted;}
-	section	{background: #1B4E81; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
-	footer	{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0;}
+	nav		{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-bottom: #1B4E81 3px dotted; border-top: 1px solid #0F192A;}
+	section	{background: #1B4E81; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted; border-top: 1px solid #123456;}
+	footer	{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-top: 1px solid #1B4E81 ;}
 
 /* Header */
 	header {text-align: center;}

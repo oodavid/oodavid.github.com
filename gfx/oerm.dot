@@ -1,0 +1,49 @@
+/**
+ * Example GraphViz file for the generation of a visual schema.
+ * 
+ *		To use:
+ *
+ *			dot -Tpng oerm.dot -o oerm.png
+ *			setsid exo-open oerm.png
+ */
+digraph G {
+	// General Settings
+	graph [
+		truecolor=true
+		bgcolor="#FFFFFF00"
+		fontname = "Ubuntu"
+	]
+	node [
+		shape=box
+		style=filled
+		fillcolor="#FFFFFF"
+		color=transparent
+		fontcolor="#0F192A"
+	]
+	edge [
+		color="#0F192A"
+	]
+	// Define our Nodes
+	schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
+	database [label="Database"];
+	ui [label="Web UI"];
+	mobile [label="Mobile UI"];
+	validation [label="Validation"];
+	crud [label="CRUD\nOperations"];
+	sync [label="SYNC"];
+	query [label="Query\nGenerator"];
+	clustering [label="Marker\nClustering"];
+	search [label="Search"];
+	// Define our Connections
+	schema -> database;
+	schema -> crud;
+	schema -> ui;
+	schema -> mobile;
+	ui -> crud -> database
+	schema -> query -> database;
+	query -> search -> database;
+	query -> clustering;
+	database -> validation -> database;
+	database -> sync;
+	crud -> validation;
+}
