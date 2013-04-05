@@ -1,0 +1,39 @@
+---
+layout: blog
+title: "Ola New Website"
+tags:
+- code
+- hello
+- world
+- hello world
+published: false
+---
+<!-- Jekyll Notes -->
+<p>Some notes about Jekyll and my blog tempates:</p>
+<ul>
+	<li>The Page title is automatically added above the HTML content</li>
+	<li>As you can see in the source, the &quot;YAML front-matter&quot; contains a number of variables...</li>
+	<li>Standard variables:
+		<ul>
+			<li><strong>layout: blog</strong> - selects the _layout to use, while I tend to use blog, it would be trivial to make new templates for more involved pages</li>
+			<li><strong>title: "Hello World"</strong> - used on the page itself and in the HTML &gt; TITLE tag</li>
+			<li><strong>tags ...</strong> - a YAML list of tags to associate with the article, I've not (yet) made much use for these, but I shall</li>
+			<li><strong>published: false</strong> - add this to draft pages, or to remove a page from the site</li>
+		</ul>
+	</li>
+	<li>Custom variables:
+		<ul>
+			<li><strong>github: http://...</strong> - link to a github repo related to this post</li>
+			<li><strong>gist: http://...</strong> - link to a gist related to this post</li>
+		</ul>
+	</li>
+	<li>Previous and Next links are automatically added</li>
+	<li>FB-Comments are also added</li>
+</ul>
+<!-- Markup Snippets -->
+<h1>h1 - article title</h1>
+<h2>h2 - </h2>
+<figure>
+	<img src="/assets/nexgen.png">
+	<figcaption>a simplified view of NexGen functionality</figcaption>
+</figure>

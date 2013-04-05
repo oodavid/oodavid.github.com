@@ -5,14 +5,16 @@ title: "Blog Listing"
 <!-- Title -->
 <h1>Blog Listing</h1>
 <!-- All articles... -->
-<ul>
+<ul class="listing">
 	{% for post in site.posts limit 4 %}
 		<li>
-			<span>{{ post.date | date: "%d %b %Y" }}</span>
-			&raquo;
-			<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+			<a href="{{BASE_PATH}}{{post.url}}">{{post.title}}</a><br>
+			<time datetime="2013-02-27">
+				{{post.date | date: "%d %B, %Y"}}
+			</time>
+			{% if post.github %} - <a href="{{post.github}}">GitHub Repo</a> {% endif %}
+			{% if post.gist %} - <a href="{{post.github}}">Github Gist</a> {% endif %}
+			<small>{{post.content | strip_html | truncatewords:10}}...</small>
 		</li>
-		{{ post.content | strip_html | truncatewords:75}}<br>
-		<a href="{{ post.url }}">Read more...</a><br><br>
 	{% endfor %}
 </ul>
