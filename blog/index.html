@@ -12,8 +12,8 @@ title: "Blog Listing"
 			<time datetime="2013-02-27">
 				{{post.date | date: "%d %B, %Y"}}
 			</time>
-			{% if post.github %} - <a href="{{post.github}}">GitHub Repo</a> {% endif %}
-			{% if post.gist %} - <a href="{{post.github}}">Github Gist</a> {% endif %}
+			{% if post.github %} - <a href="{{post.github}}" target="_blank">GitHub Repo</a> {% endif %}
+			{% if post.gist %} - <a href="{{post.gist}}" target="_blank">Github Gist</a> {% endif %}
 			<small>{{post.content | strip_html | truncatewords:10}}...</small>
 		</li>
 	{% endfor %}
