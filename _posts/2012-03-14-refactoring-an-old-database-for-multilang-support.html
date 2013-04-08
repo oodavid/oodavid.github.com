@@ -12,13 +12,16 @@ title: "Refactoring an old database for multilang support"
 	<figcaption>the new relational database + multilang translations</figcaption>
 </figure>
 <p>Table-wise we decided to keep with pretty much the same to make the transition painless, however when you compare the original and the new you can see everything has more structure and logic:</p>
-<ul><li>Converted from MyISAM to InnoDB<br/><em>the new MySQL standard</em></li>
-<li>Foreign-Keys have been added</li>
-<li>Additional Unique indexes for structural integrity</li>
-<li>Split the content into
-<ul><li>Structural tables</li>
-<li>Content tables (for multi-lang)</li>
-</ul></li>
+<ul>
+	<li>Converted from MyISAM to InnoDB<br/><em>the new MySQL standard</em></li>
+	<li>Foreign-Keys have been added</li>
+	<li>Additional Unique indexes for structural integrity</li>
+	<li>Split the content into
+		<ul>
+			<li>Structural tables</li>
+			<li>Content tables (for multi-lang)</li>
+		</ul>
+	</li>
 </ul>
 <figure>
 	<img src="http://media.tumblr.com/tumblr_m0vke31FY41qk6dpq.png" alt="Simplified EER to show only the i18n parts of the diagram"/>
@@ -36,11 +39,15 @@ FROM `units` AS u
 	LEFT JOIN units_lang AS lang2 ON lang2.unit = u.id AND lang2.lang = 'en'
 WHERE u.id = 32;</pre>
 <p>In this statement:</p>
-<ul><li><strong>u</strong> is the structural <strong>units</strong> table with common info (only id in this case)</li>
-<li><strong>lang1</strong> is the multilang table <strong>units_lang</strong> in Chinese (zh)</li>
-<li><strong>lang2</strong> is the multilang table <strong>units_lang</strong> in English (en)</li>
-<li><strong>COALESCE</strong>picks out the first NON-NULL column, so these go:
-<ul><li>Chinese table<br/><em>then</em></li>
-<li>English table</li>
-</ul></li>
-</ul><p>Pretty nifty huh?</p>
+<ul>
+	<li><strong>u</strong> is the structural <strong>units</strong> table with common info (only id in this case)</li>
+	<li><strong>lang1</strong> is the multilang table <strong>units_lang</strong> in Chinese (zh)</li>
+	<li><strong>lang2</strong> is the multilang table <strong>units_lang</strong> in English (en)</li>
+	<li><strong>COALESCE</strong>picks out the first NON-NULL column, so these go:
+		<ul>
+			<li>Chinese table<br/><em>then</em></li>
+			<li>English table</li>
+		</ul>
+	</li>
+</ul>
+<p>Pretty nifty huh?</p>
