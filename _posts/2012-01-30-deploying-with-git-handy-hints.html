@@ -3,10 +3,21 @@ layout: blog
 title: "Deploying with Git > handy hints"
 ---
 <p>With regards to deploying your site with git, there's some potentially confusing posts out there; a quick google for &quot;git deployment&quot; will turn up a few (seemingly) outdated posts (I'm using <strong>git version 1.7.4.1</strong> at the time of writing), ie:</p>
-<ul><li><a href="http://ryanflorence.com/simple-git-deployment/"><a href="http://ryanflorence.com/simple-git-deployment/">http://ryanflorence.com/simple-git-deployment/</a><br/></a><em>I had a few problems with this one when I got to the push stage, apparently this occurs with newer versions of git.</em></li>
-<li><a href="http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html">http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html</a><br/><em>while written for specific deployment platforms I ran into the same problems as the ryanfolrence post</em></li>
-<li><a href="http://toroid.org/ams/git-website-howto">http://toroid.org/ams/git-website-howto</a><br/><em>now we're talking! Not only is this kept up-to-date but works a treat :-)</em></li>
-</ul><p>If you take a peek at the <strong>toroid</strong> post you'll read:</p>
+<ul>
+	<li>
+		<a href="http://ryanflorence.com/simple-git-deployment/">http://ryanflorence.com/simple-git-deployment/</a><br/>
+		<em>I had a few problems with this one when I got to the push stage, apparently this occurs with newer versions of git.</em>
+	</li>
+	<li>
+		<a href="http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html">http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html</a><br/>
+		<em>while written for specific deployment platforms I ran into the same problems as the ryanfolrence post</em>
+	</li>
+	<li>
+		<a href="http://toroid.org/ams/git-website-howto">http://toroid.org/ams/git-website-howto</a><br/>
+		<em>now we're talking! Not only is this kept up-to-date but works a treat :-)</em>
+	</li>
+</ul>
+<p>If you take a peek at the <strong>toroid</strong> post you'll read:</p>
 <blockquote>
 	<p>The one-line summary: push into a remote repository that has a detached work tree, and a post-receive hook that runs &quot;git checkout -f&quot;.</p>
 </blockquote>
