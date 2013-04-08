@@ -27,6 +27,10 @@
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
 	/* Iframes */
 		iframe	{border: 0;}
+	/* Definition Lists */
+		dl {padding: 0 0 20px 40px;}
+		dt {font-weight: bold;}
+		dd {padding: 0 0 0 20px; font-style: italic;}
 
 /* Clearfix - www.quirksmode.org/css/clearing.html */
 	.clearfix,
