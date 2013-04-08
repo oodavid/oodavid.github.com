@@ -8,6 +8,7 @@ title: "Blog Listing"
 <ul class="listing">
 	{% for post in site.posts limit 4 %}
 		<li>
+			<a href="http://validator.w3.org/check?uri=http://oodavid.github.io{{post.url}}" target="_blank" style="float: right;">Validate</a>
 			<a href="{{BASE_PATH}}{{post.url}}">{{post.title}}</a><br>
 			<time datetime="2013-02-27">
 				{{post.date | date: "%d %B, %Y"}}
