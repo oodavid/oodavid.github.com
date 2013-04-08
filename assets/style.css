@@ -25,6 +25,8 @@
 		blockquote img 	{float: left; margin: 0 20px 20px 0;}
 	/* Figures & FigCaptions */
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
+	/* Iframes */
+		iframe	{border: 0;}
 
 /* Clearfix - www.quirksmode.org/css/clearing.html */
 	.clearfix,
