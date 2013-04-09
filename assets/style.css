@@ -25,6 +25,8 @@
 		blockquote img 	{float: left; margin: 0 20px 20px 0;}
 	/* Figures & FigCaptions */
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
+	/* Images */
+		img {vertical-align: middle;}
 	/* Iframes */
 		iframe	{border: 0;}
 	/* Definition Lists */
@@ -69,7 +71,8 @@
 		#stuck		{display: none; z-index: 100; position: fixed; top: 0; left: 0; right: 0;}
 
 /* Footer */
-	footer {text-align: center; font-style: italic;}
+	footer		{text-align: center;}
+	footer p	{font-style: italic;}
 
 /* Tweak the syntax highlighter */
 	pre					{padding: 5px; overflow: auto; background: #0F192A; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
