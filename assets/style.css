@@ -78,6 +78,9 @@
 	pre					{padding: 5px; overflow: auto; background: #0F192A; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
 	.syntaxhighlighter	{padding: 5px 0;}
 
+/* Embedded gists */
+	.gist {text-shadow: none;}
+
 /* Listings (blog list etc) */
 	.listing		{list-style-type: none; padding-left: 0; font-size: 1.2em; line-height: 1.4em;}
 	.listing li		{margin: 20px 0;}
