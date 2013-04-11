@@ -1,0 +1,171 @@
+---
+layout: default
+title: "GViz"
+---
+<!-- Title -->
+<h1>GViz - Graphviz online</h1>
+<p>Allows you to generate graphviz diagrams using inline HTML like so:</p>
+<pre class="brush: xml">
+&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+			fontname = "Ubuntu"
+		];
+        node [
+            shape=box
+            style=filled
+            fillcolor="#FFFFFF"
+            color=transparent
+            fontcolor="#0F192A"
+        ];
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]&gt;&lt;/script&gt;
+</pre>
+<p>Is translated into...</p>
+<figure>
+<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+			fontname = "Ubuntu"
+		];
+        node [
+            shape=box
+            style=filled
+            fillcolor="#FFFFFF"
+            color=transparent
+            fontcolor="#0F192A"
+        ];
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]></script>
+	<figcaption>How lovely!</figcaption>
+</figure>
+<h2>Why?</h2>
+<p>Because I like graphviz, but I'd rather write it directly into my HTML and be done with it.</p>
+<h2>Instructions</h2>
+<p>Blah...</p>
+<p>Requires jQuery (for now)</p>
+<p>Add the gviz script to your page, either in &lt;head&gt; or before the closing &lt;/body&gt; tag</p>
+<pre class="brush: xml">
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://gviz.oodavid.com/gviz.js&quot; /&gt;&lt;/script&gt;
+</pre>
+<p>Then define your graphviz information inline...</p>
+<p>See: http://graphviz.org/</p>
+<p>Uses any layout engine:</p>
+<dl>
+	<dt>dot</dt>
+		<dd>&quot;hierarchical&quot; or layered drawings of directed graphs. This is the default tool to use if edges have directionality.</dd>
+	<dt>neato</dt>
+		<dd>&quot;spring model&quot; layouts.  This is the default tool to use if the graph is not too large (about 100 nodes) and you don't know anything else about it. Neato attempts to minimize a global energy function, which is equivalent to statistical multi-dimensional scaling.</dd>
+	<dt>fdp</dt>
+		<dd>&quot;spring model&quot; layouts similar to those of neato, but does this by reducing forces rather than working with energy.</dd>
+	<dt>sfdp</dt>
+		<dd>multiscale version of fdp for the layout of large graphs.</dd>
+	<dt>twopi</dt>
+		<dd>radial layouts, after Graham Wills 97. Nodes are placed on concentric circles depending their distance from a given root node.</dd>
+	<dt>circo</dt>
+		<dd>circular layout, after Six and Tollis 99, Kauffman and Wiese 02. This is suitable for certain diagrams of multiple cyclic structures, such as certain telecommunications networks.</dd>
+</dl>
+<!-- Some Examples -->
+<h2>Examples</h2>
+<pre class="brush: xml">
+	&lt;script type="gviz" data-layout=&quot;fdp&quot;&gt;&lt;![CDATA[
+		digraph G {
+			// General Settings
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+				fontname = "Ubuntu"
+			];
+			node [
+				shape=box
+				style=filled
+				fillcolor="#FFFFFF"
+				color=transparent
+				fontcolor="#0F192A"
+			];
+			edge [
+				color="#0F192A"
+			];
+			// Define our Nodes
+			schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
+			database [label="Database"];
+			ui [label="Web UI"];
+			mobile [label="Mobile UI"];
+			validation [label="Validation"];
+			crud [label="CRUD\nOperations"];
+			sync [label="SYNC"];
+			query [label="Query\nGenerator"];
+			clustering [label="Marker\nClustering"];
+			search [label="Search"];
+			// Define our Connections
+			schema -> database;
+			schema -> crud;
+			schema -> ui;
+			schema -> mobile;
+			ui -> crud -> database
+			schema -> query -> database;
+			query -> search -> database;
+			query -> clustering;
+			database -> validation -> database;
+			database -> sync;
+			crud -> validation;
+		}
+	]]&gt;&lt;/script&gt;
+</pre>
+
+<figure>
+	<script type="gviz" data-layout="fdp"><![CDATA[
+		digraph G {
+			// General Settings
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+				fontname = "Ubuntu"
+			];
+			node [
+				shape=box
+				style=filled
+				fillcolor="#FFFFFF"
+				color=transparent
+				fontcolor="#0F192A"
+			];
+			edge [
+				color="#0F192A"
+			];
+			// Define our Nodes
+			schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
+			database [label="Database"];
+			ui [label="Web UI"];
+			mobile [label="Mobile UI"];
+			validation [label="Validation"];
+			crud [label="CRUD\nOperations"];
+			sync [label="SYNC"];
+			query [label="Query\nGenerator"];
+			clustering [label="Marker\nClustering"];
+			search [label="Search"];
+			// Define our Connections
+			schema -> database;
+			schema -> crud;
+			schema -> ui;
+			schema -> mobile;
+			ui -> crud -> database
+			schema -> query -> database;
+			query -> search -> database;
+			query -> clustering;
+			database -> validation -> database;
+			database -> sync;
+			crud -> validation;
+		}
+	]]></script>
+	<figcaption>hello world</figcaption>
+</figure>
