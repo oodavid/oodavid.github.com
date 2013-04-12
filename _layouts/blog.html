@@ -18,7 +18,7 @@
 	<h1>{{ page.title }}</h1>
 	<p style="text-align: right">{{ page.date | date: "%d %b %Y" }}</p>
 	{{ content }}
-	<!-- Comments -->
-	<div class="fb-comments" data-href="http://oodavid.com{{page.url}}" data-width="680" data-num-posts="50"></div>
+
+	{% include comments.html %}
 
 {% include footer.html %}
