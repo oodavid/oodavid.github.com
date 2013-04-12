@@ -4,63 +4,44 @@ title: "GViz"
 ---
 <!-- Title -->
 <h1>GViz - Graphviz online</h1>
-<p>Allows you to generate graphviz diagrams using inline HTML like so:</p>
+<p><em><strong>Nota Bene</strong> - I've written this over a couple of lunchtimes and haven't had time to properly write the documentation, I shall fix this page up ASAP.</em></p>
+<!-- Overview -->
+<h2>Overview</h2>
+<ol>
+	<li>Add my hosted gviz.js script to your page</li>
+	<li>Define some a gviz diagram on your page</li>
+	<li>Enjoy as it is magically translated into a png</li>
+</ol>
+<!-- Instructions -->
+<h2>Instructions</h2>
+<p>Requires jQuery (I will be refactoring it to not need this dependency)</p>
+<p>1 - Add the gviz script to your page, either in &lt;head&gt; or before the closing &lt;/body&gt; tag:</p>
+<pre class="brush: xml">
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://gviz.oodavid.com/gviz.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>2 - Define your graphviz information inline...</p>
 <pre class="brush: xml">
 &lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
 	digraph G {
-		graph [
-			truecolor=true
-			bgcolor="#FFFFFF00"
-			fontname = "Ubuntu"
-		];
-        node [
-            shape=box
-            style=filled
-            fillcolor="#FFFFFF"
-            color=transparent
-            fontcolor="#0F192A"
-        ];
 		this -> that;
 		that -> theother;
 		theother -> this;
 	}
 ]]&gt;&lt;/script&gt;
 </pre>
-<p>Is translated into...</p>
+<p>3 - Enjoy as it is automatically translated into an image</p>
 <figure>
-<script type="gviz" data-layout="dot"><![CDATA[
-	digraph G {
-		graph [
-			truecolor=true
-			bgcolor="#FFFFFF00"
-			fontname = "Ubuntu"
-		];
-        node [
-            shape=box
-            style=filled
-            fillcolor="#FFFFFF"
-            color=transparent
-            fontcolor="#0F192A"
-        ];
-		this -> that;
-		that -> theother;
-		theother -> this;
-	}
-]]></script>
-	<figcaption>How lovely!</figcaption>
+	<script type="gviz" data-layout="dot"><![CDATA[
+		digraph G {
+			this -> that;
+			that -> theother;
+			theother -> this;
+		}
+	]]></script>
 </figure>
-<h2>Why?</h2>
-<p>Because I like graphviz, but I'd rather write it directly into my HTML and be done with it.</p>
-<h2>Instructions</h2>
-<p>Blah...</p>
-<p>Requires jQuery (for now)</p>
-<p>Add the gviz script to your page, either in &lt;head&gt; or before the closing &lt;/body&gt; tag</p>
-<pre class="brush: xml">
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://gviz.oodavid.com/gviz.js&quot; /&gt;&lt;/script&gt;
-</pre>
-<p>Then define your graphviz information inline...</p>
-<p>See: http://graphviz.org/</p>
-<p>Uses any layout engine:</p>
+<!-- Layout Engine -->
+<h2>Layout Engine</h2>
+<p>Do you see the <strong>data-layout</strong> attribute? That allows you to choose which of the graphviz layout engines to use for rendering your graph, I've only really used the &quot;dot&quot; engine, but have tested the others to work fine:</p>
 <dl>
 	<dt>dot</dt>
 		<dd>&quot;hierarchical&quot; or layered drawings of directed graphs. This is the default tool to use if edges have directionality.</dd>
@@ -75,10 +56,46 @@ title: "GViz"
 	<dt>circo</dt>
 		<dd>circular layout, after Six and Tollis 99, Kauffman and Wiese 02. This is suitable for certain diagrams of multiple cyclic structures, such as certain telecommunications networks.</dd>
 </dl>
-<!-- Some Examples -->
-<h2>Examples</h2>
+<!-- Make your graph transparent -->
+<h2>Make your graph transparent</h2>
 <pre class="brush: xml">
-	&lt;script type="gviz" data-layout=&quot;fdp&quot;&gt;&lt;![CDATA[
+&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]&gt;&lt;/script&gt;
+</pre>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+		digraph G {
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+			];
+			node [
+				style=filled
+				fillcolor="#FFFFFF"
+			];
+			this -> that;
+			that -> theother;
+			theother -> this;
+		}
+	]]></script>
+</figure>
+<!-- -->
+<h2>A Big example</h2>
+<pre class="brush: xml">
+	&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
 		digraph G {
 			// General Settings
 			graph [
@@ -122,9 +139,8 @@ title: "GViz"
 		}
 	]]&gt;&lt;/script&gt;
 </pre>
-
 <figure>
-	<script type="gviz" data-layout="fdp"><![CDATA[
+	<script type="gviz" data-layout="dot"><![CDATA[
 		digraph G {
 			// General Settings
 			graph [
@@ -167,5 +183,4 @@ title: "GViz"
 			crud -> validation;
 		}
 	]]></script>
-	<figcaption>hello world</figcaption>
 </figure>
