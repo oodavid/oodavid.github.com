@@ -89,3 +89,7 @@
 
 /* FB: Comments */
 	.fb-comments {margin: 0 20px; background-color: #FFFFFF;}
+
+/* Nice buttons */
+	button			{-webkit-border-radius: 5px; border-radius: 5px; border: none; padding: 5px 10px; background: #1B4E81; color: inherit; cursor: pointer; margin: 8px 5px; -webkit-box-shadow: 2px 2px 0px 4px #123456; box-shadow: 2px 2px 0px 4px #123456; text-shadow: 1px 2px 1px #123456; font-weight: bold;}
+	button:hover	{color: #F6B82F;}
