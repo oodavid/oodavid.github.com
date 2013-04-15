@@ -1,6 +1,9 @@
 ---
 layout: default
 title: "GViz"
+scripts:
+- https://raw.github.com/jackmoore/autosize/master/jquery.autosize-min.js
+- /gviz/script.js
 ---
 <!-- Title -->
 <h1>GViz - Graphviz online</h1>
@@ -14,7 +17,7 @@ title: "GViz"
 </ol>
 <!-- Instructions -->
 <h2>Instructions</h2>
-<p>Requires jQuery (I will be refactoring it to not need this dependency)</p>
+<p>Requires jQuery (I <em>may</em> refactoring it to not need this dependency)</p>
 <p>1 - Add the gviz script to your page, either in &lt;head&gt; or before the closing &lt;/body&gt; tag:</p>
 <pre class="brush: xml">
 	&lt;script type=&quot;text/javascript&quot; src=&quot;http://gviz.oodavid.com/gviz.js&quot;&gt;&lt;/script&gt;
@@ -30,15 +33,38 @@ title: "GViz"
 ]]&gt;&lt;/script&gt;
 </pre>
 <p>3 - Enjoy as it is automatically translated into an image</p>
-<figure>
-	<script type="gviz" data-layout="dot"><![CDATA[
-		digraph G {
-			this -> that;
-			that -> theother;
-			theother -> this;
-		}
-	]]></script>
-</figure>
+<!-- Helper Tool -->
+<h1>Helper Tool</h1>
+<div id="tool">
+	<p style="text-align: center;">
+		<textarea style="width: 600px;">digraph G {
+  graph [
+    truecolor=true
+    bgcolor="#FFFFFF00"
+  ];
+  node [
+    style=filled
+    fillcolor="#FFFFFF"
+  ];
+  this -> that;
+  that -> theother;
+  theother -> this;
+}</textarea>
+		<br>
+		Layout Engine:
+		<select>
+			<option>dot</option>
+			<option>neato</option>
+			<option>fdp</option>
+			<option>sfdp</option>
+			<option>twopi</option>
+			<option>circo</option>
+		</select>
+		<button>Create HTML and render graph</button>
+	</p>
+	<div id="embed"></div>
+	<figure></figure>
+</div>
 <!-- Layout Engine -->
 <h2>Layout Engine</h2>
 <p>Do you see the <strong>data-layout</strong> attribute? That allows you to choose which of the graphviz layout engines to use for rendering your graph, I've only really used the &quot;dot&quot; engine, but have tested the others to work fine:</p>
