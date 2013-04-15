@@ -1,0 +1,4 @@
+---
+layout: nil
+---
+{{ site.posts.first.date | date_to_xmlschema }}
