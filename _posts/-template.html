@@ -1,11 +1,14 @@
 ---
 layout: blog
-title: "Ola New Website"
+title: "Article Title Goes Here"
 tags:
 - code
 - hello
 - world
 - hello world
+scripts:
+- https://raw.github.com/jackmoore/autosize/master/jquery.autosize-min.js
+- /gviz/script.js
 published: false
 ---
 <!-- Jekyll Notes -->
@@ -17,7 +20,7 @@ published: false
 		<ul>
 			<li><strong>layout: blog</strong> - selects the _layout to use, while I tend to use blog, it would be trivial to make new templates for more involved pages</li>
 			<li><strong>title: "Hello World"</strong> - used on the page itself and in the HTML &gt; TITLE tag</li>
-			<li><strong>tags ...</strong> - a YAML list of tags to associate with the article, I've not (yet) made much use for these, but I shall</li>
+			<li><strong>tags: ...</strong> - a YAML list of tags to associate with the article, I've not (yet) made much use for these, but I shall</li>
 			<li><strong>published: false</strong> - add this to draft pages, or to remove a page from the site</li>
 		</ul>
 	</li>
@@ -25,15 +28,23 @@ published: false
 		<ul>
 			<li><strong>github: http://...</strong> - link to a github repo related to this post</li>
 			<li><strong>gist: http://...</strong> - link to a gist related to this post</li>
+			<li><strong>scripts: ...</strong> - YAML list of additional scripts to load for this page</li>
 		</ul>
 	</li>
 	<li>Previous and Next links are automatically added</li>
 	<li>FB-Comments are also added</li>
 </ul>
 <!-- Markup Snippets -->
-<h1>h1 - article title</h1>
+<h1>h1 - article title (automatically added)</h1>
 <h2>h2 - </h2>
 <figure>
-	<img src="/assets/nexgen.png">
-	<figcaption>a simplified view of NexGen functionality</figcaption>
+	<!-- embedded graphViz -->
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+	]]></script>
+	<figcaption>embedded graphViz</figcaption>
 </figure>

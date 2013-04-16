@@ -69,6 +69,41 @@ title: "Software Engineer and Manager"
 <h3>Lucion Environmental Today</h3>
 <p>We worked tirelessly to remove every painful issue from the company. We now have a single software solution that encompasses almost every aspect of the business:</p>
 <figure>
-	<img src="/assets/nexgen.png" alt="Graph showing the internal structure of the NexGen platform">
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		// General Settings
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+			fontname = "Ubuntu"
+		]
+		node [
+			shape=box
+			style=filled
+			fillcolor="#FFFFFF"
+			color=transparent
+			fontcolor="#0F192A"
+		]
+		edge [
+			color="#0F192A"
+		]
+		// Just simple for now
+		crm -> leads;
+		crm -> quotes;
+		leads -> quotes;
+		quotes -> contracts;
+		contracts -> jobs;
+		activities -> jobs;
+		activities -> contracts;
+		activities -> invoices;
+		invoices -> contracts;
+		jobs -> sites;
+		jobs -> crm;
+		targets -> invoices;
+		staff -> training;
+		staff -> jobs;
+		staff -> activities;
+	}
+	]]></script>
 	<figcaption>a simplified view of NexGen functionality</figcaption>
 </figure>
