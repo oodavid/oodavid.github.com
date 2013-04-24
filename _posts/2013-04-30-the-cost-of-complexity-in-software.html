@@ -1,0 +1,202 @@
+---
+layout: blog
+title: "The Cost of Complexity in Software"
+tags:
+- software development
+- management
+published: false
+---
+<p>To carry on with my <a href="/2013/04/23/stone-soup-software.html">Stone-Soup Software</a> analogy I'd like to share my thoughts on the true cost of complexity in software.</p>
+
+
+
+<p>To explain the concept...</p>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		// Graph
+		A -> B;
+		B -> A;
+	}
+	]]></script>
+	<figcaption>A and B represent views, the arrows show that they link together</figcaption>
+</figure>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			label="Complexity: 4"
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		// Definitions
+		A [label="A (2)"];
+		B [label="B (2)"];
+		// Graph
+		A -> B;
+		B -> A;
+	}
+	]]></script>
+	<figcaption>We can represent complexity by numbering the views and links</figcaption>
+</figure>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			label="Complexity: 10"
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		// Definitions
+		A [label="A (3)"];
+		B [label="B (3)"];
+		B [label="C (2)"];
+		// Graph
+		A -> B;
+		B -> A;
+		A -> C;
+		C -> B;
+	}
+	]]></script>
+	<figcaption>Adding one more view quickly increases the complexity</figcaption>
+</figure>
+
+
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			label="Complexity: 4"
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		// Definitions
+		A [label="A (?)"];
+		B [label="B (?)"];
+		C [label="C (?)"];
+		D [label="D (?)"];
+		E [label="E (?)"];
+		// Graph
+		A -> B;
+		B -> A;
+		A -> C;
+		C -> B;
+		A -> D;
+		A -> E;
+		B -> E;
+		E -> A;
+		E -> A;
+		E -> A;
+		E -> C;
+	}
+	]]></script>
+	<figcaption>Adding one more view quickly increases the complexity</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		stone -> water;
+		// Highlight the water
+		water [shape=diamond color="#0F192A" penwidth=3];
+	}
+	]]></script>
+	<figcaption>humble beginnings</figcaption>
+</figure>
+
+<figure>
+	<script type="gviz" data-layout="fdp"><![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		stone -> water;
+		salt -> water;
+		pepper -> water;
+		potatoes -> water;
+		onions -> water;
+		mutton -> water;
+		carrots -> water;
+		// Highlight the water
+		water [shape=diamond color="#0F192A" penwidth=3];
+	}
+	]]></script>
+	<figcaption>people can be forgiven if they think like this</figcaption>
+</figure>
+
+<figure>
+	<script type="gviz" data-layout="twopi"><![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		stone -> water;
+		salt -> water;
+		pepper -> water;
+		onions -> water;
+		mutton -> water;
+		carrots -> water;
+		// Extra connections
+		potatoes -> onions;
+		potatoes -> mutton;
+		stone -> water;
+		stone -> onions;
+		salt -> mutton;
+		salt -> pepper;
+		pepper -> potatoes;
+		onions -> onions;
+		mutton -> salt;
+		carrots -> stone;
+		carrots -> pepper;
+		onions -> mutton;
+		// Highlight the water
+		water [shape=diamond color="#0F192A" penwidth=3];
+	}
+	]]></script>
+	<figcaption>the reality is often more complex</figcaption>
+</figure>
