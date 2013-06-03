@@ -1,0 +1,63 @@
+---
+layout: blog
+title: "Frontend-Wizard Wanted"
+tags:
+- programming
+- jobs
+published: false
+---
+
+<p>Frontend-Wizard Wanted!</p>
+<p>ORRRR - I could write a complex test ala hubbub(sp?) - Here's some questions (example google Map code, bootstrap) - answers POSTed to our server...</p>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  // Load the Visualization API and the piechart package.
+  google.load('visualization', '1.0', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+      ['HTML, Javascript & CSS', 10],
+      ['X-Browser Testing', 9],
+      ['JS MVC', 8],
+      ['Twitter Bootstrap', 8],
+      ['API Consumption', 8],
+      ['Google Products', 6],
+      ['PHP - basics', 4]
+    ]);
+
+    // Set chart options
+    var options = {'title':'Top Trumps',
+                   'width':800,
+                   'height':600};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+<div id="chart_div" style="text-shadow: none;"></div>
+<ul>
+  <li>JS - </li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
