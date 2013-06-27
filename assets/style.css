@@ -33,6 +33,8 @@
 		dl {padding: 0 0 20px 40px;}
 		dt {font-weight: bold;}
 		dd {padding: 0 0 0 20px; font-style: italic;}
+	/* HRs */
+		hr {background: transparent; border: none; margin: 20px 0; border-bottom: #123456 3px dotted;}
 
 /* Clearfix - www.quirksmode.org/css/clearing.html */
 	.clearfix,

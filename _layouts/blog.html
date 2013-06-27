@@ -1,23 +1,23 @@
 {% include header.html %}
 
-	<!-- Index -->
+	<!-- Blog: Index -->
 	<p style="font-style: italic; text-align: center;">
 		<a href="/blog/" title="All Articles">All Blog Articles</a>
 	</p>
-	<!-- Previous and Next posts... -->
-	<p class="prevnext clearfix">
-		{% if page.previous.url %}
-			<span style="float: left;">Prev &laquo; <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">{{page.previous.title}}</a></span>
-		{% endif %}
-		{% if page.next.url %}
-			<span style="float: right;">Next &raquo; <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}}</a></span>
-		{% endif %}
-	</p>
+	
+	{% include prev_next.html %}
+
+	<hr>
 
 	<!-- Title & Content -->
 	<h1>{{ page.title }}</h1>
 	<p style="text-align: right">{{ page.date | date: "%d %b %Y" }}</p>
+	
 	{{ content }}
+
+	<hr>
+
+	{% include prev_next.html %}
 
 	{% include comments.html %}
 
