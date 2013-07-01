@@ -1,0 +1,45 @@
+---
+layout: blog
+title: "Accessible Online Banking Confirmation"
+---
+<p>When you setup a new recipient online, your bank will ask to jump through a telephonic security hoop to confirm that you aren't a naughty hacker. Quite rightly so.</p>
+<p>However this becomes an issue if you have hearing issues, back in August 2011 I had a conversation with <a href="https://twitter.com/AskLloydsTSB/status/109233455879036928">@AskLloydsTSB</a> about adding some on-screen instructions detailing the timings of the call as a simple workaround.</p>
+<p><strong>They did it within a few hours</strong>. It is still the best piece of reactive design I have ever experienced.</p>
+<h2>It's no longer suitable</h2>
+<p>Even though my hearing is fine, I <em>always</em> use the non-hearing approach to make sure that it's still functional. Today it failed me. The automated message has changed and the complexity of the amount to transfer also affects the timings adversely.</p>
+<h2>The proposal</h2>
+<p>Using SMS to transmit the UUID and allowing the user to enter it on-screen you have a solution that will be FULLY accessible to the hard-of-hearing community.</p>
+<figure>
+<script type="gviz" data-layout="dot"><![CDATA[
+digraph G {
+  graph [
+    truecolor=true
+    bgcolor="#FFFFFF00"
+  ];
+  node [
+    style=filled
+    fillcolor="#FFFFFF"
+    color="#0F192A"
+    fontcolor="#0F192A"
+    penwidth=2
+    shape=box
+  ];
+  new [label="Setup New Recipient"];
+  chooseSMS [label="Confirm with SMS"];
+  chooseVoice [label="Confirm with Voice"];
+  receive [label="Receive UUID via SMS"];
+  enter [label="Enter UUID On-Screen"];
+  view [label="Show UUID On-Screen"];
+  call [label="Receive Phone Call"];
+  enter2 [label="Enter UUID On-Call"];
+  new -> chooseSMS -> receive -> enter -> thanks [color="#F6B82F" penwidth=2];
+  new -> chooseVoice -> view -> call -> enter2 -> thanks [color="#F62F41" penwidth=2];
+}
+]]></script>
+</figure>
+<p>Interface-wise we only need one additional page to deal with the SMS instructions and input; there's no need to have an additional screen to choose between SMS and Voice as this choice can be added to the &quot;create new recipient page&quot; like so:</p>
+<figure>
+	<img src="/assets/blog/lloyds-auth.png">
+	<figcaption>Current User-Experience would be unchanged as Voice is selected by default<figcaption>
+</figure>
+<p>And with that I must bid LloydsTSB Godspeed!</p>
