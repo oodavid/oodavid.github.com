@@ -2,18 +2,9 @@
 layout: default
 title: "Project: OERM"
 ---
-<h1>{{page.title}}</h1>
-<p><em>This page is a work-in-progress, I generally spend more time developing than shouting about it...</em></p>
-<p>
-	During my career I have strived to contribute to open-source software and to share my programs and ideas for the
-	benefit of the community at large. In doing so I have developed a very powerful &quot;core&quot; set of tools that is
-	Project: <abbr title="It's a long story, but the OE = &empty; (an Empty Set) and the RM = Relational Mapping.">OERM</abbr>.
-</p>
-<p>
-	Project: OERM is a system that allows me to manage complex, relational databases (the best kind) in a very straightforward
-	manner, all I need to do is define the database schema in code and a seriously powerful set of tools are exposed to me that
-	create VERY powerful websites and mobile apps.
-</p>
+<h1 style="text-align: center;">{{page.title}} <small>pronounced "&#8709;rm?"</small></h1>
+<p style="text-align: center;">OERM links Databases to User-Interfaces.</p>
+<p>Write a <a href="#schema">PHP Schema Definition</a> to describe your <a href="#database">MySQL Database</a> and get a powerful <a href="#query-generator">Query Generator</a> (with search and geospatial functionality), <a href="#user-interface">User-Interface Generator</a> and <a href="#diagnostics">Database Diagnostics Tool</a>:</p>
 <figure>
 	<script type="gviz" data-layout="dot"><![CDATA[
 		digraph G {
@@ -34,36 +25,144 @@ title: "Project: OERM"
 				color="#0F192A"
 			]
 			// Define our Nodes
-			schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
-			database [label="Database"];
-			ui [label="Web UI"];
-			mobile [label="Mobile UI"];
-			validation [label="Validation"];
-			crud [label="CRUD\nOperations"];
-			sync [label="SYNC"];
+			schema [label="PHP Schema\nDefinition" shape=diamond fillcolor="#0F192A" fontcolor="#FFFFFF" color="#FFFFFF" penwidth=3];
+			database [label="MySQL\nDatabase" shape=diamond fillcolor="#0F192A" fontcolor="#FFFFFF" color="#FFFFFF" penwidth=3];
+			diagnostics [label="Diagnostics"];
+			webui [label="Web UI"];
+			mobileui [label="Mobile UI"];
 			query [label="Query\nGenerator"];
-			clustering [label="Marker\nClustering"];
+			geo [label="Geospatial"];
 			search [label="Search"];
 			// Define our Connections
-			schema -> database;
-			schema -> crud;
-			schema -> ui;
-			schema -> mobile;
-			ui -> crud -> database
+			schema -> diagnostics -> database;
 			schema -> query -> database;
-			query -> search -> database;
-			query -> clustering;
-			database -> validation -> database;
-			database -> sync;
-			crud -> validation;
-		}
-	]]></script>
+			schema -> webui;
+			schema -> mobileui -> query;
+			webui -> query;
+			query -> search [arrowhead="none" style="dashed"];
+			query -> geo [arrowhead="none" style="dashed"];
+		}]]></script>
 	<figcaption>an overview of the OERM functionality</figcaption>
 </figure>
 
-<!-- In a Nutshell -->
-<h2>In a Nutshell</h2>
-<p>Video plz</p>
+<!-- Schema Definition -->
+<h2 id="schema">PHP Schema Definition</h2>
+<p>This definition describes the interface elements <em>(email, password, textarea, rating, latlng, address etc.)</em> as well as table relationships <em>(foreign_key)</em>; it is the foundation of all things OERM.</p>
+<blockquote><p>&quot;We want to build a simple cooking app where <strong>users</strong> can <strong>review</strong> and author <strong>recipes</strong>...&quot;</p></blockquote>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+<?php
+$TABLES		= array(
+	'users'		=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'name'		=> array( 'type' => 'text' ),
+			'email'		=> array( 'type' => 'email' )
+		)
+	),
+	'recipes'	=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'title'		=> array( 'type' => 'text' ),
+			'recipe'	=> array( 'type' => 'textarea' ),
+			'author'	=> array( 'type' => 'foreign_key', 'table' => 'users' )
+		)
+	),
+	'reviews'	=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'review'	=> array( 'type' => 'textarea' ),
+			'rating'	=> array( 'type' => 'rating', 'min' => 0, 'max' => 5 ),
+			'recipe'	=> array( 'type' => 'foreign_key', 'table' => 'recipes' )
+			'author'	=> array( 'type' => 'foreign_key', 'table' => 'users' )
+		)
+	)
+);
+?>]]></script>
+<p style="color: #F6B82F;">explain basic properties: type, label, grid, hidden. Some types have additional props...</p>
+<h3 style="color: #F6B82F;">All Input Types...</h3>
+<div style="color: #F6B82F;">
+	<p>This should be collapsed by default...</p>
+	<ul>
+		<li>Structural
+			<ul>
+				<li>id</li>
+				<li>foreign_id</li>
+			</ul>
+		</li>
+		<li>Basics
+			<ul>
+				<li>text</li>
+				<li>textarea</li>
+				<li>wysiwyg - <em>might be deprecated</em></li>
+				<li>markdown</li>
+				<li>combobox</li>
+				<li>email</li>
+				<li>password</li>
+				<li>date</li>
+				<li>time</li>
+				<li>datetime</li>
+				<li>timestamp</li>
+				<li>color</li>
+				<li>money</li>
+				<li>number</li>
+				<li>float1</li>
+				<li>float2</li>
+				<li>float3</li>
+			</ul>
+		</li>
+		<li>Multiple Choice
+			<ul>
+				<li>boolean</li>
+				<li>select</li>
+				<li>indexed_select</li>
+				<li>buttons</li>
+				<li>indexed_buttons</li>
+				<li>indexed_key_buttons</li>
+				<li>checkboxes - <em>might be deprecated</em></li>
+			</ul>
+		</li>
+		<li>Geospatial
+			<ul>
+				<li>latlng</li>
+			</ul>
+		</li>
+		<li>Special
+			<ul>
+				<li>imagick</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- MySQL Database -->
+<h2 id="database">MySQL Database</h2>
+<p>OERM does not (currently) manage your database structure, however there is an awesome <a href="#diagnostics">visual diagnostics tool</a> that visually exposes any inequalities between your schema and database.</p>
+
+<!-- Query Generator -->
+<h2 id="query-generator">Query Generator</h2>
+
+<!-- User Interface Generators -->
+<h2 id="user-interface">User Interface Generators</h2>
+
+<!-- Database Diagnostics Tool -->
+<h2 id="diagnostics">Database Diagnostics Tool</h2>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+<?php
+	require_once("{$_SERVER['DOCUMENT_ROOT']}/oerm/oerm.php");
+	$DBH	= new PDO("mysql:host=localhost;dbname=test;charset=utf8", 'user', 'password');
+	$TABLES	= ...; // See above
+	$orm	= new ORM($DBH, $TABLES);
+	$orm->diagnostics();
+?>]]></script>
+<figure>
+	<img src="/oerm/diagnostics.png">
+	<figcaption><strong>contacts</strong> and <strong>addresses</strong> have errors, <strong>todo</strong> has warnings</figcaption>
+</figure>
+
+<hr><hr><hr><hr><hr><hr>
+
+<h2>NOTES</h2>
+<p>I love the simplicity of <a href="http://www.slimframework.com/">slimframework.com</a>, very nice and github biased too.</p>
 
 <!-- Query Generator -->
 <h2>Query Generator</h2>

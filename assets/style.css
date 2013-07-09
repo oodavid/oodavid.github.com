@@ -71,6 +71,11 @@
 	nav .active		{text-decoration: none; color: #F6B82F;}
 	/* Sticky header */
 		#stuck		{display: none; z-index: 100; position: fixed; top: 0; left: 0; right: 0;}
+	/* To fix internal hashlinks going behind the sticky header - http://css-tricks.com/hash-tag-links-padding/ */
+		h1:before,
+		h2:before,
+		h3:before,
+		h4:before {display: block; content: " "; margin-top: -77px; height: 77px; visibility: hidden;}
 
 /* Footer */
 	footer		{text-align: center;}
