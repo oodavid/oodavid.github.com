@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		var dogindex;	// Current dog...
+		// When ready...
+		function init(e){
+			// Read all breeds
+			$.ajax({
+				url: 'http://animal.discovery.com/breed-selector/dog-breeds/all-breeds-a-z.html',
+				success: function(data){
+					// Get a list of all dog-breeds...
+					var dogs = $('#tabAtoZ a[href^="http://animal.discovery.com/breed-selector/dog-breeds"]', data);
+					// Render them on-screen
+					dogs.each(function(k,v){
+						var el = $('<li>', { text: $(this).text() });
+						el.data('href', $(this).attr('href'));
+						$('#dogs').append(el);
+					});
+					// Tidy up
+					delete data;
+					// Load the first dog
+					dogindex = 0;
+					loadNext();
+				}
+			});
+		};
+		// Loads the next dog...
+		function loadNext(){
+			// Reference the dog
+			var dog = $('#dogs li').eq(dogindex);
+			if(!dog.length){
+				analyseData();
+				return;
+			}
+			// Show we're busy with it
+			dog.css('color', '#FFAA23');
+			// Read the dog
+			$.ajax({
+				url: dog.data('href'),
+				success: function(data){
+					// Dog basics
+					var category	= $('header:eq(1) h3', data).text(); // Remove " Breeds" from the end of the string
+					var deets		= $('#tab1 .body', data).html();
+						// Tidy
+						category = category.replace(' Breeds', '');
+						deets = deets.replace(/\<br\>\s*/ig, '\n');
+						deets = deets.trim();
+					// Photos...
+					var photo	= $('#carousel-downstream-single img[src$="01_lg.jpg"]:eq(0)', data).attr('src');
+						// Thumbnail (uses the adopted naming convention)
+						var thumb = photo.replace('01_lg.jpg', '01_sm.jpg');
+					// Dog Stats
+					var stats = {};
+					var stats1 = $('#tab1 .stats p', data);
+					var stats2 = $('#tab2 .stats p', data);
+					var stats3 = $('#tab3 .body:last()', data).text();
+						// Stats1 - look for the AKC RANKING and exit...
+						stats1.each(function(k, v){
+							if($(this).find('.left').text().indexOf("AKC") != -1){
+								// Add the stat
+								stats['AKC Ranking'] = $(this).find('.right').text();
+								// Don't parse the rest
+								return false;
+							}
+						});
+						// Stats2 - add them all
+						stats2.each(function(k, v){
+							stats[$(this).find('.left').text()] = $(this).find('.right').text();
+						});
+						// Stats3 - Look for Life-Span...
+						var s = stats3.match(/Life Span:\s?([\W\d]*)/i);
+						if(s){
+							stats['Life Span'] = s[1] + ' years';
+						}
+					// Validate all our info
+					var errors = [];
+					if(!category){
+						errors.push('No Category');
+					}
+					if(!deets){
+						errors.push('No Details');
+					}
+					if(!photo){
+						errors.push('No Photo');
+					}
+					if(!thumb){
+						errors.push('No Thumbnail');
+					}
+					if(!stats['AKC Ranking']){
+						errors.push('No AKC Ranking');
+					}
+					if(!stats['Life Span']){
+						errors.push('No Life Span');
+					}
+					// Something wrong?
+					if(errors.length){
+						// Highlight the bad dog!
+						dog.css('color', '#EF5C45');
+						dog.text(dog.text() + ' :: ' + errors.join(', '));
+					} else {
+						// Good dog
+						dog.css('color', '#13AA23');
+						dog.data('info', {
+							name:		dog.text(),
+							category:	category,
+							deets:		deets,
+							photo:		photo,
+							thumb:		thumb,
+							stats:		stats
+						})
+						renderDog(dog.data('info'));
+					}
+					// Tidy up
+					delete data;
+					// Load the next dog
+					dogindex ++;
+					loadNext();
+				}
+			});
+		}
+		// Parse Dogs into cards
+		function renderDog(info){
+			// Add the thumbnail to the page
+			var stats = '';
+			for(var s in info.stats){
+				stats += '<li>' + s + ' = ' + info.stats[s] + '</li>';
+			}
+			var html = '<div class="dog" style="background-image: url(\'' + info.photo + '\')">\
+							<div class="inner">\
+								<h3>' + info.name + '</h3>\
+								<h4>' + info.category + '</h4>\
+								<div class="img"><img src="' + info.thumb + '"></div>\
+								<ul>' + stats + '</ul>\
+							</div>\
+						</div>';
+			$('body').append($(html));
+		}
+		// Analyse the dog data
+		function analyseData(){
+			// Loop the dogs and build a unique list of all stats so we can map them to a scale...
+
+		}
+		// Start when ready...
+		$(document).ready(init);
+	</script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		body		{font-family: 'Ubuntu', sans-serif; color: #282828;}
+		#dogs		{margin: 0; padding: 0; -moz-column-count: 5; -webkit-column-count: 5; column-count: 5;}
+		.dog		{width: 340px; float: left; margin: 10px; background-repeat: no-repeat; background-position: center center; background-size: cover; -webkit-border-radius: 10px; border-radius: 10px; -webkit-box-shadow: 2px 2px 10px 0px #282828; box-shadow: 2px 2px 10px 0px #282828;}
+		.dog .inner	{padding: 10px; background: url('http://upload.wikimedia.org/wikipedia/commons/a/aa/White-semitransparent-backgroundimage.png');}
+		.dog li		{font-size: 11px;}
+		.dog h3		{margin: 0; text-align: center;}
+		.dog h4		{margin: 0 0 10px 0; text-align: center; color: #888888;}
+		.dog ul		{margin: 0 0 10px 0;}
+		.dog .img	{text-align: center;}
+	</style>
+</head>
+<body>
+	<h1>Dog Top Trumps <small>Card Generator</small></h1>
+	<p>Must run in insecure browser to ignore X-Site security issues: <strong>chromium-browser --disable-web-security</strong></p>
+	<ul id="dogs"></ul>
+</body>
+</html>
+
+
