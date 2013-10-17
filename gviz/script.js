@@ -12,8 +12,7 @@ $(document).ready(function(){
 		// Show the embeddable HTML
 		var intro	= $('<p>').text('Add this to your page...');
 		var html	= $('<pre>').addClass('brush: xml').text(string);
-		var outro	= $('<p>').text('...and this will be rendered');
-		$('#tool #embed').empty().append(intro).append(html).append(outro);
+		$('#tool #embed').empty().append(intro).append(html);
 		SyntaxHighlighter.highlight();
 		// Add the script and parse it
 		var script	= $(string);
