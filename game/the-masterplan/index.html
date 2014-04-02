@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rotate</title>
+	<style>
+		@-webkit-keyframes spin {
+			0%   {-webkit-transform: rotate(0deg)}
+			100% {-webkit-transform: rotate(360deg)}
+		}
+		div { position: absolute; width: 120px; height: 120px; -webkit-animation: spin 1s infinite linear; }
+	</style>
+</head>
+<body>
+	<div style="z-index: 4; top: 10px; background-image: url('hat.png');"></div>
+	<div style="z-index: 3; top: 20px; background-image: url('face.png');"></div>
+	<div style="z-index: 2; top: 30px; background-image: url('torso.png');"></div>
+	<div style="z-index: 1; top: 40px; background-image: url('shoes.png');"></div>
+</body>
+</html>
