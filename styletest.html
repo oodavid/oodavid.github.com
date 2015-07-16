@@ -1,0 +1,60 @@
+---
+layout: default
+title: "Style Test"
+---
+<h1>{{page.title}}</h1>
+<h2>heading 2</h2>
+<h3>heading 3</h3>
+<h4>heading 4</h4>
+<p>Paragraph...</p>
+<ul>
+	<li>unordered lists</li>
+</ul>
+<ol>
+	<li>ordered lists</li>
+</ol>
+<hr>
+<dl>
+	<dt>Coffee</dt>
+		<dd>Black hot drink</dd>
+	<dt>Milk</dt>
+		<dd>White cold drink</dd>
+</dl>
+<blockquote><p>A simple Blockquote</p></blockquote>
+<blockquote>
+	<img src="/assets/work/corrodere.png" width="200">
+	<p>Corrodere</p>
+	<p>And some things</p>
+</blockquote>
+<figure>
+	<img src="/assets/tea_harry.png">
+	<figcaption>Harry taking a coffee break</figcaption>
+</figure>
+<figure>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/ojvTSRA-O-Y" frameborder="0" allowfullscreen></iframe>
+	<figcaption>corgi sploot</figcaption>
+</figure>
+<p>Buttons: <button>button</button></p>
+<p>Individual Keyboard key: <span class="key">ctrl</span></p>
+<p>Keyboard Shortcut: <span class="shortcut"><span class="key">ctrl</span> + <span class="key">alt</span> + <span class="key">del</span></span></p>
+<pre>simple
+preformatted text
+(no code syntax highlighting)</pre>
+<pre class="brush: js">
+	var js = true;
+	if(js){
+		alert('I am javascript highlighting!');
+	}
+</pre>
+	<!-- Saves escaping, not so good for SEO / syndication -->
+	<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+		<?php
+			echo "hello world";
+		?>
+]]></script>
+	<pre class="brush: sql">
+		SELECT * FROM `users` WHERE `id` = 1;
+</pre>
+	<pre class="brush: sql">
+		SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1;
+</pre>

@@ -1,27 +1,27 @@
 /* Basics */
 	html			{overflow: -moz-scrollbars-vertical; overflow-y: scroll;}
-	body			{background: #123456; font-family: sans-serif; color: #FFFFFF; font-size: 100%; line-height: 1.4em; text-shadow: 1px 2px 1px #123456;}
+	body			{background: #dcbb83; font-family: 'Droid Sans', sans-serif; font-weight: 400; font-size: 18px; color: #361d0e; line-height: 1.4em; text-shadow: 1px 2px 1px rgba(0,0,0,0.2);}
 	body, html		{padding: 0; margin: 0;}
-	h1, h2, h3, h4	{font-family: 'Ubuntu', sans-serif; font-weight: normal; text-shadow: 2px 3px 1px #123456;}
+	h1, h2, h3, h4	{font-family: 'Ubuntu', sans-serif; font-weight: normal; text-shadow: 2px 3px 1px rgba(0,0,0,0.2);}
 	/* Font-Sizes */
-		h1	{font-size: 3em;	line-height: 1em;	letter-spacing: -0.06em;}
-		h2	{font-size: 2em;	line-height: 1em;	letter-spacing: -0.06em;}
-		h3	{font-size: 1.6em;	line-height: 1em;	letter-spacing: -0.06em;}
-		h4	{font-size: 1.4em;	line-height: 1em;	letter-spacing: -0.06em;}
+		h1	{font-size: 3em;	line-height: 1em;}
+		h2	{font-size: 2em;	line-height: 1em;}
+		h3	{font-size: 1.6em;	line-height: 1em;}
+		h4	{font-size: 1.4em;	line-height: 1em;}
 		h1 small,
 		h2 small,
 		h3 small,
-		h4 small		{font-size: 50%; padding-left: 10px; font-style: italic; letter-spacing: 0;}
+		h4 small		{font-size: 50%; padding-left: 10px; font-style: italic;}
 	/* Basics */
 		h1, h2, h3, h4, p {margin: 0 0 20px 0;}
 	/* Links */
-		a		{text-decoration: none; color: #F6B82F; font-weight: bold;}
+		a		{text-decoration: none; color: #CE534D; font-weight: bold; text-shadow: none;}
 		a:hover,
 		.active	{text-decoration: underline;}
 	/* Abbreviations */
 		abbr {border-bottom: 1px dashed #FFFFFF;}
 	/* Blockquotes */
-		blockquote				{background: #123456; font-style: italic; padding: 20px 20px 0 20px; margin: 0 0 20px 0; -webkit-border-radius: 10px; border-radius: 10px;}
+		blockquote				{background: #dcbb83; font-style: italic; padding: 20px 20px 0 20px; margin: 0 0 20px 0; -webkit-border-radius: 10px; border-radius: 10px;}
 		blockquote img			{float: left; margin: 0 20px 20px 0;}
 		blockquote cite			{display: block; margin: -20px 0 20px 0; text-align: right; color: #ABCDEF;}
 		blockquote cite:before	{content: "\2014 \2009";}
@@ -44,47 +44,41 @@
 
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
-	header	{background: #0F192A; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
-	nav		{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0; border-bottom: #1B4E81 3px dotted;}
-	section	{background: #1B4E81; text-shadow-color: #123456; padding: 20px 0; border-bottom: #123456 3px dotted;}
-	footer	{background: #123456; text-shadow-color: #1B4E81; padding: 20px 0;}
+	header	{background: #caa279; padding: 20px 0;}
+	nav		{background: #dcbb83; padding: 5px 0;}
+	section	{background: #ebe3d9; padding: 20px 0;}
+	footer	{background: #dcbb83; padding: 20px 0;}
 
 /* Header */
 	header {text-align: center;}
-	header h1,
-	header h2,
-	header h3 {margin: 0;}
-	header h1 {margin: 0 0 25px 0;}
-	header h2 {margin: 0 0 30px 0;}
+	header h1 {font-size: 4em;   margin: 100px 0 0 0;}
+	header h2 {font-size: 2.2em; margin: 0;}
 	/* Guru Graphic */
 		header hgroup	{position: relative; z-index: 2;}
-		#meditate		{position: relative; z-index: 1; float: right; margin: 0 75px 0 0; display: none;}
+		#meditate		{position: relative; z-index: 1; float: right; margin: -15px 75px 0 0; display: none;}
 		#guru			{position: absolute; width: 72px; height: 132px; left: -24px; top: -165px; background: url('/assets/harry_balloon.png') no-repeat;}
-		#shadow			{position: absolute; width: 27px; height: 6px; left: 0; top: 10px; background: #123456; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+		#shadow			{position: absolute; width: 27px; height: 6px; left: 0; top: 10px; background: rgba(0,0,0,0.2); -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
 
-/* Nav - http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support */
-	nav	div	div		{float: left; width: 100%; overflow: hidden; position: relative;}
-	nav ul			{clear: left; float: left; list-style: none; margin: 0; padding: 0; position: relative; left: 50%; text-align: center;}
-	nav ul li		{display: block; float: left; list-style: none; margin: 0; padding: 0; position: relative; right: 50%;}
-	nav ul li a,
-	nav ul li span	{display: block; margin: 0 0 0 1px; padding: 3px 30px; text-decoration: none; line-height: 1.3em; font-weight: bold;}
-	nav a			{text-decoration: none; color: #FFFFFF;}
-	nav a:hover,
-	nav .active		{text-decoration: none; color: #F6B82F;}
+/* Nav */
+	nav div           {display: flex; flex-wrap: wrap; justify-content: center; -webkit-filter: url("#goo"); filter: url("../styletest.html#goo");}
+	nav span          {display: block; border-radius: 50%; margin: 10px 0; width: 80px; height: 80px; line-height: 80px; text-align: center; border: none; background-color: #CAA279; -webkit-transition: 0.3s ease-in-out; -moz-transition: 0.3s ease-in-out; -o-transition: 0.3s ease-in-out; transition: 0.3s ease-in-out;}
+	nav a,
+	nav a:hover       {text-decoration: none!important; color: #FFFFFF;}
+	nav a.active span,
+	nav a:hover  span {margin: 0; width: 100px; height: 100px; line-height: 100px; background-color: #CE534D;}
 	/* Sticky header */
 		#stuck		{display: none; z-index: 100; position: fixed; top: 0; left: 0; right: 0;}
-	/* To fix internal hashlinks going behind the sticky header - http://css-tricks.com/hash-tag-links-padding/ */
+	/* To fix internal hashlinks going behind the sticky header */
 		h1:before,
 		h2:before,
 		h3:before,
 		h4:before {display: block; content: " "; margin-top: -77px; height: 77px; visibility: hidden;}
 
 /* Footer */
-	footer		{text-align: center;}
-	footer p	{font-style: italic;}
+	footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}
 
 /* Tweak the syntax highlighter */
-	pre					{padding: 5px; overflow: auto; background: #0F192A; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
+	pre					{padding: 5px; overflow: auto; background: #CAA279; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
 	.syntaxhighlighter	{padding: 5px 0;}
 
 /* Embedded gists */
@@ -93,12 +87,23 @@
 /* Listings (blog list etc) */
 	.listing		{list-style-type: none; padding-left: 0; font-size: 1.2em; line-height: 1.4em;}
 	.listing li		{margin: 20px 0;}
-	.listing a		{color: #F6B82F;}
 	.listing small	{display: block; font-style: italic;}
 
 /* FB: Comments */
 	.fb-comments {margin: 0 20px; background-color: #FFFFFF;}
 
 /* Nice buttons */
-	button			{-webkit-border-radius: 5px; border-radius: 5px; border: none; padding: 5px 10px; background: #1B4E81; color: inherit; cursor: pointer; margin: 8px 5px; -webkit-box-shadow: 2px 2px 0px 4px #123456; box-shadow: 2px 2px 0px 4px #123456; text-shadow: 1px 2px 1px #123456; font-weight: bold;}
-	button:hover	{color: #F6B82F;}
+	button        {line-height: 20px; padding: 4px 15px 6px 15px; font-size: inherit; vertical-align: middle; border: none; background-color: #CE534D; color: #FFFFFF; text-shadow: 0px 3px 2px rgba(0,0,0,0.4); border-radius: 10px; cursor: pointer;}
+	button:active {line-height: 20px; padding: 6px 15px 4px 15px; text-shadow: 0px 1px 2px rgba(0,0,0,0.4);}
+	button:focus  {outline:none;}
+
+/* Keyboard shortcuts */
+	.shortcut  { display: inline-block; padding: 0 10px 0 5px; margin: 8px 0; height: 33px; line-height: 33px; border-radius: 5px; cursor: pointer; }
+	.key       { display: inline-block; width: 44px; height: 20px; line-height: 20px; font-weight: bold; text-align: center; color: #888; text-decoration: none; text-shadow: 0px 1px 0px #f5f5f5; background: #eff0f2; border-radius: 4px; border-top: 1px solid #f5f5f5; box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333; margin: 1px 1px 3px 1px; cursor: pointer; }
+	.shortcut:hover      { background-color: #DDDDDD; }
+	.shortcut:hover .key,
+	.key:hover           { background-color: #FFFFFF; }
+	.shortcut:active .key,
+	.key:active,
+	.key.active { background: #ebeced; box-shadow: inset 0 0 25px #ddd, 0 0 3px #333; border-top: 1px solid #eee; }
+	.key img   { vertical-align: text-top; }

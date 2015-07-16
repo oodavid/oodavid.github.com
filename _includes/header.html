@@ -7,7 +7,7 @@
 	<meta name="author" content="David King">
 	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
 	<!-- Customization -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/style.css?v=3">
 </head>
 <!--
@@ -23,7 +23,7 @@
 
 	So you're wondering how my simple website functions? Or maybe you
 	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
-	rid this this bizzarro garblings of text from your screen.
+	rid this this bizzarro garblings of text from your screen...
 
 	I built this website in around 12 hours using Jekyll (it's a Ruby
 	thing) via github pages, I'm not a Ruby or Jekyll user but I figured
@@ -38,6 +38,16 @@
 	David
 -->
 <body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
 	<!-- FB: Comments -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -48,12 +58,11 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- That's me! -->
-	<header>
+	<header style="background-color: #;">
 		<div class="center">
 			<hgroup>
-				<h1>David &quot;oodavid&quot; King</h1>
-				<h2>creative problem solver</h2>
-				<h3>full service web development</h3>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
 			</hgroup>
 			<div id="meditate">
 				<div id="guru"></div>
@@ -64,18 +73,14 @@
 	<!-- Navigation -->
 	<nav id="stuck"></nav>
 	<nav id="unstuck">
-		<div class="center clearfix">
-			<div>
-				<ul>
-					<li><a href="/" {% if page.url == "/index.html" %} class="active" {% endif %} title="oodavid! ...what a lovely homepage you have!">David King</a></li>
-					<li><a href="{{ site.posts.first.url }}" title="{{ site.posts.first.title }}" {% if page.layout == "blog" or page.url == "/blog/index.html" %} class="active" {% endif %}>Blog</a></li>
-					<!--li><a href="/oerm.html" title="OERM is not an ORM..." {% if page.url == "/oerm.html" %} class="active" {% endif %}>OERM</a></li-->
-					<li><a href="/gviz/" {% if page.url == "/gviz/index.html" %} class="active" {% endif %} title="Online graphViz generator">GViz</a></li>
-					<li><a href="https://github.com/oodavid" title="Open-source work on github">GitHub</a></li>
-					<li><a href="/cv.html" title="My rather nerdy CV">CV</a></li>
-					<li><a href="mailto:david@oodavid.com" title="Email me">Contact</a></li>
-				</ul>
-			</div>
+		<div>
+			<a href="/" {% if page.url == "/index.html" %} class="active" {% endif %} title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a>
+			<a href="{{ site.posts.first.url }}" title="{{ site.posts.first.title }}" {% if page.layout == "blog" or page.url == "/blog/index.html" %} class="active" {% endif %}><span>Blog</span></a>
+			<!--a href="/oerm.html" title="OERM is not an ORM..." {% if page.url == "/oerm.html" %} class="active" {% endif %}><span>OERM</span></a-->
+			<a href="/gviz/" {% if page.url == "/gviz/index.html" %} class="active" {% endif %} title="Online graphViz generator"><span>GViz</span></a>
+			<a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a>
+			<a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a>
+			<a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
 		</div>
 	</nav>
 	<!-- The meat -->

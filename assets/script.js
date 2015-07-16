@@ -7,17 +7,11 @@ $(document).ready(function(){
 
 var guru = {};
 guru.init = function(){
-	// Store the starting positions
-	guru.guruTop	= parseInt($('#guru').css('top'), 10);
-	guru.guruLeft	= parseInt($('#guru').css('left'), 10);
-	guru.shadowLeft	= parseInt($('#shadow').css('left'), 10);
-	guru.guruDt = 0;
 	// Now go!
+	guru.guruDt = 0;
 	setInterval(guru.move, 30);
 	guru.move();
 	$('#meditate').show();
-	// Setup the transform
-	$('#shadow').css('-webkit-transform-origin', '50% 50%');
 };
 guru.move = function(){
 	// Where do we move to?
@@ -25,12 +19,9 @@ guru.move = function(){
 	var dX = Math.sin(guru.guruDt) * 20;
 	var dY = Math.cos(guru.guruDt) * 10;
 	var dZ = 1 + Math.cos(guru.guruDt) / 4;
-	// Apply
-	$('#guru').css('top', (guru.guruTop + dY) + "px");
-	$('#guru').css('left', (guru.guruLeft + dX) + "px");
-	$('#shadow').css('left', (guru.shadowLeft + dX) + "px");
-	// Scale the shadow
-	$('#shadow').css('-webkit-transform', 'scale(' + dZ +')');
+	// Move the things!
+	$('#guru').css('transform', 'translate('+dX+'px,'+dY+'px)');
+	$('#shadow').css('transform', 'scale('+dZ+') translate('+dX+'px,0px)');
 };
 
 /*** Sticky Header ******************************/
@@ -45,6 +36,7 @@ sticky.init = function(){
 	$('#unstuck').css('height', h);
 	// Detect on scroll...
 	$(window).scroll(sticky.scroll);
+	sticky.scroll();
 };
 sticky.scroll = function(e){
 	// Check the scrolltop...
