@@ -1,6 +1,6 @@
 /* Basics */
 	html			{overflow: -moz-scrollbars-vertical; overflow-y: scroll;}
-	body			{background: #dcbb83; font-family: 'Droid Sans', sans-serif; font-weight: 400; font-size: 18px; color: #361d0e; line-height: 1.4em; text-shadow: 1px 2px 1px rgba(0,0,0,0.2);}
+	body			{background: #caa279; font-family: 'Droid Sans', sans-serif; font-weight: 400; font-size: 18px; color: #361d0e; line-height: 1.4em; text-shadow: 1px 2px 1px rgba(0,0,0,0.2);}
 	body, html		{padding: 0; margin: 0;}
 	h1, h2, h3, h4	{font-family: 'Ubuntu', sans-serif; font-weight: normal; text-shadow: 2px 3px 1px rgba(0,0,0,0.2);}
 	/* Font-Sizes */
@@ -23,8 +23,8 @@
 	/* Blockquotes */
 		blockquote				{background: #dcbb83; font-style: italic; padding: 20px 20px 0 20px; margin: 0 0 20px 0; -webkit-border-radius: 10px; border-radius: 10px;}
 		blockquote img			{float: left; margin: 0 20px 20px 0;}
-		blockquote cite			{display: block; margin: -20px 0 20px 0; text-align: right; color: #ABCDEF;}
-		blockquote cite:before	{content: "\2014 \2009";}
+		blockquote cite			{display: block; margin: 0 0 20px 0; text-align: right; font-weight: bold;}
+		blockquote cite:before	{content: "~ ";}
 	/* Figures & FigCaptions */
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
 	/* Images */
@@ -47,7 +47,7 @@
 	header	{background: #caa279; padding: 20px 0;}
 	nav		{background: #dcbb83; padding: 5px 0;}
 	section	{background: #ebe3d9; padding: 20px 0;}
-	footer	{background: #dcbb83; padding: 20px 0;}
+	#footer	{background: #dcbb83; padding: 20px 0;}
 
 /* Header */
 	header {text-align: center;}
@@ -75,7 +75,7 @@
 		h4:before {display: block; content: " "; margin-top: -77px; height: 77px; visibility: hidden;}
 
 /* Footer */
-	footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}
+	#footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}
 
 /* Tweak the syntax highlighter */
 	pre					{padding: 5px; overflow: auto; background: #CAA279; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
