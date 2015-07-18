@@ -15,7 +15,7 @@
 	/* Basics */
 		h1, h2, h3, h4, p {margin: 0 0 20px 0;}
 	/* Links */
-		a		{text-decoration: none; color: #CE534D; font-weight: bold; text-shadow: none;}
+		a		{text-decoration: none; color: #CE534D; font-weight: bold;}
 		a:hover,
 		.active	{text-decoration: underline;}
 	/* Abbreviations */
@@ -23,7 +23,7 @@
 	/* Blockquotes */
 		blockquote				{background: #dcbb83; font-style: italic; padding: 20px 20px 0 20px; margin: 0 0 20px 0; -webkit-border-radius: 10px; border-radius: 10px;}
 		blockquote img			{float: left; margin: 0 20px 20px 0;}
-		blockquote cite			{display: block; margin: 0 0 20px 0; text-align: right; font-weight: bold;}
+		blockquote cite			{display: block; margin: -10px 0 20px 0; text-align: right; font-weight: bold;}
 		blockquote cite:before	{content: "~ ";}
 	/* Figures & FigCaptions */
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
@@ -44,10 +44,10 @@
 
 /* Big Picture */
 	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
-	header	{background: #caa279; padding: 20px 0;}
-	nav		{background: #dcbb83; padding: 5px 0;}
-	section	{background: #ebe3d9; padding: 20px 0;}
-	#footer	{background: #dcbb83; padding: 20px 0;}
+	header	{background: #CAA279; padding: 20px 0;}
+	nav		{background: #DCBB83; padding: 5px 0;}
+	section	{background: #EBE3d9; padding: 20px 0;}
+	#footer	{background: #DCBB83; padding: 20px 0;}
 
 /* Header */
 	header {text-align: center;}
@@ -78,8 +78,13 @@
 	#footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}
 
 /* Tweak the syntax highlighter */
-	pre					{padding: 5px; overflow: auto; background: #CAA279; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
+	pre					{padding: 5px; overflow: auto; background: #FFFFFF; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
 	.syntaxhighlighter	{padding: 5px 0;}
+
+/* Tables */
+	table         {border-collapse: collapse; margin: 0 auto 20px auto;}
+	table, th, td {border: 1px solid #CAA279; padding: 2px 10px;}
+	th            {background-color: #DCBB83;}
 
 /* Embedded gists */
 	.gist {text-shadow: none;}

@@ -6,7 +6,7 @@ title: "Style Test"
 <h2>heading 2</h2>
 <h3>heading 3</h3>
 <h4>heading 4</h4>
-<p>Paragraph...</p>
+<p>Paragraph with a <a href="#">link somewhere</a></p>
 <ul>
 	<li>unordered lists</li>
 </ul>
@@ -20,6 +20,17 @@ title: "Style Test"
 	<dt>Milk</dt>
 		<dd>White cold drink</dd>
 </dl>
+<p>here comes a table...</p>
+<table>
+	<tr>
+		<th>hello</th>
+		<th>world</th>
+	</tr>
+	<tr>
+		<td>hello!</td>
+		<td>world!</td>
+	</tr>
+</table>
 <blockquote>
 	<p>A simple Blockquote</p>
 </blockquote>
@@ -52,15 +63,15 @@ preformatted text
 		alert('I am javascript highlighting!');
 	}
 </pre>
-	<!-- Saves escaping, not so good for SEO / syndication -->
-	<script type="syntaxhighlighter" class="brush: php"><![CDATA[
-		<?php
-			echo "hello world";
-		?>
+<!-- Saves escaping, not so good for SEO / syndication -->
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+	<?php
+		echo "hello world";
+	?>
 ]]></script>
-	<pre class="brush: sql">
-		SELECT * FROM `users` WHERE `id` = 1;
+<pre class="brush: sql">
+	SELECT * FROM `users` WHERE `id` = 1;
 </pre>
-	<pre class="brush: sql">
-		SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1;
+<pre class="brush: sql">
+	SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1; SELECT * FROM `users` WHERE `id` = 1;
 </pre>
