@@ -78,7 +78,7 @@
 	#footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}
 
 /* Tweak the syntax highlighter */
-	pre					{padding: 5px; overflow: auto; background: #FFFFFF; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em;}
+	pre					{padding: 5px; overflow: auto; background: #FFFFFF; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; font-size: 1em; line-height: 1.1em;}
 	.syntaxhighlighter	{padding: 5px 0;}
 
 /* Tables */
