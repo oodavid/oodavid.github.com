@@ -28,9 +28,9 @@
 	/* Figures & FigCaptions */
 		figure		{text-align: center; font-style: italic; margin: 0 0 20px 0; -webkit-border-radius: 10px;}
 	/* Images */
-		img {vertical-align: middle;}
+		img {vertical-align: middle; max-width: 100%;}
 	/* Iframes */
-		iframe	{border: 0;}
+		iframe	{border: 0; max-width: 100%;}
 	/* Definition Lists */
 		dl {padding: 0 0 20px 40px;}
 		dt {font-weight: bold;}
@@ -43,7 +43,7 @@
 	blockquote {overflow: auto; width: auto;}
 
 /* Big Picture */
-	.center	{padding: 1px 0; width: 720px; margin: 0 auto;}
+	.center	{box-sizing: border-box; width: 720px; max-width: 100%; margin: 0 auto; padding: 1px 10px;}
 	header	{background: #CAA279; padding: 20px 0;}
 	nav		{background: #DCBB83; padding: 5px 0;}
 	section	{background: #EBE3d9; padding: 20px 0;}
