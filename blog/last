@@ -1,4 +1,4 @@
 ---
-layout: nil
+layout: null
 ---
 {{ site.posts.first.date | date_to_xmlschema }}

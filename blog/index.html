@@ -6,7 +6,7 @@ title: "Blog Listing"
 <h1>Blog Listing</h1>
 <!-- All articles... -->
 <ul class="listing">
-	{% for post in site.posts limit 4 %}
+	{% for post in site.posts %}
 		<li>
 			{% if post.github %}<a href="{{post.github}}" target="_blank" style="float: right;">GitHub Repo</a> {% endif %}
 			{% if post.gist %}<a href="{{post.gist}}" target="_blank" style="float: right;">Github Gist</a> {% endif %}
