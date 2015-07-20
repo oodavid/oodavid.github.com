@@ -4,9 +4,9 @@ title: "Easing Functions Refactored"
 github: https://github.com/oodavid/timestep/blob/master/src/animate/transitions.js
 ---
 <p>In the 2002 book, <strong>&quot;Robert Penner's Programming Macromedia Flash MX&quot;</strong> the author wrote a chapter about <a href="http://www.robertpenner.com/easing/penner_chapter7_tweening.pdf" target="_blank">tweening</a>; a word you may now know as &quot;easing&quot;. Anyhoo, these easing functions have made their way into mainstream programming culture and have been ported over into every conceivable language and many popular frameworks.</p>
-<p>Simply, easing functions are a way to animate in <a href="easings.net" target="_blank">a smooth or interesting manner</a>.</p>
-<p>These functions have been all but unaltered in the past decade, however while looking into the relatively new <a href="http://gameclosure.com/">gameclosure</a> framework I found an opportunity to contribute by adding these functionns to their codebase.</p>
-<p>So I did the logical thing, read the background, found a modern port (jQuery) and started dissecting the code... what I found was bewildering and confusing.</p>
+<p>Simply, easing functions are a way to animate in <a href="http://easings.net" target="_blank">a smooth or interesting manner</a>.</p>
+<p>These functions have been all but unaltered for the past decade, however while looking into the relatively new <a href="http://gameclosure.com/">gameclosure</a> framework I found an opportunity to contribute by adding these functions to their javascript codebase.</p>
+<p>So I did the logical thing, read some background information, found a modern port (jQuery) and started dissecting the code... what I found was bewildering and confusing.</p>
 <h3>Why do they accept 4 parameters?!</h3>
 <ul>
 	<li>t: current time</li>
@@ -14,8 +14,8 @@ github: https://github.com/oodavid/timestep/blob/master/src/animate/transitions.
 	<li>c: change in value</li>
 	<li>d: duration</li>
 </ul>
-<p>I might be missing the point, but these parameters make the functions difficult to read and complex to use outside of their intended animation scope. I <em>wrongly</em> surmised that the functions would accept one parameter akin to <strong>Math.sin</strong>, <strong>Math.cos</strong> or <strong>Math.tan</strong>, <em>after</em> which the transformations and manipulations would be applied.</p>
-<p>I used the current <a href="https://github.com/danro/jquery-easing/blob/master/jquery.easing.js" target="_blank">jQuery easing functions</a> and refactored these functions to accept one parameter:</p>
+<p>I might be missing the point, but these parameters make the functions difficult to read and complex to use outside of their intended animation scope. I <em>wrongly</em> surmised that the functions would accept one parameter akin to <strong>Math.sin</strong>, <strong>Math.cos</strong> or <strong>Math.tan</strong>, <em>after</em> which the transformations and manipulations could be applied.</p>
+<p>So I modified the <a href="https://github.com/danro/jquery-easing/blob/master/jquery.easing.js" target="_blank">jQuery easing functions</a> to accept one parameter:</p>
 <h3>n - A value between 0 and 1</h3>
 <p>If you consider the above parameters we can assume a special scenario:</p>
 <ul>
@@ -24,7 +24,7 @@ github: https://github.com/oodavid/timestep/blob/master/src/animate/transitions.
 	<li>c: change in value<ul><li>Always 1</li></ul></li>
 	<li>d: duration<ul><li>Always 1</li></ul></li>
 </ul>
-<p>Means that we can refactor some functions to an extremely compact form, for example:</p>
+<p>Means that we can rewrite the functions to an extremely compact form, for example:</p>
 <pre class="brush: javascript">
 	// Original Function
 	easeInQuad = function (t, b, c, d) {
@@ -39,7 +39,7 @@ github: https://github.com/oodavid/timestep/blob/master/src/animate/transitions.
 		return n * n;
 	};
 </pre>
-<p>You can quickly see that the refactored version is <em>MUCH</em> more readable. Furthermore, I've found an amazing oddity in the jQuery port of the elastic easing:</p>
+<p>You can quickly see that my version is <em>MUCH</em> more readable. Furthermore, I've found an amazing oddity in the jQuery port of the elastic easing:</p>
 <pre class="brush: javascript">
 	// Original
 	easeInElastic = function (t, b, c, d) {
