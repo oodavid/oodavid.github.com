@@ -7,10 +7,14 @@
      88     Y8a.    .a8P  88      .a8P   Y8a.    .a8P
      88      `"Y8888Y"'   88888888Y"'     `"Y8888Y"'
 
+    http://www.grgrdvrt.com/
+    	Inspiration for oodavid.com
+
 	Articles
 		VSI Architecture
 		VSI Politics
-		Complexity Chess
+		"Kingmaker Chess"
+			https://www.facebook.com/TheQueenDrinksTea/posts/10155800586850258?pnref=story
 		Facebook AppEvents
 		Gameclosure Review
 		Gameclosure Contributions

@@ -1,2 +1,2 @@
-server_port: 4000
-permalink:   date
+port: 4000
+permalink: date
