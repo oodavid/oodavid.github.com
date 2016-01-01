@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project: OERM - David King</title>
+	<!-- Author -->
+	<meta name="author" content="David King">
+	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
+	<!-- Customization -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/style.css?v=4">
+	<meta name="theme-color" content="#CAA279">
+	<!-- Mobile Width -->
+	<meta name="viewport" content="width=760">
+</head>
+<!--
+	                 _             _     _ _ 
+	                | |           (_)   | | |
+	  ___   ___   __| | __ ___   ___  __| | |
+	 / _ \ / _ \ / _` |/ _` \ \ / / |/ _` | |
+	| (_) | (_) | (_| | (_| |\ V /| | (_| |_|
+	 \___/ \___/ \__,_|\__,_| \_/ |_|\__,_(_)
+	...what lovely source code you have!
+	
+	Hello nerdbuckets!
+
+	So you're wondering how my simple website functions? Or maybe you
+	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
+	rid this this bizzarro garblings of text from your screen...
+
+	I built this website in a few hours using Jekyll (it's a Ruby thing)
+	via github pages, I'm not a Ruby or Jekyll user but I figured my
+	personal webpage would be a good place to have a play.
+
+		Big thanks to:
+			http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html
+		You can get my *proper* sources over at:
+			https://github.com/oodavid/oodavid.github.com
+
+	Regards and whatnot,
+	David
+-->
+<body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header style="background-color: #;">
+		<div class="center">
+			<hgroup>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div>
+			<a href="/"  title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+			--><a href="/2015/07/20/complexity.html" title="Complexity" ><span>Blog</span></a><!--
+			--><a style="display:none;" href="/very-short-introductions.html"  title="Very Short Introductions"><span>VSI</span></a><!--
+			--><a href="/gviz/"  title="Online graphViz generator"><span>GViz</span></a><!--
+			--><a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a><!--
+			--><a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a><!--
+			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">
+
+
+	<!-- Content -->
+	<h1 style="text-align: center;">Project: OERM <small>pronounced "&#8709;rm?"</small></h1>
+<p style="text-align: center;">OERM links Databases to User-Interfaces.</p>
+<p>Write a <a href="#schema">PHP Schema Definition</a> to describe your <a href="#database">MySQL Database</a> and get a powerful <a href="#query-generator">Query Generator</a> (with search and geospatial functionality), <a href="#user-interface">User-Interface Generator</a> and <a href="#diagnostics">Database Diagnostics Tool</a>:</p>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+		digraph G {
+			// General Settings
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+				fontname = "Ubuntu"
+			]
+			node [
+				shape=box
+				style=filled
+				fillcolor="#FFFFFF"
+				color=transparent
+				fontcolor="#0F192A"
+			]
+			edge [
+				color="#0F192A"
+			]
+			// Define our Nodes
+			schema [label="PHP Schema\nDefinition" shape=diamond fillcolor="#0F192A" fontcolor="#FFFFFF" color="#FFFFFF" penwidth=3];
+			database [label="MySQL\nDatabase" shape=diamond fillcolor="#0F192A" fontcolor="#FFFFFF" color="#FFFFFF" penwidth=3];
+			diagnostics [label="Diagnostics"];
+			webui [label="Web UI"];
+			mobileui [label="Mobile UI"];
+			query [label="Query\nGenerator"];
+			geo [label="Geospatial"];
+			search [label="Search"];
+			// Define our Connections
+			schema -> diagnostics -> database;
+			schema -> query -> database;
+			schema -> webui;
+			schema -> mobileui -> query;
+			webui -> query;
+			query -> search [arrowhead="none" style="dashed"];
+			query -> geo [arrowhead="none" style="dashed"];
+		}]]></script>
+	<figcaption>an overview of the OERM functionality</figcaption>
+</figure>
+
+<!-- Schema Definition -->
+<h2 id="schema">PHP Schema Definition</h2>
+<p>This definition describes the interface elements <em>(email, password, textarea, rating, latlng, address etc.)</em> as well as table relationships <em>(foreign_key)</em>; it is the foundation of all things OERM.</p>
+<blockquote><p>&quot;We want to build a simple cooking app where <strong>users</strong> can <strong>review</strong> and author <strong>recipes</strong>...&quot;</p></blockquote>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+<?php
+$TABLES		= array(
+	'users'		=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'name'		=> array( 'type' => 'text' ),
+			'email'		=> array( 'type' => 'email' )
+		)
+	),
+	'recipes'	=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'title'		=> array( 'type' => 'text' ),
+			'recipe'	=> array( 'type' => 'textarea' ),
+			'author'	=> array( 'type' => 'foreign_key', 'table' => 'users' )
+		)
+	),
+	'reviews'	=> array(
+		'fields'	=> array(
+			'id'		=> array( 'type' => 'id' ),
+			'review'	=> array( 'type' => 'textarea' ),
+			'rating'	=> array( 'type' => 'rating', 'min' => 0, 'max' => 5 ),
+			'recipe'	=> array( 'type' => 'foreign_key', 'table' => 'recipes' )
+			'author'	=> array( 'type' => 'foreign_key', 'table' => 'users' )
+		)
+	)
+);
+?>]]></script>
+<p style="color: #F6B82F;">explain basic properties: type, label, grid, hidden. Some types have additional props...</p>
+<h3 style="color: #F6B82F;">All Input Types...</h3>
+<div style="color: #F6B82F;">
+	<p>This should be collapsed by default...</p>
+	<ul>
+		<li>Structural
+			<ul>
+				<li>id</li>
+				<li>foreign_id</li>
+			</ul>
+		</li>
+		<li>Basics
+			<ul>
+				<li>text</li>
+				<li>textarea</li>
+				<li>wysiwyg - <em>might be deprecated</em></li>
+				<li>markdown</li>
+				<li>combobox</li>
+				<li>email</li>
+				<li>password</li>
+				<li>date</li>
+				<li>time</li>
+				<li>datetime</li>
+				<li>timestamp</li>
+				<li>color</li>
+				<li>money</li>
+				<li>number</li>
+				<li>float1</li>
+				<li>float2</li>
+				<li>float3</li>
+			</ul>
+		</li>
+		<li>Multiple Choice
+			<ul>
+				<li>boolean</li>
+				<li>select</li>
+				<li>indexed_select</li>
+				<li>buttons</li>
+				<li>indexed_buttons</li>
+				<li>indexed_key_buttons</li>
+				<li>checkboxes - <em>might be deprecated</em></li>
+			</ul>
+		</li>
+		<li>Geospatial
+			<ul>
+				<li>latlng</li>
+			</ul>
+		</li>
+		<li>Special
+			<ul>
+				<li>imagick</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- MySQL Database -->
+<h2 id="database">MySQL Database</h2>
+<p>OERM does not (currently) manage your database structure, however there is an awesome <a href="#diagnostics">visual diagnostics tool</a> that visually exposes any inequalities between your schema and database.</p>
+
+<!-- Query Generator -->
+<h2 id="query-generator">Query Generator</h2>
+
+<!-- User Interface Generators -->
+<h2 id="user-interface">User Interface Generators</h2>
+
+<!-- Database Diagnostics Tool -->
+<h2 id="diagnostics">Database Diagnostics Tool</h2>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+<?php
+	require_once("{$_SERVER['DOCUMENT_ROOT']}/oerm/oerm.php");
+	$DBH	= new PDO("mysql:host=localhost;dbname=test;charset=utf8", 'user', 'password');
+	$TABLES	= ...; // See above
+	$orm	= new ORM($DBH, $TABLES);
+	$orm->diagnostics();
+?>]]></script>
+<figure>
+	<img src="/oerm/diagnostics.png">
+	<figcaption><strong>contacts</strong> and <strong>addresses</strong> have errors, <strong>todo</strong> has warnings</figcaption>
+</figure>
+
+<hr><hr><hr><hr><hr><hr>
+
+<h2>NOTES</h2>
+<p>I love the simplicity of <a href="http://www.slimframework.com/">slimframework.com</a>, very nice and github biased too.</p>
+
+<!-- Query Generator -->
+<h2>Query Generator</h2>
+<p>I can demonstrate the concept of this feature with a real-world example. I was asked a non-trivial question by a client:</p>
+<blockquote><p>&quot;We need to see all Sites related to Contracts that we (an Account) have worked on within a Region, searching for the word 'Durham' and Clustered onto a google map...&quot;</p></blockquote>
+<p>Anyone familiar with SQL queries will know that this <em>naive</em> question would test even the most hardened database engineer. With OERM it's a walk in the park.</p>
+<script type="syntaxhighlighter" class="brush: php"><![CDATA[
+	<?php
+		$rows = $oerm->select("COUNT(*) AS `TOTAL`")->
+			from('jobs')->join('contract')->join('site')->
+			where('contract.account', 730)->
+			clustering('site', array(
+				'zoom' => 10,
+				'lat_n' => 55.206,
+				'lat_s' => 54.694,
+				'lng_e' => -1.304,
+				'lng_w' => -2.087
+			))->search('site', 'durham')->execute();
+	?>]]></script>
+
+<!-- Search -->
+<h2>Search</h2>
+<p>InnoDB = stable, MyISAM has fulltext... explain how we manage this</p>
+
+<!-- Web and Mobile UI -->
+<h2>Web and Mobile UI</h2>
+<p>Screenies pls</p>
+
+<!-- DB Sync -->
+<h2>Database Sync and Validation</h2>
+<p>Common patterns - boolean should be an unsigned TINYINT(1). FK's should be indexed and setup. Did you forget to Auto-Increment your PK?</p>
+<p>Screenies of the diagnostics page</p>
+
+
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="center">
+			Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.
+		</div>
+	</footer>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Our scripts -->
+	<script src="/assets/script.js?v=2"></script>
+	<script type="text/javascript" src="http://gviz.oodavid.com/gviz.js" /></script>
+	
+	<!-- 1984 -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7070529-6']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

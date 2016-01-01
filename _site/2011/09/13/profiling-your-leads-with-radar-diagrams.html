@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profiling your leads... WITH RADAR DIAGRAMS - David King</title>
+	<!-- Author -->
+	<meta name="author" content="David King">
+	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
+	<!-- Customization -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/style.css?v=4">
+	<meta name="theme-color" content="#CAA279">
+	<!-- Mobile Width -->
+	<meta name="viewport" content="width=760">
+</head>
+<!--
+	                 _             _     _ _ 
+	                | |           (_)   | | |
+	  ___   ___   __| | __ ___   ___  __| | |
+	 / _ \ / _ \ / _` |/ _` \ \ / / |/ _` | |
+	| (_) | (_) | (_| | (_| |\ V /| | (_| |_|
+	 \___/ \___/ \__,_|\__,_| \_/ |_|\__,_(_)
+	...what lovely source code you have!
+	
+	Hello nerdbuckets!
+
+	So you're wondering how my simple website functions? Or maybe you
+	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
+	rid this this bizzarro garblings of text from your screen...
+
+	I built this website in a few hours using Jekyll (it's a Ruby thing)
+	via github pages, I'm not a Ruby or Jekyll user but I figured my
+	personal webpage would be a good place to have a play.
+
+		Big thanks to:
+			http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html
+		You can get my *proper* sources over at:
+			https://github.com/oodavid/oodavid.github.com
+
+	Regards and whatnot,
+	David
+-->
+<body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header style="background-color: #;">
+		<div class="center">
+			<hgroup>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div>
+			<a href="/"  title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+			--><a href="/2015/07/20/complexity.html" title="Complexity"  class="active" ><span>Blog</span></a><!--
+			--><a style="display:none;" href="/very-short-introductions.html"  title="Very Short Introductions"><span>VSI</span></a><!--
+			--><a href="/gviz/"  title="Online graphViz generator"><span>GViz</span></a><!--
+			--><a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a><!--
+			--><a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a><!--
+			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">
+
+
+	<!-- Blog: Index -->
+	<p style="font-style: italic; text-align: center;">
+		<a href="/blog/" title="All Articles">All Blog Articles</a>
+	</p>
+	
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2011/09/12/jquery-plugin-favicon-notifier.html" title="Previous Post: jQuery plugin - favicon notifier">jQuery plugin - favicon notifier</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2011/09/14/idea-social-intentions-on-google-plus.html" title="Next Post: Idea - Social Intentions on Google Plus">Idea - Social Intentions on Google Plus</a></span>
+		
+	</p>
+
+	<hr>
+
+	<!-- Title & Content -->
+	<h1>Profiling your leads... WITH RADAR DIAGRAMS</h1>
+	<p style="text-align: right">13 Sep 2011</p>
+	
+	<p>Last month I was doodling radar diagrams of people's characteristics and trying to match them to personality types (interesting but maybe a bit odd), but regardless it led me to do the same for different <em>types</em> of freelance work. After a little <a title="Google Charts API" href="http://code.google.com/apis/chart/">Google Charts</a> tinkering I now have a few for your viewing pleasure - they compare</p>
+<ul>
+	<li>Safe Returns - are you gonna get paid?</li>
+	<li>High Returns - are you getting paid a lot?</li>
+	<li>Quick Returns - aka good payment terms</li>
+	<li>Low Input - amount of &quot;hands-on&quot; needed</li>
+	<li>Further Work - odds of a referral / follow up lead</li>
+	<li>Likelyhood - odds of getting the work</li>
+</ul>
+<figure>
+	<img height="400" width="400" alt="Disaster Recovery &amp; Emergency Work" src="https://chart.googleapis.com/chart?cht=r&amp;chs=400x400&amp;chtt=Disaster+Recovery+%2F+Emergency+Work&amp;chxl=1:%7CSafe+Returns%7CHigh+Returns%7CQuick+Returns%7CLow+Input%7CFurther+Work%7CLikelyhood&amp;chd=t:80,80,80,70,50,30,80&amp;chxt=y,x&amp;chls=2&amp;chco=CC3366&amp;chts=000000,18&amp;chxr=0,0.0,100.0&amp;chxp=0,0,20,40,60,80,100&amp;chxs=0,000000,12%7C1,000000,12&amp;chm=o,CC3366,0,-1,8"/>
+</figure>
+<figure>
+	<img height="400" width="400" alt="Consultancy" src="https://chart.googleapis.com/chart?cht=r&amp;chs=400x400&amp;chtt=Consultancy&amp;chxl=1:%7CSafe+Returns%7CHigh+Returns%7CQuick+Returns%7CLow+Input%7CFurther+Work%7CLikelyhood&amp;chd=t:60,70,80,90,50,50,60&amp;chxt=y,x&amp;chls=2&amp;chco=CC3366&amp;chts=000000,18&amp;chxr=0,0.0,100.0&amp;chxp=0,0,20,40,60,80,100&amp;chxs=0,000000,12%7C1,000000,12&amp;chm=o,CC3366,0,-1,8"/>
+</figure>
+<figure>
+	<img height="400" width="400" alt="Public Sector" src="https://chart.googleapis.com/chart?cht=r&amp;chs=400x400&amp;chtt=Public+Sector&amp;chxl=1:%7CSafe+Returns%7CHigh+Returns%7CQuick+Returns%7CLow+Input%7CFurther+Work%7CLikelyhood&amp;chd=t:90,70,25,60,40,40,90&amp;chxt=y,x&amp;chls=2&amp;chco=CC3366&amp;chts=000000,18&amp;chxr=0,0.0,100.0&amp;chxp=0,0,20,40,60,80,100&amp;chxs=0,000000,12%7C1,000000,12&amp;chm=o,CC3366,0,-1,8"/>
+</figure>
+<figure>
+	<img height="400" width="400" alt="Startup" src="https://chart.googleapis.com/chart?cht=r&amp;chs=400x400&amp;chtt=Startup&amp;chxl=1:%7CSafe+Returns%7CHigh+Returns%7CQuick+Returns%7CLow+Input%7CFurther+Work%7CLikelyhood&amp;chd=t:15,60,20,20,70,80,15&amp;chxt=y,x&amp;chls=2&amp;chco=CC3366&amp;chts=000000,18&amp;chxr=0,0.0,100.0&amp;chxp=0,0,20,40,60,80,100&amp;chxs=0,000000,12%7C1,000000,12&amp;chm=o,CC3366,0,-1,8"/>
+</figure>
+<figure>
+	<img src="https://chart.googleapis.com/chart?cht=r&amp;chs=400x400&amp;chtt=In+Another+Reality&amp;chxl=1:%7CSafe+Returns%7CHigh+Returns%7CQuick+Returns%7CLow+Input%7CFurther+Work%7CLikelyhood&amp;chd=t:100,100,100,100,100,100,100&amp;chxt=y,x&amp;chls=2&amp;chco=CC3366&amp;chts=000000,18&amp;chxr=0,0.0,100.0&amp;chxp=0,0,20,40,60,80,100&amp;chxs=0,000000,12%7C1,000000,12&amp;chm=o,CC3366,0,-1,8" alt="In Another Reality" width="400" height="400"/>
+</figure>
+<p>Of course this applies to my own experiences of freelance and charts the criteria I deem important, hopefully you can see how data like this can help make decisions. In my case drive me to say no to certain types of work and hunt down others.</p>
+<p>Get in the comments and with some feedback I'll look at making a printable cheat-sheet for your wall :-)</p>
+<p><em>If you want to create your own, and to save you reading (the rather excellent) documentation, this is the URL format I used to create these.</em></p>
+<pre>https://chart.googleapis.com/chart?cht=r
+	&amp;chs=400x400
+	&amp;chtt=Consultancy
+	&amp;chxl=1:|Safe+Returns|High+Returns|Quick+Returns|Low+Input|Further+Work|Likelyhood
+	&amp;chd=t:60,70,80,90,50,50,60
+	&amp;chxt=y,x
+	&amp;chls=2
+	&amp;chco=CC3366
+	&amp;chts=000000,18
+	&amp;chxr=0,0.0,100.0
+	&amp;chxp=0,0,20,40,60,80,100
+	&amp;chxs=0,000000,12|1,000000,12
+	&amp;chm=o,CC3366,0,-1,8</pre>
+
+	<hr>
+
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2011/09/12/jquery-plugin-favicon-notifier.html" title="Previous Post: jQuery plugin - favicon notifier">jQuery plugin - favicon notifier</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2011/09/14/idea-social-intentions-on-google-plus.html" title="Next Post: Idea - Social Intentions on Google Plus">Idea - Social Intentions on Google Plus</a></span>
+		
+	</p>
+
+		<!-- Comments -->
+	<div class="fb-comments" data-href="http://oodavid.com/2011/09/13/profiling-your-leads-with-radar-diagrams.html" data-width="680" data-num-posts="50"></div>
+
+
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="center">
+			Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.
+		</div>
+	</footer>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Our scripts -->
+	<script src="/assets/script.js?v=2"></script>
+	<script type="text/javascript" src="http://gviz.oodavid.com/gviz.js" /></script>
+	
+	<!-- 1984 -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7070529-6']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

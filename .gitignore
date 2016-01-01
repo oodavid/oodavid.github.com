@@ -12,8 +12,3 @@ Thumbs.db
 *.db
 .Trashes
 .Spotlight-V100
-
-##### Build folder and log file
-_site/
-build/
-build.log

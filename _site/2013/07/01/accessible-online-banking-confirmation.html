@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accessible Online Banking Confirmation - David King</title>
+	<!-- Author -->
+	<meta name="author" content="David King">
+	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
+	<!-- Customization -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/style.css?v=4">
+	<meta name="theme-color" content="#CAA279">
+	<!-- Mobile Width -->
+	<meta name="viewport" content="width=760">
+</head>
+<!--
+	                 _             _     _ _ 
+	                | |           (_)   | | |
+	  ___   ___   __| | __ ___   ___  __| | |
+	 / _ \ / _ \ / _` |/ _` \ \ / / |/ _` | |
+	| (_) | (_) | (_| | (_| |\ V /| | (_| |_|
+	 \___/ \___/ \__,_|\__,_| \_/ |_|\__,_(_)
+	...what lovely source code you have!
+	
+	Hello nerdbuckets!
+
+	So you're wondering how my simple website functions? Or maybe you
+	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
+	rid this this bizzarro garblings of text from your screen...
+
+	I built this website in a few hours using Jekyll (it's a Ruby thing)
+	via github pages, I'm not a Ruby or Jekyll user but I figured my
+	personal webpage would be a good place to have a play.
+
+		Big thanks to:
+			http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html
+		You can get my *proper* sources over at:
+			https://github.com/oodavid/oodavid.github.com
+
+	Regards and whatnot,
+	David
+-->
+<body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header style="background-color: #;">
+		<div class="center">
+			<hgroup>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div>
+			<a href="/"  title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+			--><a href="/2015/07/20/complexity.html" title="Complexity"  class="active" ><span>Blog</span></a><!--
+			--><a style="display:none;" href="/very-short-introductions.html"  title="Very Short Introductions"><span>VSI</span></a><!--
+			--><a href="/gviz/"  title="Online graphViz generator"><span>GViz</span></a><!--
+			--><a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a><!--
+			--><a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a><!--
+			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">
+
+
+	<!-- Blog: Index -->
+	<p style="font-style: italic; text-align: center;">
+		<a href="/blog/" title="All Articles">All Blog Articles</a>
+	</p>
+	
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2013/06/24/converting-google-spreadsheeets-to-json.html" title="Previous Post: Converting Google Spreadsheeets to JSON">Converting Google Spreadsheeets to JSON</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2013/07/10/a-simple-way-to-smash-your-todo-list.html" title="Next Post: A Simple Way to Smash Your Todo List">A Simple Way to Smash Your Todo List</a></span>
+		
+	</p>
+
+	<hr>
+
+	<!-- Title & Content -->
+	<h1>Accessible Online Banking Confirmation</h1>
+	<p style="text-align: right">01 Jul 2013</p>
+	
+	<p>When you setup a new recipient online, your bank will ask to jump through a telephonic security hoop to confirm that you aren't a naughty hacker. Quite rightly so.</p>
+<p>However this becomes an issue if you have hearing issues, back in August 2011 I had a conversation with <a href="https://twitter.com/AskLloydsTSB/status/109233455879036928">@AskLloydsTSB</a> about adding some on-screen instructions detailing the timings of the call as a simple workaround.</p>
+<p><strong>They did it within a few hours</strong>. I consider this the best piece of reactive design I have ever experienced.</p>
+<h2>It's no longer suitable</h2>
+<p>Even though my hearing is fine, I <em>always</em> use the non-hearing approach to make sure that it's still functional. Today it failed me. The automated message has changed and I have realised that the transfer amount also affects the timings.</p>
+<blockquote>
+  <p>&quot;TEN PENCE&quot; - a mere moment</p>
+  <p>&quot;ONE THOUSAND, NINE HUNDRED AND TWENTY THREE POUNDS AND SEVENTY TWO PENCE&quot; - somewhat longer</p>
+</blockquote>
+<h2>The proposal</h2>
+<p>By sending the 4-digit code to the user via SMS they could enter it on-screen for the same level of security (verifying the user is who they say they are). Furthermore it will be FULLY accessible to the hard-of-hearing community.</p>
+<p>Interface-wise we only need one additional page to deal with the SMS instructions and input; there's no need to have an additional screen to choose between SMS and Voice as this choice can be added to the &quot;create new recipient page&quot;.</p>
+<figure>
+	<img src="/assets/blog/lloyds-auth-A.png">
+	<figcaption>Current User-Experience would be unchanged as Voice is selected by default<figcaption>
+</figure>
+<figure>
+  <img src="/assets/blog/lloyds-auth-B.png">
+  <figcaption>Those requiring SMS confirmation get the alternative Confirmation screen<figcaption>
+</figure>
+<figure>
+<script type="gviz" data-layout="dot"><![CDATA[
+digraph G {
+  graph [
+    truecolor=true
+    bgcolor="#FFFFFF00"
+  ];
+  node [
+    style=filled
+    fillcolor="#FFFFFF"
+    color="#0F192A"
+    fontcolor="#0F192A"
+    penwidth=2
+    shape=box
+  ];
+  new         [label="Setup New Recipient\nHow would you like to confirm?"];
+  chooseSMS   [label="Confirm with SMS"  shape="none" fillcolor="transparent" fontcolor="#F6B82F"];
+  chooseVoice [label="Confirm with Call" shape="none" fillcolor="transparent" fontcolor="#F62F41"];
+  receive     [label="Receive Code via SMS"];
+  enter       [label="Enter Code On-Screen"];
+  view        [label="Show Code On-Screen"];
+  call        [label="Receive Phone Call"];
+  enter2      [label="Enter Code On-Call"];
+  thanks      [label="Thanks for confirming your identity"];
+  new -> chooseSMS -> receive -> enter -> thanks [color="#F6B82F" penwidth=2];
+  new -> chooseVoice -> view -> call -> enter2 -> thanks [color="#F62F41" penwidth=2];
+}
+]]></script>
+  <figcaption>As you can see, the changes would have minimal effect on the interface, and with my experience<br>as a programmer I'd be confident that the backend logic would be straightforward too.</figcaption>
+</figure>
+<p><strong>Addendum</strong>: To the LloydsTSB employees reading this; I hope that you take these graphics and arguments, take them to your boss and impress the shit out of them. I don't even care if you pass it off as your brainchild and get a fat rise and employee of the month, if it gets done you will make the hard-of-hearing community proud!</p>
+<p>And with that I must bid LloydsTSB Godspeed!</p>
+
+	<hr>
+
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2013/06/24/converting-google-spreadsheeets-to-json.html" title="Previous Post: Converting Google Spreadsheeets to JSON">Converting Google Spreadsheeets to JSON</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2013/07/10/a-simple-way-to-smash-your-todo-list.html" title="Next Post: A Simple Way to Smash Your Todo List">A Simple Way to Smash Your Todo List</a></span>
+		
+	</p>
+
+		<!-- Comments -->
+	<div class="fb-comments" data-href="http://oodavid.com/2013/07/01/accessible-online-banking-confirmation.html" data-width="680" data-num-posts="50"></div>
+
+
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="center">
+			Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.
+		</div>
+	</footer>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Our scripts -->
+	<script src="/assets/script.js?v=2"></script>
+	<script type="text/javascript" src="http://gviz.oodavid.com/gviz.js" /></script>
+	
+	<!-- 1984 -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7070529-6']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

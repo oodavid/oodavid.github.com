@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GViz - David King</title>
+	<!-- Author -->
+	<meta name="author" content="David King">
+	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
+	<!-- Customization -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/style.css?v=4">
+	<meta name="theme-color" content="#CAA279">
+	<!-- Mobile Width -->
+	<meta name="viewport" content="width=760">
+</head>
+<!--
+	                 _             _     _ _ 
+	                | |           (_)   | | |
+	  ___   ___   __| | __ ___   ___  __| | |
+	 / _ \ / _ \ / _` |/ _` \ \ / / |/ _` | |
+	| (_) | (_) | (_| | (_| |\ V /| | (_| |_|
+	 \___/ \___/ \__,_|\__,_| \_/ |_|\__,_(_)
+	...what lovely source code you have!
+	
+	Hello nerdbuckets!
+
+	So you're wondering how my simple website functions? Or maybe you
+	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
+	rid this this bizzarro garblings of text from your screen...
+
+	I built this website in a few hours using Jekyll (it's a Ruby thing)
+	via github pages, I'm not a Ruby or Jekyll user but I figured my
+	personal webpage would be a good place to have a play.
+
+		Big thanks to:
+			http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html
+		You can get my *proper* sources over at:
+			https://github.com/oodavid/oodavid.github.com
+
+	Regards and whatnot,
+	David
+-->
+<body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header style="background-color: #;">
+		<div class="center">
+			<hgroup>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div>
+			<a href="/"  title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+			--><a href="/2015/07/20/complexity.html" title="Complexity" ><span>Blog</span></a><!--
+			--><a style="display:none;" href="/very-short-introductions.html"  title="Very Short Introductions"><span>VSI</span></a><!--
+			--><a href="/gviz/"  title="Online graphViz generator"><span>GViz</span></a><!--
+			--><a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a><!--
+			--><a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a><!--
+			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">
+
+
+	<!-- Content -->
+	<!-- Title -->
+<h1>GViz - Graphviz online</h1>
+<p><em><strong>Nota Bene</strong> - I've written this over a couple of lunchtimes and haven't had time to properly write the documentation, I shall fix this page up ASAP.</em></p>
+<!-- Overview -->
+<h2>Overview</h2>
+<ol>
+	<li>Add my hosted gviz.js script to your page</li>
+	<li>Define some a gviz diagram on your page</li>
+	<li>Enjoy as it is magically translated into a png</li>
+</ol>
+<!-- Instructions -->
+<h2>Instructions</h2>
+<p>Requires jQuery (I <em>may</em> refactoring it to not need this dependency)</p>
+<p>1 - Add the gviz script to your page, either in &lt;head&gt; or before the closing &lt;/body&gt; tag:</p>
+<pre class="brush: xml">
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://gviz.oodavid.com/gviz.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>2 - Define your graphviz information inline...</p>
+<pre class="brush: xml">
+&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
+	digraph G {
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]&gt;&lt;/script&gt;
+</pre>
+<p>3 - Enjoy as it is automatically translated into an image</p>
+<figure>
+<script type="gviz" data-layout="dot"><![CDATA[
+	digraph G {
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]></script>
+</figure>
+<!-- Helper Tool -->
+<h1>Helper Tool</h1>
+<p>Try out your graphViz definitions here and see the HTML source-code required and view the rendered graph.</p>
+<div id="tool">
+	<p style="text-align: center;">
+		<textarea style="width: 600px;">digraph G {
+  graph [
+    truecolor=true
+    bgcolor="#FFFFFF00"
+  ];
+  node [
+    style=filled
+    fillcolor="#FFFFFF"
+  ];
+  this -> that;
+  that -> theother;
+  theother -> this;
+}</textarea>
+		<br>
+		Layout Engine:
+		<select>
+			<option>dot</option>
+			<option>neato</option>
+			<option>fdp</option>
+			<option>sfdp</option>
+			<option>twopi</option>
+			<option>circo</option>
+		</select>
+		<button>Create HTML and render graph</button>
+	</p>
+	<figure></figure>
+	<div id="embed"></div>
+</div>
+<!-- Layout Engine -->
+<h2>Layout Engine</h2>
+<p>Do you see the <strong>data-layout</strong> attribute? That allows you to choose which of the graphviz layout engines to use for rendering your graph, I've only really used the &quot;dot&quot; engine, but have tested the others to work fine:</p>
+<dl>
+	<dt>dot</dt>
+		<dd>&quot;hierarchical&quot; or layered drawings of directed graphs. This is the default tool to use if edges have directionality.</dd>
+	<dt>neato</dt>
+		<dd>&quot;spring model&quot; layouts.  This is the default tool to use if the graph is not too large (about 100 nodes) and you don't know anything else about it. Neato attempts to minimize a global energy function, which is equivalent to statistical multi-dimensional scaling.</dd>
+	<dt>fdp</dt>
+		<dd>&quot;spring model&quot; layouts similar to those of neato, but does this by reducing forces rather than working with energy.</dd>
+	<dt>sfdp</dt>
+		<dd>multiscale version of fdp for the layout of large graphs.</dd>
+	<dt>twopi</dt>
+		<dd>radial layouts, after Graham Wills 97. Nodes are placed on concentric circles depending their distance from a given root node.</dd>
+	<dt>circo</dt>
+		<dd>circular layout, after Six and Tollis 99, Kauffman and Wiese 02. This is suitable for certain diagrams of multiple cyclic structures, such as certain telecommunications networks.</dd>
+</dl>
+<!-- Make your graph transparent -->
+<h2>Make your graph transparent</h2>
+<pre class="brush: xml">
+&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
+	digraph G {
+		graph [
+			truecolor=true
+			bgcolor="#FFFFFF00"
+		];
+		node [
+			style=filled
+			fillcolor="#FFFFFF"
+		];
+		this -> that;
+		that -> theother;
+		theother -> this;
+	}
+]]&gt;&lt;/script&gt;
+</pre>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+		digraph G {
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+			];
+			node [
+				style=filled
+				fillcolor="#FFFFFF"
+			];
+			this -> that;
+			that -> theother;
+			theother -> this;
+		}
+	]]></script>
+</figure>
+<!-- -->
+<h2>A Big example</h2>
+<pre class="brush: xml">
+	&lt;script type="gviz" data-layout=&quot;dot&quot;&gt;&lt;![CDATA[
+		digraph G {
+			// General Settings
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+				fontname = "Ubuntu"
+			];
+			node [
+				shape=box
+				style=filled
+				fillcolor="#FFFFFF"
+				color=transparent
+				fontcolor="#0F192A"
+			];
+			edge [
+				color="#0F192A"
+			];
+			// Define our Nodes
+			schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
+			database [label="Database"];
+			ui [label="Web UI"];
+			mobile [label="Mobile UI"];
+			validation [label="Validation"];
+			crud [label="CRUD\nOperations"];
+			sync [label="SYNC"];
+			query [label="Query\nGenerator"];
+			clustering [label="Marker\nClustering"];
+			search [label="Search"];
+			// Define our Connections
+			schema -> database;
+			schema -> crud;
+			schema -> ui;
+			schema -> mobile;
+			ui -> crud -> database
+			schema -> query -> database;
+			query -> search -> database;
+			query -> clustering;
+			database -> validation -> database;
+			database -> sync;
+			crud -> validation;
+		}
+	]]&gt;&lt;/script&gt;
+</pre>
+<figure>
+	<script type="gviz" data-layout="dot"><![CDATA[
+		digraph G {
+			// General Settings
+			graph [
+				truecolor=true
+				bgcolor="#FFFFFF00"
+				fontname = "Ubuntu"
+			];
+			node [
+				shape=box
+				style=filled
+				fillcolor="#FFFFFF"
+				color=transparent
+				fontcolor="#0F192A"
+			];
+			edge [
+				color="#0F192A"
+			];
+			// Define our Nodes
+			schema [label="Schema\nDefinition" shape=diamond color="#0F192A" penwidth=3];
+			database [label="Database"];
+			ui [label="Web UI"];
+			mobile [label="Mobile UI"];
+			validation [label="Validation"];
+			crud [label="CRUD\nOperations"];
+			sync [label="SYNC"];
+			query [label="Query\nGenerator"];
+			clustering [label="Marker\nClustering"];
+			search [label="Search"];
+			// Define our Connections
+			schema -> database;
+			schema -> crud;
+			schema -> ui;
+			schema -> mobile;
+			ui -> crud -> database
+			schema -> query -> database;
+			query -> search -> database;
+			query -> clustering;
+			database -> validation -> database;
+			database -> sync;
+			crud -> validation;
+		}
+	]]></script>
+</figure>
+
+	<!-- Comments -->
+	<div class="fb-comments" data-href="http://oodavid.com/old/gviz/" data-width="680" data-num-posts="50"></div>
+
+
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="center">
+			Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.
+		</div>
+	</footer>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Our scripts -->
+	<script src="/assets/script.js?v=2"></script>
+	<script type="text/javascript" src="http://gviz.oodavid.com/gviz.js" /></script>
+	
+		<script type="text/javascript" src="/gviz/jquery.autosize.min.js"></script>
+	
+		<script type="text/javascript" src="/gviz/script.js?v=2"></script>
+	
+	<!-- 1984 -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7070529-6']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

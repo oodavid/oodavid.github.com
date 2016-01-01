@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Psuedocode - How to rapidly plan your work - David King</title>
+	<!-- Author -->
+	<meta name="author" content="David King">
+	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
+	<!-- Customization -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/style.css?v=4">
+	<meta name="theme-color" content="#CAA279">
+	<!-- Mobile Width -->
+	<meta name="viewport" content="width=760">
+</head>
+<!--
+	                 _             _     _ _ 
+	                | |           (_)   | | |
+	  ___   ___   __| | __ ___   ___  __| | |
+	 / _ \ / _ \ / _` |/ _` \ \ / / |/ _` | |
+	| (_) | (_) | (_| | (_| |\ V /| | (_| |_|
+	 \___/ \___/ \__,_|\__,_| \_/ |_|\__,_(_)
+	...what lovely source code you have!
+	
+	Hello nerdbuckets!
+
+	So you're wondering how my simple website functions? Or maybe you
+	accidentally pressed [CTRL][SHIFT][U] and are now pondering how to
+	rid this this bizzarro garblings of text from your screen...
+
+	I built this website in a few hours using Jekyll (it's a Ruby thing)
+	via github pages, I'm not a Ruby or Jekyll user but I figured my
+	personal webpage would be a good place to have a play.
+
+		Big thanks to:
+			http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html
+		You can get my *proper* sources over at:
+			https://github.com/oodavid/oodavid.github.com
+
+	Regards and whatnot,
+	David
+-->
+<body>
+	<!-- Goo filter :: http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/ -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<!-- FB: Comments -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=127387677361468";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- That's me! -->
+	<header style="background-color: #;">
+		<div class="center">
+			<hgroup>
+				<h1>David King</h1>
+				<h2>full stack developer</h2>
+			</hgroup>
+			<div id="meditate">
+				<div id="guru"></div>
+				<div id="shadow"></div>
+			</div>
+		</div>
+	</header>
+	<!-- Navigation -->
+	<nav id="stuck"></nav>
+	<nav id="unstuck">
+		<div>
+			<a href="/"  title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+			--><a href="/2015/07/20/complexity.html" title="Complexity"  class="active" ><span>Blog</span></a><!--
+			--><a style="display:none;" href="/very-short-introductions.html"  title="Very Short Introductions"><span>VSI</span></a><!--
+			--><a href="/gviz/"  title="Online graphViz generator"><span>GViz</span></a><!--
+			--><a href="https://github.com/oodavid" title="Open-source work on github"><span>GitHub</span></a><!--
+			--><a href="/cv.html" title="My rather nerdy CV"><span>CV</span></a><!--
+			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+		</div>
+	</nav>
+	<!-- The meat -->
+	<section>
+		<div class="center">
+
+
+	<!-- Blog: Index -->
+	<p style="font-style: italic; text-align: center;">
+		<a href="/blog/" title="All Articles">All Blog Articles</a>
+	</p>
+	
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2012/01/18/how-to-write-a-blog-post-in-a-jiffy.html" title="Previous Post: How to write a blog post in a jiffy">How to write a blog post in a jiffy</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2012/01/23/designer-tricks-test-many-fonts-on-your-site.html" title="Next Post: designer tricks - test many fonts on your site">designer tricks - test many fonts on your site</a></span>
+		
+	</p>
+
+	<hr>
+
+	<!-- Title & Content -->
+	<h1>Psuedocode - How to rapidly plan your work</h1>
+	<p style="text-align: right">20 Jan 2012</p>
+	
+	<p>At some point in my coding life I got into the habit of writing a sort of comment-soup-pseudocode as a way of planning the work ahead of me. Depending on the language and environment I often end up with a mix of basic programming structures (functions, objects etc) flooded with notes about the work I need to do.</p>
+<p>For example I am (right now) writing a sites manager for a client, they need to be able to search for addresses on google, see what sites are nearby on their database and given that information they can then go on to use an existing site, or create a new one.</p>
+<p>To plan the first part (finding sites) I wrote this psuedo-code:</p>
+<pre class="brush: javascript;">NG.sites_manager = {};
+NG.sites_manager.show = function(){
+	// Check we have google
+		// Activate the map
+};
+NG.sites_manager.geocode_address = function(address, site_id){
+	// Geocode the address
+		// If we have a site_id
+			// NG.sites_manager.add_site(lat, lng, address, site_id, true)
+		// Otherwise
+			// NG.sites_manager.add_site(lat, lng, address)
+};
+NG.sites_manager.add_site = function(lat, lng, title, site_id, focal){
+	// If it's focal
+		// NG.sites_manager.clear_sites();
+	// If we have a site_id
+		// If the site exists in the nearby-sites list, exit the function
+		// Add the link on the nearby-sites list
+	// Add a marker to the map
+	// Increment the counter
+	// If it's focal
+		// Centre the map
+		// Request nearby sites
+};
+NG.sites_manager.clear_sites = function(){
+	// Reset the counter
+	// Empty the nearby-sites list
+	// Remove the markers
+};
+NG.sites_manager.get_nearby_sites = function(lat, lng){
+	// Request nearby sites
+		// For each site
+			// NG.sites_manager.add_site(lat, lng, title, site_id)
+};</pre>
+<p>It serves many useful purposes</p>
+<ol>
+	<li>As you write your psuedocode you can visualise the work ahead of you, and the code will already be written in your head by the time you start proper.</li>
+	<li>Making changes at this stage is trivial.<em><br/></em></li>
+	<li>It is NOT a waste of time, the comments remain in your code.</li>
+	<li>Something else that I've forgotten... err... damn brain.</li>
+</ol>
+<p>Does anyone else work in a similar manner? I'd love to hear some tips and tricks in this area! Now to write my sites-manager...</p>
+
+	<hr>
+
+	
+	<!-- Blog: Previous and Next -->
+	<p class="prevnext clearfix">
+		
+			<span style="float: left;">Prev &laquo; <a href="/2012/01/18/how-to-write-a-blog-post-in-a-jiffy.html" title="Previous Post: How to write a blog post in a jiffy">How to write a blog post in a jiffy</a></span>
+		
+		
+			<span style="float: right;">Next &raquo; <a href="/2012/01/23/designer-tricks-test-many-fonts-on-your-site.html" title="Next Post: designer tricks - test many fonts on your site">designer tricks - test many fonts on your site</a></span>
+		
+	</p>
+
+		<!-- Comments -->
+	<div class="fb-comments" data-href="http://oodavid.com/2012/01/20/psuedocode-how-to-rapidly-plan-your-work.html" data-width="680" data-num-posts="50"></div>
+
+
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="center">
+			Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.
+		</div>
+	</footer>
+	<!-- jQuery + plugins -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Our scripts -->
+	<script src="/assets/script.js?v=2"></script>
+	<script type="text/javascript" src="http://gviz.oodavid.com/gviz.js" /></script>
+	
+	<!-- 1984 -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7070529-6']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>
