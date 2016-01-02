@@ -7,6 +7,10 @@
      88     Y8a.    .a8P  88      .a8P   Y8a.    .a8P
      88      `"Y8888Y"'   88888888Y"'     `"Y8888Y"'
 
+    khan draw
+		blog
+		tweet to khan academy
+
     http://www.grgrdvrt.com/
     	Inspiration for oodavid.com
 

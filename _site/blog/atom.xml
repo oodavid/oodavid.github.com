@@ -3,12 +3,40 @@
 	<title>David King</title>
 	<link href="http://oodavid.com/atom.xml" rel="self"/>
 	<link href="http://oodavid.com/"/>
-	<updated>2016-01-01T18:59:10+00:00</updated>
+	<updated>2016-01-02T14:41:11+00:00</updated>
 	<id>http://oodavid.com/</id>
 	<author>
 		<name>David King</name>
 		<email>david@oodavid.com</email>
 	</author>
+	
+	<entry>
+		<title>Khan Draw</title>
+		<link href="http://oodavid.com/2015/12/18/khan-draw.html"/>
+		<updated>2015-12-18T00:00:00+00:00</updated>
+		<id>http://oodavid.com.com/2015/12/18/khan-draw</id>
+		<content type="html">&lt;p&gt;I&#39;ve been spending a lot of time using &lt;a href=&quot;http://khanacademy.org&quot;&gt;Khan-Academy&lt;/a&gt; to brush off some Math and Biology cobwebs. Great fun!&lt;/p&gt;
+&lt;p&gt;The format of the videos appeals to me; a simple sketch with voice-over. I decided to see if I could replicate their toolchain in the browser:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;A Sketching App&lt;/li&gt;
+	&lt;li&gt;...which records the screen&lt;/li&gt;
+	&lt;li&gt;...captures the microhpone audio&lt;/li&gt;
+	&lt;li&gt;...and spits out a video&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I was initially concerned that screen recording would be impossible, but a quick search led me to a couple of great projects:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/muaz-khan/RecordRTC&quot;&gt;RecordRTC&lt;/a&gt; - for recording videos in the browser&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://bgrins.github.io/videoconverter.js/&quot;&gt;videoconverter.js&lt;/a&gt; - a javascript port of ffmpeg, for merging and converting seperate video and audio streams&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Standing on the shoulders of these giants, I created &lt;a href=&quot;https://draw.oodavid.com/&quot;&gt;khan-draw&lt;/a&gt;! This is the output:&lt;/p&gt;
+&lt;figure&gt;
+	&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ipukSqk1pTY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+	&lt;figcaption&gt;I made this in the browser!&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The source-code is &lt;a href=&quot;https://github.com/oodavid/khan-draw&quot;&gt;available on github&lt;/a&gt;, but please give it a go at &lt;a href=&quot;https://draw.oodavid.com/&quot;&gt;draw.oodavid.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are a few limitations of my project, I&#39;ve made note of them on the project (click the &amp;quot;info&amp;quot; button)&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Complexity</title>

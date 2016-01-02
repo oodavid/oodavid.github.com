@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Psuedocode - How to rapidly plan your work - David King</title>
+	<title>Khan Draw - David King</title>
 	<!-- Author -->
 	<meta name="author" content="David King">
 	<link rel="author" href="https://plus.google.com/114477180785416187576"/>
@@ -102,64 +102,38 @@
 	<!-- Blog: Previous and Next -->
 	<p class="prevnext clearfix">
 		
-			<span style="float: left;">Prev &laquo; <a href="/2012/01/18/how-to-write-a-blog-post-in-a-jiffy.html" title="Previous Post: How to write a blog post in a jiffy">How to write a blog post in a jiffy</a></span>
+			<span style="float: left;">Prev &laquo; <a href="/2015/07/20/complexity.html" title="Previous Post: Complexity">Complexity</a></span>
 		
-		
-			<span style="float: right;">Next &raquo; <a href="/2012/01/23/designer-tricks-test-many-fonts-on-your-site.html" title="Next Post: designer tricks - test many fonts on your site">designer tricks - test many fonts on your site</a></span>
 		
 	</p>
 
 	<hr>
 
 	<!-- Title & Content -->
-	<h1>Psuedocode - How to rapidly plan your work</h1>
-	<p style="text-align: right">20 Jan 2012</p>
+	<h1>Khan Draw</h1>
+	<p style="text-align: right">18 Dec 2015</p>
 	
-	<p>At some point in my coding life I got into the habit of writing a sort of comment-soup-pseudocode as a way of planning the work ahead of me. Depending on the language and environment I often end up with a mix of basic programming structures (functions, objects etc) flooded with notes about the work I need to do.</p>
-<p>For example I am (right now) writing a sites manager for a client, they need to be able to search for addresses on google, see what sites are nearby on their database and given that information they can then go on to use an existing site, or create a new one.</p>
-<p>To plan the first part (finding sites) I wrote this psuedo-code:</p>
-<pre class="brush: javascript;">NG.sites_manager = {};
-NG.sites_manager.show = function(){
-	// Check we have google
-		// Activate the map
-};
-NG.sites_manager.geocode_address = function(address, site_id){
-	// Geocode the address
-		// If we have a site_id
-			// NG.sites_manager.add_site(lat, lng, address, site_id, true)
-		// Otherwise
-			// NG.sites_manager.add_site(lat, lng, address)
-};
-NG.sites_manager.add_site = function(lat, lng, title, site_id, focal){
-	// If it's focal
-		// NG.sites_manager.clear_sites();
-	// If we have a site_id
-		// If the site exists in the nearby-sites list, exit the function
-		// Add the link on the nearby-sites list
-	// Add a marker to the map
-	// Increment the counter
-	// If it's focal
-		// Centre the map
-		// Request nearby sites
-};
-NG.sites_manager.clear_sites = function(){
-	// Reset the counter
-	// Empty the nearby-sites list
-	// Remove the markers
-};
-NG.sites_manager.get_nearby_sites = function(lat, lng){
-	// Request nearby sites
-		// For each site
-			// NG.sites_manager.add_site(lat, lng, title, site_id)
-};</pre>
-<p>It serves many useful purposes</p>
-<ol>
-	<li>As you write your psuedocode you can visualise the work ahead of you, and the code will already be written in your head by the time you start proper.</li>
-	<li>Making changes at this stage is trivial.<em><br/></em></li>
-	<li>It is NOT a waste of time, the comments remain in your code.</li>
-	<li>Something else that I've forgotten... err... damn brain.</li>
-</ol>
-<p>Does anyone else work in a similar manner? I'd love to hear some tips and tricks in this area! Now to write my sites-manager...</p>
+	<p>I've been spending a lot of time using <a href="http://khanacademy.org">Khan-Academy</a> to brush off some Math and Biology cobwebs. Great fun!</p>
+<p>The format of the videos appeals to me; a simple sketch with voice-over. I decided to see if I could replicate their toolchain in the browser:</p>
+<ul>
+	<li>A Sketching App</li>
+	<li>...which records the screen</li>
+	<li>...captures the microhpone audio</li>
+	<li>...and spits out a video</li>
+</ul>
+<p>I was initially concerned that screen recording would be impossible, but a quick search led me to a couple of great projects:</p>
+<ul>
+	<li><a href="https://github.com/muaz-khan/RecordRTC">RecordRTC</a> - for recording videos in the browser</li>
+	<li><a href="https://bgrins.github.io/videoconverter.js/">videoconverter.js</a> - a javascript port of ffmpeg, for merging and converting seperate video and audio streams</li>
+</ul>
+<p>Standing on the shoulders of these giants, I created <a href="https://draw.oodavid.com/">khan-draw</a>! This is the output:</p>
+<figure>
+	<iframe width="420" height="315" src="https://www.youtube.com/embed/ipukSqk1pTY" frameborder="0" allowfullscreen></iframe>
+	<figcaption>I made this in the browser!</figcaption>
+</figure>
+<p>The source-code is <a href="https://github.com/oodavid/khan-draw">available on github</a>, but please give it a go at <a href="https://draw.oodavid.com/">draw.oodavid.com</a>.</p>
+<p>There are a few limitations of my project, I've made note of them on the project (click the &quot;info&quot; button)</p>
+
 
 	<hr>
 
@@ -167,15 +141,13 @@ NG.sites_manager.get_nearby_sites = function(lat, lng){
 	<!-- Blog: Previous and Next -->
 	<p class="prevnext clearfix">
 		
-			<span style="float: left;">Prev &laquo; <a href="/2012/01/18/how-to-write-a-blog-post-in-a-jiffy.html" title="Previous Post: How to write a blog post in a jiffy">How to write a blog post in a jiffy</a></span>
+			<span style="float: left;">Prev &laquo; <a href="/2015/07/20/complexity.html" title="Previous Post: Complexity">Complexity</a></span>
 		
-		
-			<span style="float: right;">Next &raquo; <a href="/2012/01/23/designer-tricks-test-many-fonts-on-your-site.html" title="Next Post: designer tricks - test many fonts on your site">designer tricks - test many fonts on your site</a></span>
 		
 	</p>
 
 		<!-- Comments -->
-	<div class="fb-comments" data-href="http://oodavid.com/2012/01/20/psuedocode-how-to-rapidly-plan-your-work.html" data-width="680" data-num-posts="50"></div>
+	<div class="fb-comments" data-href="http://oodavid.com/2015/12/18/khan-draw.html" data-width="680" data-num-posts="50"></div>
 
 
 		</div>
