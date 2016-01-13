@@ -7,6 +7,21 @@
      88     Y8a.    .a8P  88      .a8P   Y8a.    .a8P
      88      `"Y8888Y"'   88888888Y"'     `"Y8888Y"'
 
+	tasknote
+		video for site
+		project outline
+	gym app
+	button up
+		weeby.co
+		hashcube
+		orangebus
+		coatsink
+	nexgen
+	khan draw
+	employee?
+		node specialist
+	Refactor Lord Mountbutton to be an online guide
+
     http://www.grgrdvrt.com/
     	Inspiration for oodavid.com
 
