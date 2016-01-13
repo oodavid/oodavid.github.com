@@ -30,7 +30,7 @@
 	/* Images */
 		img {vertical-align: middle; max-width: 100%;}
 	/* Iframes */
-		iframe	{border: 0; max-width: 100%;}
+		iframe	{ border: 0; }
 	/* Definition Lists */
 		dl {padding: 0 0 20px 40px;}
 		dt {font-weight: bold;}
