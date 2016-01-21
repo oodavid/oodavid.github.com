@@ -1,3 +1,6 @@
 [submodule "jQuery-Favicon-Notifier"]
 	path = jQuery-Favicon-Notifier
 	url = git@github.com:oodavid/jQuery-Favicon-Notifier.git
+[submodule "jQuery-Textarea-AutoGrow"]
+	path = jQuery-Textarea-AutoGrow
+	url = git@github.com:oodavid/jQuery-Textarea-AutoGrow.git

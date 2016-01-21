@@ -104,6 +104,7 @@
 
 /* Inputs */
 	input {vertical-align: middle; height: 20px; padding: 5px; font-size: inherit;}
+	textarea {padding: 5px; width: 200px; font-size: inherit; border: 1px solid #AAAAAA; outline: none;}
 
 /* Keyboard shortcuts */
 	.shortcut  { display: inline-block; padding: 0 10px 0 5px; margin: 8px 0; height: 33px; line-height: 33px; border-radius: 5px; cursor: pointer; }
