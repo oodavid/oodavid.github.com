@@ -1,0 +1,3 @@
+[submodule "jQuery-Favicon-Notifier"]
+	path = jQuery-Favicon-Notifier
+	url = git@github.com:oodavid/jQuery-Favicon-Notifier.git
