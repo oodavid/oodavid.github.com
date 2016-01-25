@@ -7,17 +7,24 @@
      88     Y8a.    .a8P  88      .a8P   Y8a.    .a8P
      88      `"Y8888Y"'   88888888Y"'     `"Y8888Y"'
 
-	tasknote
-		video for site
-		project outline
+    Projects > Consider adding a "Testimonial" icon
+    	There's some disconnect between the homepage testimonials and the Projects
+    	 in this sense...
+
+    Projects > NexGen
+    	Convert the page into a Google Doc ala Button Up!
+    	Create a youtube video
+	    	Will probably need to add a "redacted" stylesheet for nexgen
+	    	 .blurry-text {color: transparent; text-shadow: 0 0 5px rgba(0,0,0,0.5);}
+
+    Button Up! > Create a youtube video
+
 	gym app
 	button up
 		weeby.co
 		hashcube
 		orangebus
 		coatsink
-	nexgen
-	khan draw
 	employee?
 		node specialist
 	Refactor Lord Mountbutton to be an online guide
@@ -28,8 +35,6 @@
 	Articles
 		VSI Architecture
 		VSI Politics
-		"Kingmaker Chess"
-			https://www.facebook.com/TheQueenDrinksTea/posts/10155800586850258?pnref=story
 		Facebook AppEvents
 		Gameclosure Review
 		Gameclosure Contributions
@@ -44,7 +49,6 @@
 	Windows / OSX / Linux toggler (for code snippets)
 		Use localStorage to store preference
 		Release to GitHub
-
 	
 	SQLite for Mobile, Automatic Reconciliation
 		Publish my SQLite library on github and shout about it.
@@ -124,3 +128,16 @@
 	Beautiful things
 		The story of how I proposed to Roz?
 		The sushi ring
+
+  ,ad8888ba,   ,ad8888ba,   88b           d88 88888888ba  88          88888888888 888888888888 88888888888
+ d8"'    `"8b d8"'    `"8b  888b         d888 88      "8b 88          88               88      88
+d8'          d8'        `8b 88`8b       d8'88 88      ,8P 88          88               88      88
+88           88          88 88 `8b     d8' 88 88aaaaaa8P' 88          88aaaaa          88      88aaaaa
+88           88          88 88  `8b   d8'  88 88""""""'   88          88"""""          88      88
+Y8,          Y8,        ,8P 88   `8b d8'   88 88          88          88               88      88
+ Y8a.    .a8P Y8a.    .a8P  88    `888'    88 88          88          88               88      88
+  `"Y8888Y"'   `"Y8888Y"'   88     `8'     88 88          88888888888 88888888888      88      88888888888
+
+	Project > tasknote
+		video for site
+		project outline

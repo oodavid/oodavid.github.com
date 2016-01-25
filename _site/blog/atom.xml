@@ -3,7 +3,7 @@
 	<title>David King</title>
 	<link href="http://oodavid.com/atom.xml" rel="self"/>
 	<link href="http://oodavid.com/"/>
-	<updated>2016-01-21T14:42:55+00:00</updated>
+	<updated>2016-01-25T11:41:06+00:00</updated>
 	<id>http://oodavid.com/</id>
 	<author>
 		<name>David King</name>
@@ -20,7 +20,7 @@
 &lt;ul&gt;
 	&lt;li&gt;A Sketching App&lt;/li&gt;
 	&lt;li&gt;...which records the screen&lt;/li&gt;
-	&lt;li&gt;...captures the microhpone audio&lt;/li&gt;
+	&lt;li&gt;...captures the microphone audio&lt;/li&gt;
 	&lt;li&gt;...and spits out a video&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I was initially concerned that screen recording would be impossible, but a quick search led me to a couple of great projects:&lt;/p&gt;

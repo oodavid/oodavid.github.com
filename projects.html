@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Projects"
+permalink: /projects/
+---
+<style>
+	.thumb                      {float: left; width: 208px; margin: 0 20px 0 0;}
+	.thumb img:nth-of-type(1)   {float: left; margin: 0;}
+	.thumb img:nth-of-type(n+2) {float: left; margin: 10px 2px;}
+	.thumb img.disabled {-webkit-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.2;}
+</style>
+<h1>{{page.title}}</h1>
+<p>A small collection of my recent work. The scale and scope varies a lot; Lucion NexGen took 2 years to create, while Khan-Draw only took a few hours.</p>
+<p>Follow the project links for more information, some have a youtube video, source code or a comprehensive document. See the key:</p>
+<p class="legend">
+	<span><img src="/assets/48/www.png"     width="48" height="48"> www</span>
+	<span><img src="/assets/48/youtube.png" width="48" height="48"> youtube</span>
+	<span><img src="/assets/48/docs.png"    width="48" height="48"> doc</span>
+	<span><img src="/assets/48/code.png"    width="48" height="48"> source code</span>
+</p>
+<p>In terms of tech, I tend to seek out the right languages and platforms early on - the learning curve is usually &quot;cheaper&quot; in the long run. There's a lot of Javascript, some PHP, Node, C++ and Java. Databases tend to be MySQL or MongoDB, but sqlite for mobile, and sometimes DynamoDB. I like AWS.</p>
+<div class="clearfix">
+	{% assign projects = (site.pages | where: 'layout' , 'project' | sort: 'title') %}
+	{% for page in projects %}
+		<blockquote>
+			<div class="thumb">
+				<img src="{{ page.thumbnail }}"   width="208" height="156">
+				<img src="/assets/48/www.png"     width="48" height="48" {% if page.link    == nil %} class="disabled" {% endif %}>
+				<img src="/assets/48/youtube.png" width="48" height="48" {% if page.youtube == nil %} class="disabled" {% endif %}>
+				<img src="/assets/48/docs.png"    width="48" height="48" {% if page.doc     == nil %} class="disabled" {% endif %}>
+				<img src="/assets/48/code.png"    width="48" height="48" {% if page.github  == nil %} class="disabled" {% endif %}>
+			</div>
+			<h3>{{ page.title }}</h3>
+			{{ page.intro }}
+			<p><a href="{{ page.url }}">read more...</a></p>
+			
+		</blockquote>
+	{% endfor %}
+</div>

@@ -1,0 +1,35 @@
+{% include header.html %}
+
+	<!-- Title -->
+	<h1>{{page.title}}</h1>
+
+	{% if page.link %}
+		<!-- Link -->
+		<p><a target="_blank" href="{{ page.link }}"><img src="/assets/48/www.png" width="48" height="48"> {{ page.link }}</a> - <em>project website</em></p>
+	{% endif %}
+
+	{% if page.github %}
+		<!-- GitHub -->
+		<p><a target="_blank" href="{{ page.github }}"><img src="/assets/48/code.png" width="48" height="48"> {{ page.github }}</a> - <em>source code</em></p>
+	{% endif %}
+
+	<!-- Main Content -->
+	{{ content }}
+
+	{% if page.doc %}
+		<!-- Google Doc -->
+		<figure>
+			<iframe style="width: 760px; height: 700px; margin-left: -30px;" src="https://docs.google.com/document/d/{{ page.doc }}/pub?embedded=true"></iframe>
+			<figcaption><a target="_blank" href="https://docs.google.com/document/d/{{ page.doc }}/export?format=pdf">Download as PDF</a></figcaption>
+		</figure>
+	{% endif %}
+
+	{% if page.youtube %}
+		<!-- Youtube -->
+		<figure>
+			<iframe width="640" height="480" src="//www.youtube.com/embed/{{ page.youtube }}?cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
+			<figcaption><a target="_blank" href="https://www.youtube.com/watch?v={{ page.youtube }}">View on Youtube</a></figcaption>
+		</figure>
+	{% endif %}
+
+{% include footer.html %}
