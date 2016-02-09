@@ -1,258 +1,231 @@
 ---
-title: "CV"
+layout: default
+title: "Curriculum Vitae - David King"
 permalink: /cv/
 ---
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>David King - Curriculum Vitae</title>
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <style>
-        /* For print / PDF'ing */
-            @media print {
-                @page { margin: 0 30pt; background-color: #272822; }
-            }
-        /* Basic elements */
-            body,
-            html {background: #272822; color: #F8F8F2; padding: 0; margin: 0; border: 0; overflow-x: hidden;}
-            a    {color: inherit;}
-            abbr {border-bottom: 1px dotted; cursor: help}
-        /* Float center - http://stackoverflow.com/a/1232297/1122851 */
-            #wrap {float: left; position: relative; left: 50%;}
-            #cv   {float: left; position: relative; left: -50%; padding: 0 1em; margin: 0 0 0 -2em; border: 1px solid #5B5C56; border-top: none; border-bottom: none; font-family: 'Ubuntu Mono', sans-serif;}
-        /* Syntax styles */
-            .javadoc {color: #E6DB74;}
-            .tag     {font-weight: bold;}
-            .title1  {color: #A6E22E; font-weight: bold;}
-            .title2  {color: #66D9EF; font-weight: bold;}
-            .line    {width: 2em; text-align: right; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; color: #5B5C56; font-weight: normal; border-right: 1px solid #5B5C56;}
-        /* CSS trickery to make the line numbers unselectable */
-            .line:before {content: attr(data-content) ' ';}
-    </style>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-		// Damn simple "cv highlighter"
-        $(document).ready(function(e){
-            // I'll do MSIE another day ~ something about line-endings going screwy
-            // if($.browser.msie){
-            //     return;
-            // }
-            // Pull out the cv
-            var cv = $('#cv').html();
-            // Define the expressions
-            var highlights = [
-                [ /(\/\*\*[\s\S]*?\*\/)/gm, '<span class="javadoc">$1</span>'   ], // Main Javadoc
-                [ /(^\s*\*\s\@)(\w*)/gm,    '$1<span class="tag">$2</span>'     ], // @tags
-                [ /(^\s*)(\/\/.*)/gm,       '$1<span class="title1">$2</span>'  ], // // Titles
-                [ /(^\s*)(#.*)/gm,          '$1<span class="title2">$2</span>'  ]  // # Titles
-            ];
-            // Run 'em
-            $.each(highlights, function(k,v){
-                cv = cv.replace(v[0], v[1]);
-            });
-            // Line numbers are cool
-            var lines = cv.split('\n');
-            cv = '';
-            for(i = 0; i < lines.length; i++) {
-                cv += '<span class="line" data-content="' + i + '"></span> ' + lines[i] + '\n';
-            }
-            // And re-write
-            $('#cv').html(cv);
-        });
-	</script>
-</head>
-<body>
-    <div id="wrap">
-        <pre id="cv">
-/**
- * Curriculum Vitae
- *
- * A document for the procurement of work
- * 
- * @author  David King
- * @dob     14th May, 1984
- * @email   <a href="mailto:david@oodavid.com">david@oodavid.com</a>
- * @tel     +44(0)7939273963
- * @home    West Jesmond, Newcastle
- * @url     <a target="_blank" href="http://oodavid.com">oodavid.com</a>
- *
- * @todo    Knockup a markup parser for this document (done)
- */
+<style>
+	#moi img { border-radius: 100px; box-shadow: 0px 3px 10px #A18160; }
+	#alltech { margin: 0 0 20px 0;}
+	.tech { float: left; width: 229px; margin: 2px; background-color: #DCBB83; display: -webkit-flex; display: flex; align-items: center; }
+	.tech img { margin: 5px 10px 5px 5px; flex: 0 0 64px; }
+</style>
 
-/**
- * Career Overview
- *
- * Give a quick rundown of my history leaving the reader suitably prepared to 
- * understand my more recent achievements and technical experience.
- */
+<h1>The CV of David King</h1>
+<p>A freelance programmer in Newcastle upon Tyne, UK.</p>
+<p>I'm currently taking on new clients.</p>
+<p>You can contact me on <strong>07939 273 963</strong> or <a href="mailto:david@oodavid.com">david@oodavid.com</a></p>
+<figure id="moi">
+   <img src="/assets/people/david_king_cv.jpg" width="200" height="200">
+   <figcaption>I look like this</figcaption>
+</figure>
 
-    I have been writing code since the tender age of 13. My first "app" was a
-    Visual Basic form that took two number inputs and spat out a long division
-    diagram. I'm not sure I can even do long division any more. After that I
-    worked my way through 3D Studio Max, Director, Flash (3+). I found the webby
-    ensemble of <abbr title="Linux, Apache, MySQL, PHP/Perl">LAMP</abbr> and <abbr title="Javascript, CSS, HTML">JaCH</abbr> shortly after and never really looked back.
+<h2>Overview</h2>
+<p>I am a <strong>full-stack</strong> developer, I create systems to solve real-world problems. I do:</p>
+<ul>
+	<li><strong>Mobile Development</strong> - <em>Android and iOS apps</em></li>
+	<li><strong>Back End Development</strong> - <em>Hosting, databases and deployment</em></li>
+	<li><strong>Front End Work</strong> - <em>Web design</em></li>
+</ul>
+<p>My skillset means that I excel in creating <strong>Business Operating Systems</strong> - these are used to manage every aspect of running a business.</p>
+<p>I'm also available for smaller projects such as mobile app development, project planning, web-design, database design or consultancy. I've taught specialist programming classes at Newcastle University and am quite comfortable giving talks.</p>
+<p>I can explain my <strong>Business Operating Systems</strong> face-to-face or on a video-call. There's an element of confidentiality that prevents me from writing in detail about my work in this area.</p>
+<p>You can get an insight into my <em>style</em> on my <a href="/projects/">projects page</a>.</p>
 
-    Being a whippersnapper I wrote a few clones of the games I loved (Micro-
-    Machines, Worms, Lunar Lander, Tetris etc) but eventually found work with my
-    father's company drafting illustrations for an american &quot;print and play&quot;
-    game. I continued to work closely with my father for many years, he still
-    calls on me for his more challenging jobs.
+<h2>Hands on Experience</h2>
+<p>To execute a project successfully, a solid plan must be in place. This often means creating a mockup of the software and having it signed off by the client before wiring it up.</p>
+<p>I take a slightly different approach. Before I get to the mockup stage, I need to truly understand my clients business and their need for software. I'll give you some real examples:</p>
 
-    After a few years of online and offline games I started working for
-    more serious clients and decided to try and break the startup scene (thrice)
-    with an e-commerce company, a time-tracking SaaS and a social media outfit,
-    each with varying degrees of success. I've continued to work as a freelancer
-    throughout these endevours.
+<h3>Asbestos Management <small>a huge project</small></h3>
+<p>I was asked to create a system to collate and deliver asbestos surveys.</p>
+<ul>
+	<li>I spent 2 weeks studying each department in the company. Some departments weren't formally defined, so we did that as we went:</li>
+	<ul>
+		<li>higher management
+		<li>accounts management</li>
+		<li>sales</li>
+		<li>laboratory</li>
+		<li>admin</li>
+		<li>field-work</li>
+		<li>fleet management</li>
+		<li>finances</li>
+	</ul>
+	<li>After compiling a process diagram representing the flow of information through company, I could then start to create systems to solve key issues.</li>
+</ul>
 
-    Most recently my freelance work has seen me design, implement and deploy an
-    end-to-end solution for an Asbestos surveying and management company; it
-    deals with account management, scheduling, mobile site-work, lab analysis,
-    report generation, invoicing, timesheets and inter-company communication.
-    All to fit strict UKAS standards.
+<h3>Personal Training App <small>a mid-sized project</small></h3>
+<p>I was approached by a group of Personal Trainers to create a mobile app. They wanted to deliver curated workouts to their clients.</p>
+<p>I asked them to take me on as a client and started training. Over a few training sessions, and a few &quot;normal&quot; meetings we concluded that delivering workouts would erode the experience of a face-to-face training. The app we created was aligned with their business goals and promoted continued training with the group. The app allows their clients to:</p>
+<ul>
+	<li>Log their workouts</li>
+	<li>Recieve advice post-workout, such as the right stretches to do - <em>the app knows the muscles they've worked!</em></li>
+	<li>Get nutritional tips and advice</li>
+	<li>See upcoming group workouts and events</li>
+	<li>Give feedback directly to their Personal Trainer</li>
+</ul>
 
-/**
- * Technical abilities
- *
- * Show my knowledge in a snappy manner, don't bore the potential employer,
- * they're intelligent and will ask for more details if they need to.
- */
+<h2>Project Management</h2>
+<p>I cherry pick elements of SCRUM, DSDM and Kanban in my project planning. In a small team (often just me) the main requirement is to hit deadlines and keep deliverables in scope. I've been leaning more toward a pure Kanban process over time.</p>
+<p>I even use a Kanban board to manage my housework. Don't judge me.</p>
 
-    I have a lot of experience in planning projects from concept to execution
-    and am comfortable tackling complex ideas and whittling them down to
-    manageable, simple solutions. (I have a 10 foot digital whiteboard in my
-    lounge for such activities.)
+<h2>Technical Abilities</h2>
+<p>Picking the best tool for the job is a critical part of any project. I like to review the available languages and frameworks on a case-by-case basis.</p>
+<p>For larger projects, it can be easy to swallow the &quot;cost&quot; of learning new technologies by reviewing the value on offer. A recent example comes to mind, I had to decide on the right database to use for a mobile app that synchronised data to a server:</p>
+<blockquote>
+	<p>While I am familiar with MongoDB, MySQL and RDS - CouchDB + PouchDB offers mobile data synchronisation out of the box.</p>
+	<p>The cost of learning CouchDB + PouchDB will be lower than dealing with data synchronisation on the databases I already know.</p>
+</blockquote>
+<p>I've many outstanding developers</p>
+<p>And then there are the languages and technologies I'm already familiar:</p>
+<div id="alltech" class="clearfix">
+	<div class="tech">
+		<img src="/assets/tech/javascript.png" width="64" height="64">
+		Javascript
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/promise.png" width="64" height="64">
+		Promises
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/angular2.png" width="64" height="64">
+		Angular 2
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/expressjs.png" width="64" height="64">
+		Express.js
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/nodejs.png" width="64" height="64">
+		Node.js
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/socket-io.png" width="64" height="64">
+		Socket.io
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/jquery.png" width="64" height="64">
+		jQuery
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/css3.png" width="64" height="64">
+		CSS 3
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/html5.png" width="64" height="64">
+		HTML 5
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/git.png" width="64" height="64">
+		git
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/jekyll.png" width="64" height="64">
+		Jekyll
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/php.png" width="64" height="64">
+		PHP
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/linux.png" width="64" height="64">
+		Linux **
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/apache.png" width="64" height="64">
+		Apache
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/nginx.png" width="64" height="64">
+		NGINX
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/mysql.png" width="64" height="64">
+		MySQL
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/mongodb.png" width="64" height="64">
+		MongoDB
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/couchdb.png" width="64" height="64">
+		CouchDB
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/pouchdb.png" width="64" height="64">
+		PouchDB
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/aws.png" width="64" height="64">
+		Amazon Web Services *
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/appengine.png" width="64" height="64">
+		Google App Engine *
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/cordova.png" width="64" height="64">
+		Cordova
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/phonegap.png" width="64" height="64">
+		Phonegap
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/titanium.png" width="64" height="64">
+		Titanium Appcelerator
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/gameclosure.png" width="64" height="64">
+		GameClosure
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/android.png" width="64" height="64">
+		Android
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/ios.png" width="64" height="64">
+		iOS
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/wordpress.png" width="64" height="64">
+		Wordpress
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/facebook-api.png" width="64" height="64">
+		Facebook API
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/ffmpeg.png" width="64" height="64">
+		Ffmpeg
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/raspberry-pi.png" width="64" height="64">
+		Raspberry Pi
+	</div>
+	<div class="tech">
+		<img src="/assets/tech/qr-codes.png" width="64" height="64">
+		QR Codes
+	</div>
+</div>
+<p>* These represent a <em>huge</em> number of technologies. It would be absurd to say &quot;I know AWS&quot;, but in this case I simply mean that I am familiar with their APIs and methodologies; I've created auto-scaling sites, leveraged their database services, file storage, CDN etc.</p>
+<p>** Similarly, Linux is a big large to truly &quot;know&quot;, I mean to say that this is my OS of choice (any flavour) and I'm happy doing system admin.</p>
 
-    To date I have only worked on small programming teams, but should be
-    comfortable integrating with larger groups.
 
-    // Backend Development
+<h2>Complementary Skills</h2>
+<p>Whether I'm walking around in my clients shoes or reading about cutting edge technologies I love learning new skills. On my journey so far I've become reasonably proficient in a number of areas outside of programming.</p>
 
-        # Linux
-            All your standard server admin tasks: installation of software via
-            YUM / APT; managing services; user administration; working over
-            SSH / Telnet; SSL setup etc. Linux is my OS of choice but will be
-            able to pick up the same skills in a Windows or Mac environment.
-            I have deployed scalable apps on AWS and App-Engine.
-        # Apache
-            The basics: installation; .htaccess wizardry; Server-Side-Includes;
-            aliases; fundamental security etc.
-        # PHP
-            My goto backend language, I've used many frameworks (CodeIgniter,
-            Cake, Kohana, Rat) however I tend to custom-build my own
-            environments using 3rd party libraries etc as a foundation.
-        # MySQL
-            Certainly my favourite database. Setup and admin, complex queries
-            (I really like a good SQL statement), indexing, spatial indexing,
-            query optimisation, storage engine nuances, Entity-Relationship
-            design, CLI or GUI are both OK by me.
-        # MongoDB
-            Used this primarily for its speed, geospatial functionality and
-            mapreduce features, however with its (possibly unfair) reputation
-            for being volatile I'm happiest using this in parallel to MySQL.
-        # JSP, ASP, Node.js, Python, Ruby, RoR, .NET
-            Only in my spare time! I've not had the opportunity to use these in
-            a commercial setting, but given the right opportunity I'd be super
-            happy to learn their nuances and port over my skillset!
+<h4>Writing</h4>
+<p>I write in plain English. I have a clear and expressive writing style. This is true of my correspondence, documentation and is even reflected in my code.</p>
 
-    // Frontend Development
+<h4>Finances, Cashflow and Law</h4>
+<p>I have created systems that handle vast sums of money; somewhere in the order of &pound;100m. In doing so I have learned all about quoting, contracts, invoicing, aged-debt and credit-notes.</p>
+<p>The same system even handles salary calculations, expenses and mileage.</p>
 
-        # Javascript
-            JS is probably my strongest language, I've written all sorts:
-            WYSIWYG Editors; jQuery Plugins; UI Engines; Templating Engines;
-            Syntax Highlighters; Code Editors; Tutorialss; Media Players... I
-            could go on. A good UI can make or break online software!
-            Suffice to say I've had decent exposure to various popular libraries
-            with
-        # HTML(5)
-            I've always considered well written HTML to be akin to good manners;
-            once you've got the jist of it you're set for life: Semantics;
-            Naming Conventions; SEO and Templating are all standard building
-            blocks for me.
-        # CSS(3)
-            With the sizzle engine and zen coding techniques, it's difficult to
-            get by without knowing your CSS3! Grid systems, cross-browser
-            testing and fixes and optimisation are a given.
-        # Flash
-            I haven't used this for a few years, but in a previous life I have:
-            written 2D games; vector transformations; worked with streaming
-            media; etc. With Actionscript being an ECMA-based language akin to
-            Javascript I'd be very confident to pick it up again should the
-            needs arise.
+<h4>Electronics</h4>
+<p>I have recently started teaching myself electronics fundamentals. I could certainly hold my own when talking about PCB design, bill-of-materials, sourcing components and the crazy cost of enclosure manufacturing.</p>
 
-/**
- * Working knowledge
- *
- * Highlight my useful non-language-specific skills to round off the list of
- * lists and then we should be ready to wind up.
- */
+<h4>3D Printing</h4>
+<p>I have a <a href="http://formlabs.com/products/3d-printers/form-2/">Form 2 SLA printer</a> which I occasionally use to create product mockups. But mostly just for tinkering!</p>
 
-    // Due Diligence
 
-        # Git
-            Day-to-day useage: push; pull; branching; merging; tagging; site
-            deployment via git hooks etc. (I've used SVN too, but I'd happily
-            not go back down that road)
-        # Documentor extraordinairre
-            Whether through JavaDoc type tools or by writing something bespoke I
-            document my code with the tenacity of someone with terrible memory.
-            What was I saying again? Oh yes, I also enjoy writing a good manual
-            or guide for the user-facing part of the systems I work on.
-
-    // Business knowledge
-
-        # Agile
-            I'm familiar with various aspects of SCRUM / DSDM / XP such as:
-            Roles, User-Stories; JEDUF; Timeboxes; Iteration, Sprints, Decision
-            Models, Standups etc.; with every team handpicking the "best" bits
-            there's always more to learn.
-        # Finances, Cashflow and Law
-            I know my share of financial and legal matters through hands-on
-            problem solving as with Lucion. Having written systems to handle
-            contracts, quotes, invoicing, credit-notes and salary calculations.
-        # Of and through my clients
-            Although I am focussed on solving problems in the web-world I pride
-            myself on being able to "walk around in my clients shoes" and have
-            learned a great deal about the businesses that I serve, from marine
-            construction (corrodere.com) to asbestos management (lucion.co.uk)
-            and rather a lot in-between.
-
-    // Of note
-
-        # Open source evangelist / contributor.
-        # I love a good regular expression.
-
-/**
- * Career history
- *
- * List the larger jobs that I have worked on during my career
- *
- * Since these are complex platforms that I have had a substantial (if not total)
- * involvement with, I'm happy to let the reader peruse and make their own
- * judgement-call as to the skills required to build them.
- */
-    
-    # Corrodere
-        corrodere.com
-    # Lucion
-        web.lucion.co.ukm
-
-/**
- * My Personality
- *
- * Write about my life outside the office. Briefly.
- */
-
-    I try to keep my days well planned and jam-packed, away from the binary
-    bongo I'll be getting messy in the kitchen, cycling, reading, swimming,
-    doing DIY, sketching, writing or generally pootling about. I don't watch TV.
-    My knowledge of pop culture is abysmal, you don't want me on your pub-quiz
-    team.
-
-    I am diligently working my way through my bucket list.
-
-    Fragments of my personality can be found on my <a target="_blank" href="http://oodavid.com/">blog</a>.
-        </pre>
-    </div>
-</body>
-</html>
+<hr>
+<p><em>Looking for my old CV? I can't blame you, that was pretty cool too, but it's a bit out-of-date. <a href="/old-cv/">Proceed with caution to my old cv</a>.</em></p>
