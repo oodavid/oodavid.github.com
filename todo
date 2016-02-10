@@ -9,20 +9,14 @@
 
     Get to rank #1 for Newcastle Programmer etc.
 
-    Add "logos" for my tech, ie:
-    	Linux, Apache, MySQL, PHP
-    	Git, AWS, Google Cloud
-    	MongoDB, ExpressJS, AngularJS, Angular2, NodeJS
-    	Cordova, PhoneGap, GameClosure, Titanium
-
-    Projects > Add "internationalisation"
-
-    Fix navbar "jump" issue
-    	http://jsfiddle.net/M33g4/6/
+    Projects > Add "internationalisation"?
 
     Projects > Consider adding a "Testimonial" icon
     	There's some disconnect between the homepage testimonials and the Projects
     	 in this sense...
+
+    Projects > Dinder
+    	Can I get this looking OK?
 
     Projects > Activate NexGen
     	Convert the page into a Google Doc ala Button Up!
@@ -143,6 +137,14 @@ d8'          d8'        `8b 88`8b       d8'88 88      ,8P 88          88        
 Y8,          Y8,        ,8P 88   `8b d8'   88 88          88          88               88      88
  Y8a.    .a8P Y8a.    .a8P  88    `888'    88 88          88          88               88      88
   `"Y8888Y"'   `"Y8888Y"'   88     `8'     88 88          88888888888 88888888888      88      88888888888
+
+    Fix navbar "jump" issue
+
+    Add "logos" for my tech, ie:
+    	Linux, Apache, MySQL, PHP
+    	Git, AWS, Google Cloud
+    	MongoDB, ExpressJS, AngularJS, Angular2, NodeJS
+    	Cordova, PhoneGap, GameClosure, Titanium
 
   	Update my CV
 

@@ -46,35 +46,39 @@
 
 /* Big Picture */
 	.center	{box-sizing: border-box; width: 720px; max-width: 100%; margin: 0 auto; padding: 1px 10px;}
-	header	{background: #CAA279; padding: 20px 0;}
-	nav		{background: #DCBB83; padding: 5px 0;}
+	header	{background: #CAA279;}
 	section	{background: #EBE3d9; padding: 20px 0;}
 	#footer	{background: #DCBB83; padding: 20px 0;}
 
 /* Header */
-	header {text-align: center;}
-	header h1 {font-size: 4em;   margin: 100px 0 0 0;}
-	header h2 {font-size: 2.2em; margin: 0;}
+	header {position: relative; z-index: 2; text-align: center;}
+	header h1 {font-size: 70px; margin: 110px 0 0 0;}
+	header h2 {font-size: 38px; margin: 0 0 20px 0;}
 	/* Guru Graphic */
-		header hgroup	{position: relative; z-index: 2;}
-		#meditate		{position: relative; z-index: 1; float: right; margin: -15px 75px 0 0; display: none;}
+		#meditate		{position: relative; z-index: 3; float: right; margin: -20px 75px 0 0; display: none;}
 		#guru			{position: absolute; width: 72px; height: 132px; left: -24px; top: -165px; background: url('/assets/harry_balloon.png') no-repeat;}
-		#shadow			{position: absolute; width: 27px; height: 6px; left: 0; top: 10px; background: rgba(0,0,0,0.2); -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
-
-/* Nav */
-	nav div           {text-align: center; -webkit-filter: url("#goo"); filter: url("#goo");}
-	nav span          {display: inline-block; border-radius: 50%; margin: 10px 0; width: 80px; height: 80px; line-height: 80px; text-align: center; border: none; background-color: #CAA279; -webkit-transition: 0.3s ease-in-out; -moz-transition: 0.3s ease-in-out; -o-transition: 0.3s ease-in-out; transition: 0.3s ease-in-out;}
-	nav a,
-	nav a:hover       {text-decoration: none!important; color: #FFFFFF;}
-	nav a.active span,
-	nav a:hover  span {margin: 0; width: 100px; height: 100px; line-height: 100px; background-color: #CE534D;}
-	/* Sticky header */
-		#stuck		{display: none; z-index: 100; position: fixed; top: 0; left: 0; right: 0;}
-	/* To fix internal hashlinks going behind the sticky header */
-		h1:before,
-		h2:before,
-		h3:before,
-		h4:before {display: block; content: " "; margin-top: -77px; height: 77px; visibility: hidden;}
+		#shadow			{position: absolute; width: 27px; height: 6px; left: 0; top: 0; background: rgba(0,0,0,0.2); -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+	/* Big Nav */
+		#bignav {background: #DCBB83; padding: 5px 0;}
+		#bignav div           {text-align: center; -webkit-filter: url("#goo"); filter: url("#goo");}
+		#bignav span          {display: inline-block; border-radius: 50%; margin: 10px 0; width: 80px; height: 80px; line-height: 80px; text-align: center; border: none; background-color: #CAA279; -webkit-transition: 0.3s ease-in-out; -moz-transition: 0.3s ease-in-out; -o-transition: 0.3s ease-in-out; transition: 0.3s ease-in-out;}
+		#bignav a,
+		#bignav a:hover       {text-decoration: none!important; color: #FFFFFF;}
+		#bignav a.active span,
+		#bignav a:hover  span {margin: 0; width: 100px; height: 100px; line-height: 100px; background-color: #CE534D;}
+	/* Mini Nav */
+		#mininav {position: fixed; z-index: 1; top: 0; left: 0; right: 0; padding: 10px 0; text-align: center; font-weight: bold; background-color: #CAA279; box-shadow: 0 3px 5px rgba(0,0,0,0.2);}
+		#mininav div {display: inline-block;}
+		#mininav span {display: inline-block; margin: 0 10px; padding: 2px 8px; border-radius: 5px;}
+		#mininav a,
+		#mininav a:hover       {text-decoration: none!important; color: #FFFFFF;}
+		#mininav a.active span,
+		#mininav a:hover  span {background-color: #CE534D;}
+		/* To fix internal hashlinks going behind the mini-nav */
+			section h1:before,
+			section h2:before,
+			section h3:before,
+			section h4:before {display: block; content: " "; margin-top: -77px; height: 77px; visibility: hidden;}
 
 /* Footer */
 	#footer   {text-align: center; font-style: italic; color: #74533E; text-shadow: none; font-size: 80%;}

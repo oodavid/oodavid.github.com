@@ -62,7 +62,7 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- That's me! -->
-	<header style="background-color: #;">
+	<header>
 		<div class="center">
 			<hgroup>
 				<h1>David King</h1>
@@ -73,17 +73,20 @@
 				<div id="shadow"></div>
 			</div>
 		</div>
+		<nav id="bignav">
+			<div>
+				<a href="/" {% if page.url == "/" %} class="active" {% endif %} title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
+				--><a href="{{ site.posts.first.url }}" title="{{ site.posts.first.title }}" {% if page.layout == "blog" or page.url == "/blog/" %} class="active" {% endif %}><span>Blog</span></a><!--
+				--><a href="/projects/" {% if page.url == "/projects/" or page.layout == "project" %} class="active" {% endif %} title="Some of my recent Projects"><span>Projects</span></a><!--
+				--><a href="/cv/" {% if page.url == "/cv/" %} class="active" {% endif %}title="My rather nerdy CV"><span>CV</span></a><!--
+				--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
+			</div>
+		</nav>
 	</header>
-	<!-- Navigation -->
-	<nav id="stuck"></nav>
-	<nav id="unstuck">
-		<div>
-			<a href="/" {% if page.url == "/" %} class="active" {% endif %} title="oodavid! ...what a lovely homepage you have!"><span>Home</span></a><!--
-			--><a href="{{ site.posts.first.url }}" title="{{ site.posts.first.title }}" {% if page.layout == "blog" or page.url == "/blog/" %} class="active" {% endif %}><span>Blog</span></a><!--
-			--><a href="/projects/" {% if page.url == "/projects/" or page.layout == "project" %} class="active" {% endif %} title="Some of my recent Projects"><span>Projects</span></a><!--
-			--><a href="/cv/" {% if page.url == "/cv/" %} class="active" {% endif %}title="My rather nerdy CV"><span>CV</span></a><!--
-			--><a href="mailto:david@oodavid.com" title="Email me"><span>Contact</span></a>
-		</div>
+	<!-- Mini Nav -->
+	<nav id="mininav">
+		David King
+		<!-- I get a clone of bignav > div here -->
 	</nav>
 	<!-- The meat -->
 	<section>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	guru.init();
-	sticky.init();
+	nav.init();
 });
 
 /*** Guru Meditation ****************************/
@@ -24,33 +24,9 @@ guru.move = function(){
 	$('#shadow').css('transform', 'scale('+dZ+') translate('+dX+'px,0px)');
 };
 
-/*** Sticky Header ******************************/
+/*** Nav ****************************************/
 
-var sticky = {};
-sticky.init = function(){
-	// Store the TOP of the unstuck header
-	sticky.top = $('#unstuck').offset().top;
-	// Force the height of both elements
-	var h = $('#unstuck').height() + 'px';
-	$('#stuck').css('height', h);
-	$('#unstuck').css('height', h);
-	// Detect on scroll...
-	$(window).scroll(sticky.scroll);
-	sticky.scroll();
-};
-sticky.scroll = function(e){
-	// Check the scrolltop...
-	if($(window).scrollTop() > sticky.top){
-		// Move the content if need be
-		if($("#unstuck>div")){
-			$("#unstuck>div").appendTo('#stuck');
-			$('#stuck').show();
-		}
-	} else {
-		// Move the content if need be
-		if($("#stuck>div")){
-			$("#stuck>div").appendTo('#unstuck');
-			$('#stuck').hide();
-		}
-	}
+var nav = {};
+nav.init = function(){
+	$('#bignav div').clone().appendTo('#mininav');
 };
