@@ -70,138 +70,18 @@ permalink: /cv/
 <p>Many developers have their languages of choice, and use them for everything. I prefer to match the language to the project.</p>
 <p>And then there are the languages and technologies I'm already familiar:</p>
 <div id="alltech" class="clearfix">
-	<div class="tech">
-		<img src="/assets/tech/javascript.png" width="64" height="64">
-		Javascript
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/promise.png" width="64" height="64">
-		Promises
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/angular2.png" width="64" height="64">
-		Angular 2
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/expressjs.png" width="64" height="64">
-		Express.js
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/nodejs.png" width="64" height="64">
-		Node.js
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/socket-io.png" width="64" height="64">
-		Socket.io
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/jquery.png" width="64" height="64">
-		jQuery
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/css3.png" width="64" height="64">
-		CSS 3
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/html5.png" width="64" height="64">
-		HTML 5
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/git.png" width="64" height="64">
-		git
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/jekyll.png" width="64" height="64">
-		Jekyll
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/php.png" width="64" height="64">
-		PHP
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/linux.png" width="64" height="64">
-		Linux **
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/apache.png" width="64" height="64">
-		Apache
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/nginx.png" width="64" height="64">
-		NGINX
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/mysql.png" width="64" height="64">
-		MySQL
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/mongodb.png" width="64" height="64">
-		MongoDB
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/couchdb.png" width="64" height="64">
-		CouchDB
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/pouchdb.png" width="64" height="64">
-		PouchDB
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/aws.png" width="64" height="64">
-		Amazon Web Services *
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/appengine.png" width="64" height="64">
-		Google App Engine *
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/cordova.png" width="64" height="64">
-		Cordova
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/phonegap.png" width="64" height="64">
-		Phonegap
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/titanium.png" width="64" height="64">
-		Titanium Appcelerator
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/gameclosure.png" width="64" height="64">
-		GameClosure
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/android.png" width="64" height="64">
-		Android
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/ios.png" width="64" height="64">
-		iOS
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/wordpress.png" width="64" height="64">
-		Wordpress
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/facebook-api.png" width="64" height="64">
-		Facebook API
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/ffmpeg.png" width="64" height="64">
-		Ffmpeg
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/raspberry-pi.png" width="64" height="64">
-		Raspberry Pi
-	</div>
-	<div class="tech">
-		<img src="/assets/tech/qr-codes.png" width="64" height="64">
-		QR Codes
-	</div>
+	{% for image in site.static_files %}
+		{% if image.path contains '/assets/tech/' and image.path contains '.png' %}
+			<div class="tech">
+				<img src="{{ image.path }}" width="64" height="64">
+				{{ image.path | remove:'/assets/tech/' | remove:'.png' }}
+			</div>
+		{% endif %}
+	{% endfor %}
 </div>
-<p>* These represent a <em>huge</em> number of technologies. It would be absurd to say &quot;I know AWS&quot;, but in this case I simply mean that I am familiar with their APIs and methodologies; I've created auto-scaling sites, leveraged their database services, file storage, CDN etc.</p>
-<p>** Similarly, Linux is a big large to truly &quot;know&quot;, I mean to say that this is my OS of choice (any flavour) and I'm happy doing system admin.</p>
 
+<p>AWS and App-Engine represent a <em>huge</em> number of technologies. It would be absurd to say &quot;I know AWS&quot;, but in this case I simply mean that I am familiar with their APIs and methodologies; I've created auto-scaling sites, leveraged their database services, file storage, CDN etc.</p>
+<p>Similarly, Linux is too large to truly &quot;know&quot;, I mean to say that this is my OS of choice (any flavour) and I'm happy doing system admin.</p>
 
 <h2>Complementary Skills</h2>
 <p>Whether I'm walking around in my clients shoes or reading about cutting edge technologies I love learning new skills. On my journey so far I've become reasonably proficient in a number of areas outside of programming.</p>
