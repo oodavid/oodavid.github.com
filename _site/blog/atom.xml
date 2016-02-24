@@ -3,12 +3,26 @@
 	<title>David King</title>
 	<link href="http://oodavid.com/atom.xml" rel="self"/>
 	<link href="http://oodavid.com/"/>
-	<updated>2016-02-22T19:54:48+00:00</updated>
+	<updated>2016-02-24T17:18:39+00:00</updated>
 	<id>http://oodavid.com/</id>
 	<author>
 		<name>David King</name>
 		<email>david@oodavid.com</email>
 	</author>
+	
+	<entry>
+		<title>Improving the UX of AngularJS Filters</title>
+		<link href="http://oodavid.com/2016/02/24/improving-the-ux-of-angular-filters.html"/>
+		<updated>2016-02-24T00:00:00+00:00</updated>
+		<id>http://oodavid.com.com/2016/02/24/improving-the-ux-of-angular-filters</id>
+		<content type="html">&lt;p&gt;If you&#39;ve used &lt;a href=&quot;https://angularjs.org/&quot; target=&quot;_blank&quot;&gt;AngularJS&lt;/a&gt; you&#39;ll undoubtedly be familiar with the &lt;a href=&quot;https://docs.angularjs.org/guide/filter&quot; target=&quot;_blank&quot;&gt;filter examples&lt;/a&gt;. When you type into the textboxthe array of items is magically filtered.&lt;/p&gt;
+&lt;p&gt;This feature is fabulous. But because the filter looks at &lt;em&gt;all&lt;/em&gt; properties in your array, it&#39;s not always obvious why certain items are in the list. Don&#39;t worry though, I&#39;ve got you covered!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://plnkr.co/edit/VapAS1D7snbMXdClJZqx?p=preview&quot; target=&quot;_blank&quot;&gt;Play with this on Plunker.&lt;/a&gt; Or watch my Youtube video... Or both! Go crazy.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;//www.youtube.com/embed/93JmNeMGgwM?cc_load_policy=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;figcaption&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=93JmNeMGgwM&quot;&gt;View on Youtube&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</content>
+	</entry>
 	
 	<entry>
 		<title>Khan Draw</title>
