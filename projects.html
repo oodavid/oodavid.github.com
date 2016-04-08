@@ -23,13 +23,13 @@ permalink: /projects/
 	{% assign projects = (site.pages | where: 'layout' , 'project' | sort: 'title') %}
 	{% for page in projects %}
 		<blockquote>
-			<div class="thumb">
+			<a class="thumb" href="{{ page.url }}">
 				<img src="{{ page.thumbnail }}"   width="208" height="156">
 				<img src="/assets/48/www.png"     width="48" height="48" {% if page.link    == nil %} class="disabled" {% endif %}>
 				<img src="/assets/48/youtube.png" width="48" height="48" {% if page.youtube == nil %} class="disabled" {% endif %}>
 				<img src="/assets/48/docs.png"    width="48" height="48" {% if page.doc     == nil %} class="disabled" {% endif %}>
 				<img src="/assets/48/code.png"    width="48" height="48" {% if page.github  == nil %} class="disabled" {% endif %}>
-			</div>
+			</a>
 			<h3>{{ page.title }}</h3>
 			{{ page.intro }}
 			<p><a href="{{ page.url }}">read more...</a></p>
